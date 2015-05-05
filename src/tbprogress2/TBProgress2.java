@@ -18,6 +18,7 @@ public class TBProgress2 {
         IO ll = new IO();
         kk.inputIdentitasKelas();
         kk.InputKondisiRuang();
+        kk.CheckKondisiRuang();
         kk.tampil();
     }
 }
