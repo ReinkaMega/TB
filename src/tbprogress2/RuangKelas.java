@@ -493,7 +493,7 @@ private int Edit;
         setBau(Bau);
         setKebocoran(Kebocoran);
         setKerusakan(Kerusakan);
-    setKeausan(Keausan);
+        setKeausan(Keausan);
     }
       
     public RuangKelas(String Kekokohan,String KunciPintuJendela,String Bahaya){
