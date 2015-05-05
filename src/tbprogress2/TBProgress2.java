@@ -14,7 +14,8 @@ public class TBProgress2 {
      */
     public static void main(String[] args) {
         Sistem analisis = new Sistem();
-        analisis.CheckKondisiRuang();
+        int hit = 0;
+        hit += (int) analisis.CheckKondisiRuang();
         //Arinkade
     }
 }
