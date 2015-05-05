@@ -20,5 +20,6 @@ public class TBProgress2 {
         kk.InputKondisiRuang();
         kk.CheckKondisiRuang();
         kk.tampil();
+        
     }
 }
