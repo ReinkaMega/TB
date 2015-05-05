@@ -433,6 +433,79 @@ private int Edit;
     public void setSuhu(int Suhu) {
         this.Suhu = Suhu;
     }
+    
+    
+    public RuangKelas(String NamaRuang,String LokasiRuang,String ProgramStudi,String Fakultas){
+        setNamaRuang(NamaRuang);
+        setLokasiRuang(LokasiRuang);
+        setProgramStudi(ProgramStudi);
+        setFakultas(Fakultas);
+    }
+    
+    
+    public RuangKelas(int PanjangRuang,int LebarRuang,int JumlahKursi,int JumlahPintu,int JumlahJendela){
+       setPanjangRuang(PanjangRuang);
+        setLebarRuang(LebarRuang);
+        setJumlahKursi(JumlahKursi);
+        setJumlahPintu(JumlahPintu);
+        setJumlahJendela(JumlahJendela);
+    }
+    
+    public RuangKelas(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,int Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV){
+        setJumlahStopKontak(JumlahStopKontak);
+        setKondisiStopKontak(KondisiStopKontak);
+        setPosisiStopKontak(PosisiStopKontak);
+        setJumlahKabelLCD(JumlahKabelLCD);
+        setKondisiKabelLCD(KondisiKabelLCD);
+        setPosisiKabelLCD(PosisiKabelLCD);
+        setJumlahLampu(JumlahLampu);
+        setKondisiLampu(KondisiLampu);
+        setPosisiLampu(PosisiLampu);
+        setJumlahKipasAngin(JumlahKipasAngin);
+        setPosisiKipasAngin(PosisiKipasAngin);
+        setJumlahAC(JumlahAC);
+        setKondisiAC(KondisiAC);
+        setPosisiAC(PosisiAC);
+        setSSID(SSID);
+        setBandwidth(Bandwidth);
+        setJumlahCCTV(JumlahCCTV);
+        setKondisiCCTV(KondisiCCTV);
+        setPosisiCCTV(PosisiCCTV);
+    }
+    
+    public RuangKelas(String KondisiLantai,String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
+       setKondisiLantai(KondisiLantai);
+        setKondisiDinding(KondisiDinding);
+        setKondisiAtap(KondisiAtap);
+        setKondisiPintu(KondisiPintu);
+        setKondisiJendela(KondisiJendela);
+    }
+    
+     public RuangKelas(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban, int Suhu){
+       setSirkulasiUdara(SirkulasiUdara);
+        setNilaiPencahayaan(NilaiPencahayaan);
+        setKelembaban(Kelembaban);
+        setSuhu(Suhu);
+    }
+    
+      public RuangKelas(String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x){
+        setKebisingan(Kebisingan);
+        setBau(Bau);
+        setKebocoran(Kebocoran);
+        setKerusakan(Kerusakan);
+    setKeausan(Keausan);
+    }
+      
+    public RuangKelas(String Kekokohan,String KunciPintuJendela,String Bahaya){
+        
+        setKekokohan(Kekokohan);
+        setKunciPintuJendela(KunciPintuJendela);
+        setBahaya(Bahaya); 
+        
+    }
+    public RuangKelas(){
+        
+    }
 
 }
 
