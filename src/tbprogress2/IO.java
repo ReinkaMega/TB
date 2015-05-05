@@ -13,6 +13,9 @@ import java.util.Scanner;
 public class IO {
     
     
+        
+    
+    
     Scanner in = new Scanner(System.in);
     RuangKelas rk;
      
@@ -37,18 +40,18 @@ public class IO {
     }
     
     void InputKondisiRuang(){
-        
+        RuangKelas lo = new RuangKelas();
         System.out.println("Masukkan Panjang Ruang : ");
-        rk.setPanjangRuang(in.nextInt());
+        lo.setPanjangRuang(in.nextInt());
         System.out.println("Masukkan Lebar Ruang : ");
-        rk.setLebarRuang(in.nextInt());
+        lo.setLebarRuang(in.nextInt());
         System.out.println("Masukkan Jumlah Kursi : ");
-        rk.setJumlahKursi(in.nextInt());
+        lo.setJumlahKursi(in.nextInt());
         System.out.println("Masukkan Jumlah Pintu : ");
-        rk.setJumlahPintu(in.nextInt());
+        lo.setJumlahPintu(in.nextInt());
         System.out.println("Masukkan Jumlah Jendela : ");
-        rk.setJumlahJendela(in.nextInt());
-        rk = new RuangKelas(rk.getPanjangRuang(),rk.getLebarRuang(),rk.getJumlahKursi(),rk.getJumlahPintu(),rk.getJumlahJendela());
+        lo.setJumlahJendela(in.nextInt());
+        rk = new RuangKelas(lo.getPanjangRuang(),lo.getLebarRuang(),lo.getJumlahKursi(),lo.getJumlahPintu(),lo.getJumlahJendela());
         }
    
     
@@ -187,6 +190,5 @@ public class IO {
         System.out.println("Kunci Pintu dan Jendela : "+rk.getKunciPintuJendela());
         System.out.println("Bahaya : "+rk.getBahaya()); 
     }
-
 }
 
