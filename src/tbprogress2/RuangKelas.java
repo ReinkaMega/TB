@@ -35,7 +35,7 @@ private int JumlahAC;
 private String KondisiAC;
 private String PosisiAC;
 private String SSID;
-private int Bandwidth;
+private String Bandwidth;
 private int JumlahCCTV;
 private String KondisiCCTV;
 private String PosisiCCTV;
@@ -66,11 +66,11 @@ private int Edit;
         this.Bahaya = Bahaya;
     }
 
-    public int getBandwidth() {
+    public String getBandwidth() {
         return Bandwidth;
     }
 
-    public void setBandwidth(int Bandwidth) {
+    public void setBandwidth(String Bandwidth) {
         this.Bandwidth = Bandwidth;
     }
 
@@ -327,7 +327,7 @@ private int Edit;
     }
 
     public void setLokasiRuang(String LokasiRuang) {
-        this.LokasiRuang = LokasiRuang;
+        this.LokasiRuang =LokasiRuang;
     }
 
     public String getNamaRuang() {
@@ -451,7 +451,7 @@ private int Edit;
         setJumlahJendela(JumlahJendela);
     }
     
-    public RuangKelas(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,int Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV){
+    public RuangKelas(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV){
         setJumlahStopKontak(JumlahStopKontak);
         setKondisiStopKontak(KondisiStopKontak);
         setPosisiStopKontak(PosisiStopKontak);
