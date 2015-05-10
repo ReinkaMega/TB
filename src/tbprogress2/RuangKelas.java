@@ -506,6 +506,4 @@ private int Edit;
     public RuangKelas(){
         
     }
-
 }
-

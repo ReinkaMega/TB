@@ -19,14 +19,14 @@ public class TBProgress2 {
         analisis.persentaseKondisiRuang();
         analisis.CheckKondisiSarana();
         analisis.persentaseKondisiSarana();
-        analisis.CheckKondisiLingkungan();
-        analisis.persentaseKondisiLingkungan();
-        analisis.CheckKondisiKebersihan();
-        analisis.persentaseKondisiKebersihan();
-        analisis.CheckKondisiKenyamanan();
-        analisis.persentaseKenyamanan();
-        analisis.CheckKondisiKeamanan();
-        analisis.persentaseKeamanan();
+//        analisis.CheckKondisiLingkungan();
+//        analisis.persentaseKondisiLingkungan();
+//        analisis.CheckKondisiKebersihan();
+//        analisis.persentaseKondisiKebersihan();
+//        analisis.CheckKondisiKenyamanan();
+//        analisis.persentaseKenyamanan();
+//        analisis.CheckKondisiKeamanan();
+//        analisis.persentaseKeamanan();
         
         
         //Arinkade

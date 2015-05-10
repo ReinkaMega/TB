@@ -10,7 +10,7 @@ package tbprogress2;
  *
  * @author eko
  */
-public class SuperKelas {
+public class Proses {
     void IdentitasKelas(){}
     void persentaseKondisiRuang(){}
     void persentaseKondisiSarana(){}
@@ -18,10 +18,10 @@ public class SuperKelas {
     void persentaseKondisiKebersihan(){}
     void persentaseKenyamanan(){}
     void persentaseKeamanan(){}
-    void Persentase(double point, double total){
-        double persen;
-        persen = point/total;
-    }
+//    void Persentase(double point, double total){
+//        double persen;
+//        persen = point/total;
+//    }
     
     
 }

@@ -10,9 +10,9 @@ import java.util.Scanner;
  *
  * @author toshiba
  */
-public class Sistem extends SuperKelas{
+public class Sistem extends Proses{
 
-      IO inop = new IO();
+    IO inop = new IO();
     RuangKelas kls = new RuangKelas();
     Scanner in = new Scanner(System.in);
     int s = 0, ts = 0, kondisi;
@@ -80,11 +80,13 @@ public class Sistem extends SuperKelas{
             System.out.println("Jumlah Jendela Tidak s");
             ts++;
         }
-        if (ts > s) {
-            kondisi = 0; 
-        } else {
-            kondisi = 1;
-        }
+        inop.output(kls.getPanjangRuang(), kls.getLebarRuang(), kls.getJumlahKursi(),kls.getJumlahPintu() ,kls.getJumlahJendela());
+        
+//        if (ts > s) {
+//            kondisi = 0; 
+//        } else {
+//            kondisi = 1;
+//        }
         return s;
     }
     @Override
@@ -101,7 +103,7 @@ public class Sistem extends SuperKelas{
         kls = inop.getRuangKelas();
         
         if (kls.getJumlahStopKontak() >= 4) {
-            System.out.println("JumlahStopKontak : s");
+            System.out.println("Jumlah Stop Kontak : s");
             s++;
         } else {
             System.out.println("Tidak Sesusai");
@@ -123,6 +125,7 @@ public class Sistem extends SuperKelas{
         if(kls.getJumlahKabelLCD()>=1){
             System.out.println("JumlahKabelLCD : s");
             s++;
+
         } else {
             System.out.println("Tidak s");
             ts++;
@@ -239,12 +242,14 @@ public class Sistem extends SuperKelas{
             System.out.println("Tidak s");
             ts++;
         }
-        if (ts > s) {
-            kondisi = 0;
-        } else {
-            kondisi = 1;
-        }
-
+        //int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak===,int                  JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,                                    String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV)
+       //int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV
+        inop.output(kls.getJumlahStopKontak(), kls.getKondisiStopKontak(), kls.getPosisiStopKontak(), kls.getJumlahKabelLCD(), kls.getKondisiKabelLCD(), kls.getPosisiKabelLCD(),kls.getJumlahLampu(), kls.getKondisiLampu(), kls.getPosisiLampu(), kls.getJumlahKipasAngin(), kls.getKondisiKipasAngin(), kls.getPosisiKipasAngin() , kls.getJumlahAC(), kls.getKondisiAC(), kls.getPosisiAC(), kls.getSSID(), kls.getBandwidth(), kls.getJumlahCCTV(), kls.getKondisiCCTV(), kls.getPosisiCCTV());
+//        if (ts > s) {
+//            kondisi = 0;
+//        } else {
+//            kondisi = 1;
+//        }
         return s;
     }
     @Override
@@ -450,4 +455,5 @@ public class Sistem extends SuperKelas{
     System.out.println("persentase Kondisi Kenyamanan : "+total+"%");
     System.out.println("======================================"); 
     }
+    
 }
