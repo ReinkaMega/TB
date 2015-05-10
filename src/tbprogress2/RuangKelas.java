@@ -450,7 +450,7 @@ private int Edit;
         setJumlahPintu(JumlahPintu);
         setJumlahJendela(JumlahJendela);
     }
-    
+    //kkjkjkj
     public RuangKelas(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV){
         setJumlahStopKontak(JumlahStopKontak);
         setKondisiStopKontak(KondisiStopKontak);
