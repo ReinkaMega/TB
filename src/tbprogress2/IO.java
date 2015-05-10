@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author toshiba
+ * @author Deny Qutara Putra (175)
  */
 public class IO extends Proses{
     

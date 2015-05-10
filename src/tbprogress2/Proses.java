@@ -8,7 +8,7 @@ package tbprogress2;
  
 /**
  *
- * @author eko
+ * @author Reinka Mega Adelia (178)
  */
 public class Proses {
     void IdentitasKelas(){}

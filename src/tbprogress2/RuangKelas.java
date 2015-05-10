@@ -6,7 +6,7 @@ package tbprogress2;
 
 /**
  *
- * @author toshiba
+ * @author Reinka Mega Adelia (178)
  */
 public class RuangKelas {
 
@@ -462,6 +462,7 @@ private int Edit;
         setKondisiLampu(KondisiLampu);
         setPosisiLampu(PosisiLampu);
         setJumlahKipasAngin(JumlahKipasAngin);
+        setKondisiKipasAngin(KondisiKipasAngin);
         setPosisiKipasAngin(PosisiKipasAngin);
         setJumlahAC(JumlahAC);
         setKondisiAC(KondisiAC);

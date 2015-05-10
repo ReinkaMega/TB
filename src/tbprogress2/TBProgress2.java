@@ -5,7 +5,7 @@
 package tbprogress2;
 /**
  *
- * @author toshiba
+ * @author Deny Qutara Putra (175)
  */
 public class TBProgress2 {
 
@@ -15,8 +15,8 @@ public class TBProgress2 {
      */
     public static void main(String[] args) {
         Sistem analisis = new Sistem();
-        analisis.CheckKondisiRuang();
-        analisis.persentaseKondisiRuang();
+//        analisis.CheckKondisiRuang();
+//        analisis.persentaseKondisiRuang();
         analisis.CheckKondisiSarana();
         analisis.persentaseKondisiSarana();
 //        analisis.CheckKondisiLingkungan();
