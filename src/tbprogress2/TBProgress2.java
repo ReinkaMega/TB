@@ -10,7 +10,7 @@ package tbprogress2;
 public class TBProgress2 {
 
    
-    /**as
+    /**assalam
      * @param args the command line arguments 
      */
     public static void main(String[] args) {
