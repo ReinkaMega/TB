@@ -8,7 +8,6 @@ package tbprogress2;
  * @author Deny Qutara Putra (175)
  */
 public class TBProgress2 {
-
    
     /**inkulppkllop
      * @param args the command line arguments 
