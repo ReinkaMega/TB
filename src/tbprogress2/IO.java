@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author Deny Qutara Putra (175)
  */
-public class IO extends Proses{
+public class IO extends Proses implements View{
     
     Scanner in = new Scanner(System.in);
     RuangKelas kls = new RuangKelas();
@@ -20,7 +20,8 @@ public class IO extends Proses{
     return rk;
     }
     
-    void inputIdentitasKelas(){
+    @Override
+    public void inputIdentitasKelas(){
         
         System.out.println("Masukkan Nama Ruang : ");
         kls.setNamaRuang(in.next());
@@ -35,7 +36,8 @@ public class IO extends Proses{
    
     
     
-    void InputKondisiRuang(){
+    @Override
+    public void InputKondisiRuang(){
        
         System.out.println("Masukkan Panjang Ruang : ");
         kls.setPanjangRuang(in.nextInt());
@@ -49,7 +51,8 @@ public class IO extends Proses{
         kls.setJumlahJendela(in.nextInt());
         rk = new RuangKelas(kls.getPanjangRuang(),kls.getLebarRuang(),kls.getJumlahKursi(),kls.getJumlahPintu(),kls.getJumlahJendela());
         }
-    void inputKondisiSarana(){
+    @Override
+    public void inputKondisiSarana(){
         System.out.println("Masukkan Jumlah Stop Kontak : ");
         kls.setJumlahStopKontak(in.nextInt());
         System.out.println("Masukkan Kondisi Stop Kontak : ");
@@ -93,7 +96,8 @@ public class IO extends Proses{
         rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu(),kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
     }
     
-    void inputKondisiLingkungan(){
+    @Override
+    public void inputKondisiLingkungan(){
         System.out.println("Masukkan Kondisi Lantai : ");
         kls.setKondisiLantai(in.next());
         System.out.println("Masukkan Kondisi Dinding : ");
@@ -107,7 +111,8 @@ public class IO extends Proses{
         rk = new RuangKelas(kls.getKondisiLantai(),kls.getKondisiDinding(),kls.getKondisiAtap(),kls.getKondisiPintu(),kls.getKondisiJendela());
     }
     
-    void inputKondisiKebersihan(){
+    @Override
+    public void inputKondisiKebersihan(){
         System.out.println("Masukkan Sirkulasi Udara: ");
         kls.setSirkulasiUdara(in.next());
         System.out.println("Masukkan Nilai Pencahayaan : ");
@@ -118,7 +123,8 @@ public class IO extends Proses{
         kls.setSuhu(in.nextInt());
         rk = new RuangKelas(kls.getSirkulasiUdara(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu());   
     }
-      void inputKondisiKenyamanan(){
+    @Override
+      public void inputKondisiKenyamanan(){
         System.out.println("Masukkan Kebisingan : ");
         kls.setKebisingan(in.next());
         System.out.println("Masukkan Bau : ");
@@ -133,9 +139,10 @@ public class IO extends Proses{
         
     }
     
-    void inputKondisiKeamanan(){
+    @Override
+    public void inputKondisiKeamanan(){
         System.out.println("Masukkan Kekokohan : ");
-       kls.setKekokohan(in.next());
+        kls.setKekokohan(in.next());
         System.out.println("Masukkan Kunci Pintu dan Jendela : ");
         kls.setKunciPintuJendela(in.next());
         System.out.println("Masukkan Bahaya : ");
@@ -145,14 +152,15 @@ public class IO extends Proses{
     }
     
     @Override
-    void IdentitasKelas(){ 
+    public void IdentitasKelas(){ 
         System.out.println("=========Identitas Kelas=========");
         System.out.println("Nama Ruang : "+kls.getNamaRuang());
         System.out.println("klskasi Ruang : "+kls.getLokasiRuang());  
         System.out.println("Fakultas : "+kls.getFakultas());
         System.out.println("Program Studi : "+kls.getProgramStudi());
     }
-    void output(int PanjangRuang,int LebarRuang,int JumlahKursi,int JumlahPintu,int JumlahJendela){
+    @Override
+    public void output(int PanjangRuang,int LebarRuang,int JumlahKursi,int JumlahPintu,int JumlahJendela){
         //System.out.println("==============Hasil===============");
         System.out.println("=========Kondisi Ruang Kelas=========");
         System.out.println("Panjang Ruang : "+PanjangRuang);
@@ -161,7 +169,8 @@ public class IO extends Proses{
         System.out.println("Jumlah Pintu : "+JumlahPintu);
         System.out.println("Jumlah Jendela : "+JumlahJendela);
     }
- void output(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV) {
+    @Override
+ public void output(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV) {
         System.out.println("=========Kondisi Sarana=========");
         System.out.println("Jumlah Stop Kontak : "+JumlahStopKontak);
         System.out.println("Kondisi Stop Kontak : "+KondisiStopKontak);
@@ -184,7 +193,8 @@ public class IO extends Proses{
         System.out.println("Kondisi CCTV : "+KondisiCCTV);
         System.out.println("Posisi CCTV : "+PosisiCCTV);
  }   
-void output(String KondisiLantai,String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
+    @Override
+    public void output(String KondisiLantai,String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
           System.out.println("===============Kondisi Lingkungan=================");
           System.out.println("Kondisi Lantai : "+KondisiLantai); 
           System.out.println("Kondisi Dinding : "+KondisiDinding);
@@ -193,7 +203,8 @@ void output(String KondisiLantai,String KondisiDinding, String KondisiAtap, Stri
           System.out.println("Kondisi Jendela : "+KondisiJendela);
   }
 
-void output(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban, int Suhu){
+    @Override
+    public void output(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban, int Suhu){
         System.out.println("===============Kenyamanan================");
         System.out.println("Sirkulasi Udara : "+SirkulasiUdara);
         System.out.println("Nilai Pencahayaan "+NilaiPencahayaan);
@@ -201,7 +212,8 @@ void output(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban, int Suh
         System.out.println("Suhu : "+Suhu);
  }
  
-void output(String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x){
+    @Override
+    public void output(String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x){
         System.out.println("===============Keamanan===============");
         System.out.println("Kebisingan : "+Kebisingan);
         System.out.println("Bau : "+Bau);
@@ -210,10 +222,41 @@ void output(String Kebisingan, String Bau, String Kebocoran, String Kerusakan, S
         System.out.println("Keausan : "+Keausan);
     }
 
-void output (String Kekokohan,String KunciPintuJendela,String Bahaya){
+    @Override
+    public void output (String Kekokohan,String KunciPintuJendela,String Bahaya){
         System.out.println("===============Keamanan===============");
         System.out.println("Kekokohan : "+Kekokohan);
         System.out.println("Kunci Pintu dan Jendela : "+KunciPintuJendela);
         System.out.println("Bahaya : "+Bahaya); 
     } 
+
+    @Override
+    void persentaseKondisiRuang() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    void persentaseKondisiSarana() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    void persentaseKondisiLingkungan() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    void persentaseKondisiKebersihan() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    void persentaseKenyamanan() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    void persentaseKeamanan() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

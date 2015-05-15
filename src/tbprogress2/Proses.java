@@ -10,14 +10,14 @@ package tbprogress2;
  *
  * @author Reinka Mega Adelia (178)
  */
-public class Proses {
-    void IdentitasKelas(){}
-    void persentaseKondisiRuang(){}
-    void persentaseKondisiSarana(){}
-    void persentaseKondisiLingkungan(){}
-    void persentaseKondisiKebersihan(){}
-    void persentaseKenyamanan(){}
-    void persentaseKeamanan(){}
+public abstract class Proses {
+    public void IdentitasKelas(){}
+    abstract void persentaseKondisiRuang();
+    abstract void persentaseKondisiSarana();
+    abstract void persentaseKondisiLingkungan();
+    abstract void persentaseKondisiKebersihan();
+    abstract void persentaseKenyamanan();
+    abstract void persentaseKeamanan();
 //    void Persentase(double point, double total){
 //        double persen;
 //        persen = point/total;
