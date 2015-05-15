@@ -8,8 +8,8 @@ package tbprogress2;
  * @author Deny Qutara Putra (175)
  */
 public class TBProgress2 {
-   
-    /** Reinka Here
+    
+    /** Gws R
      * @param args the command line arguments 
      */
     public static void main(String[] args) {
