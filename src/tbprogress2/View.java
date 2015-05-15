@@ -6,7 +6,7 @@
 
 package tbprogress2;
 
-/**..tesssss
+/**
  *
  * @author Deny SQP
  */
