@@ -14,10 +14,12 @@ public class TBProgress2 {
      */
     public static void main(String[] args) {
         Sistem analisis = new Sistem();
+        IO in = new IO();
+        in.inputIdentitasKelas();
 //        analisis.CheckKondisiRuang();
 //        analisis.persentaseKondisiRuang();
-        analisis.CheckKondisiSarana();
-        analisis.persentaseKondisiSarana();
+//        analisis.CheckKondisiSarana();
+//        analisis.persentaseKondisiSarana();
 //        analisis.CheckKondisiLingkungan();
 //        analisis.persentaseKondisiLingkungan();
 //        analisis.CheckKondisiKebersihan();
