@@ -3,10 +3,9 @@
  * and open the template in the editor.
  */
 package tbprogress2;
-
+import javax.swing.*;
 import java.util.Scanner;
-
-/**
+/**ASLDKLSAKDL
  *
  * @author Deny Qutara Putra (175)
  */
@@ -15,27 +14,24 @@ public class IO extends Proses implements View{
     Scanner in = new Scanner(System.in);
     RuangKelas kls = new RuangKelas();
     RuangKelas rk;
-    
+    public IO(JTextField nama,JTextField lokasi,JTextField fakultas,JTextField jurusan){
+        kls.setNamaRuang(nama.getText());
+        kls.setLokasiRuang(lokasi.getText());
+        kls.setFakultas(fakultas.getText());
+        kls.setProgramStudi(jurusan.getText());
+        rk = new RuangKelas(kls.getNamaRuang(),kls.getLokasiRuang(),kls.getFakultas(),kls.getProgramStudi()); 
+    }
+    public IO(){
+        
+    }
     public RuangKelas getRuangKelas(){
     return rk;
     }
     
     @Override
     public void inputIdentitasKelas(){
-        
-        System.out.println("Masukkan Nama Ruang : ");
-        kls.setNamaRuang(in.next());
-        System.out.println("Masukkan Lokasi Ruang : ");
-        kls.setLokasiRuang(in.next());
-        System.out.println("Masukkan Fakultas : ");
-        kls.setFakultas(in.next());
-        System.out.println("Masukkan Program Studi : ");
-        kls.setProgramStudi(in.next());
-        rk = new RuangKelas(kls.getNamaRuang(),kls.getLokasiRuang(),kls.getFakultas(),kls.getProgramStudi());
-        }
-   
-    
-    
+        new DataAwal().setVisible(true);
+    }
     @Override
     public void InputKondisiRuang(){
        
