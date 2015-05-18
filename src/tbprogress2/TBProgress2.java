@@ -9,7 +9,7 @@ package tbprogress2;
  */
 public class TBProgress2 {
     
-    /** Gws R
+    /** KAJSHDKSA
      * @param args the command line arguments 
      */
     public static void main(String[] args) {
