@@ -105,8 +105,8 @@ public class KondisiRuang extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Del = new javax.swing.JButton();
+        Lanjut = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jendela = new javax.swing.JTextField();
         pintu = new javax.swing.JTextField();
@@ -127,17 +127,17 @@ public class KondisiRuang extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton2.setText("Hapus");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Del.setText("Hapus");
+        Del.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                DelActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Selanjutnya");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Lanjut.setText("Selanjutnya");
+        Lanjut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                LanjutActionPerformed(evt);
             }
         });
 
@@ -209,9 +209,9 @@ public class KondisiRuang extends javax.swing.JFrame {
                                             .addComponent(jLabel8)
                                             .addComponent(jLabel9)))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jButton1)
+                                        .addComponent(Lanjut)
                                         .addGap(27, 27, 27)
-                                        .addComponent(jButton2)
+                                        .addComponent(Del)
                                         .addGap(6, 6, 6))))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(119, 119, 119)
@@ -251,8 +251,8 @@ public class KondisiRuang extends javax.swing.JFrame {
                     .addComponent(jendela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(Lanjut)
+                    .addComponent(Del))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
@@ -292,59 +292,61 @@ public class KondisiRuang extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtValueActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void LanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LanjutActionPerformed
         IO x = new IO(txtValue,txtValue2,kursi,pintu,jendela);
+        Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getPanjangRuang(), kls.getLebarRuang(), kls.getJumlahKursi(),kls.getJumlahPintu() ,kls.getJumlahJendela());
+        System.out.println("==============Analisis==================");
         Luas = kls.getPanjangRuang() * kls.getLebarRuang();
         if (kls.getLebarRuang() == kls.getPanjangRuang()) {
             System.out.println("Luas = "+Luas);
-            System.out.println("Luas Tidak s");
+            System.out.println("Luas Tidak Sesuai");
             ts++;
         } else {
             System.out.println("Luas = "+Luas);
-            System.out.println("Luas s");
+            System.out.println("Luas Sesuai");
             s++;
         }
         RasioLuas = Luas / kls.getJumlahKursi();
         System.out.println("Rasio : " + RasioLuas);
         if(RasioLuas<=0.5){
-            System.out.println("Rasio Tidak s");
+            System.out.println("Rasio Tidak Sesuai");
         }
         else{
-            System.out.println("Rasio s");
+            System.out.println("Rasio Sesuai");
             s++;
         }
         if (kls.getJumlahPintu() >= 2) {
-            System.out.println("Jumlah Pintu s");
+            System.out.println("Jumlah Pintu Sesuai");
             s++;
         } else {
-            System.out.println("Jumlah Pintu Tidak s");
+            System.out.println("Jumlah Pintu Tidak Sesuai");
             ts++;
         }
         if (kls.getJumlahJendela() >= 1) {
-            System.out.println("Jumlah Jendela s");
+            System.out.println("Jumlah Jendela Sesuai");
             s++;
         } else {
-            System.out.println("Jumlah Jendela Tidak s");
+            System.out.println("Jumlah Jendela Tidak Sesuai");
             ts++;
         }
-        //        if (ts > s) {
+//        if (ts > s) {
 //            kondisi = 0; 
 //        } else {
 //            kondisi = 1;
 //        }
-         dispose();
-         
-    }//GEN-LAST:event_jButton1ActionPerformed
+         n.persentaseKondisiRuang(s);
+         dispose();    
+    }//GEN-LAST:event_LanjutActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void DelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelActionPerformed
         txtValue.setText(null);
         txtValue2.setText(null);
         pintu.setText(null);
         jendela.setText(null);
         kursi.setText(null);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_DelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -382,8 +384,8 @@ public class KondisiRuang extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Del;
+    private javax.swing.JButton Lanjut;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
