@@ -21,6 +21,15 @@ public class IO extends Proses implements View{
         kls.setProgramStudi(jurusan.getText());
         rk = new RuangKelas(kls.getNamaRuang(),kls.getLokasiRuang(),kls.getFakultas(),kls.getProgramStudi()); 
     }
+    public IO(JTextField panjang,JTextField lebar,JTextField kursi,JTextField pintu,JTextField jendela){
+        kls.setPanjangRuang(Integer.parseInt(panjang.getText()));
+        kls.setLebarRuang(Integer.parseInt(lebar.getText()));
+        kls.setJumlahPintu(Integer.parseInt(pintu.getText()));
+        kls.setJumlahKursi(Integer.parseInt(kursi.getText()));
+        kls.setJumlahJendela(Integer.parseInt(jendela.getText()));
+        System.out.println(""+kls.getPanjangRuang());
+        rk = new RuangKelas(kls.getPanjangRuang(),kls.getLebarRuang(),kls.getJumlahKursi(),kls.getJumlahPintu(),kls.getJumlahJendela()); 
+    }
     public IO(){
         
     }
@@ -31,22 +40,24 @@ public class IO extends Proses implements View{
     @Override
     public void inputIdentitasKelas(){
         new DataAwal().setVisible(true);
+        
     }
     @Override
     public void InputKondisiRuang(){
-       
-        System.out.println("Masukkan Panjang Ruang : ");
-        kls.setPanjangRuang(in.nextInt());
-        System.out.println("Masukkan Lebar Ruang : ");
-        kls.setLebarRuang(in.nextInt());
-        System.out.println("Masukkan Jumlah Kursi : ");
-        kls.setJumlahKursi(in.nextInt());
-        System.out.println("Masukkan Jumlah Pintu : ");
-        kls.setJumlahPintu(in.nextInt());
-        System.out.println("Masukkan Jumlah Jendela : ");
-        kls.setJumlahJendela(in.nextInt());
-        rk = new RuangKelas(kls.getPanjangRuang(),kls.getLebarRuang(),kls.getJumlahKursi(),kls.getJumlahPintu(),kls.getJumlahJendela());
-        }
+       new KondisiRuang().setVisible(true);
+//        System.out.println("Masukkan Panjang Ruang : ");
+//        kls.setPanjangRuang(in.nextInt());
+//        System.out.println("Masukkan Lebar Ruang : ");
+//        kls.setLebarRuang(in.nextInt());
+//        System.out.println("Masukkan Jumlah Kursi : ");
+//        kls.setJumlahKursi(in.nextInt());
+//        System.out.println("Masukkan Jumlah Pintu : ");
+//        kls.setJumlahPintu(in.nextInt());
+//        System.out.println("Masukkan Jumlah Jendela : ");
+//        kls.setJumlahJendela(in.nextInt());
+//        rk = new RuangKelas(kls.getPanjangRuang(),kls.getLebarRuang(),kls.getJumlahKursi(),kls.getJumlahPintu(),kls.getJumlahJendela());
+//        
+    }
     @Override
     public void inputKondisiSarana(){
         System.out.println("Masukkan Jumlah Stop Kontak : ");

@@ -46,50 +46,50 @@ public class Sistem extends Proses{
 
     double CheckKondisiRuang() {
         inop.InputKondisiRuang();
-        kls = inop.getRuangKelas();
-        Luas = kls.getPanjangRuang() * kls.getLebarRuang();
-        if (kls.getLebarRuang() == kls.getPanjangRuang()) {
-            System.out.println("Luas = "+Luas);
-            System.out.println("Luas Tidak s");
-            ts++;
-        } else {
-            System.out.println("Luas = "+Luas);
-            System.out.println("Luas s");
-            s++;
-        }
-        RasioLuas = Luas / kls.getJumlahKursi();
-        System.out.println("Rasio : " + RasioLuas);
-        if(RasioLuas<=0.5){
-            System.out.println("Rasio Tidak s");
-        }
-        else{
-            System.out.println("Rasio s");
-            s++;
-        }
-        if (kls.getJumlahPintu() >= 2) {
-            System.out.println("Jumlah Pintu s");
-            s++;
-        } else {
-            System.out.println("Jumlah Pintu Tidak s");
-            ts++;
-        }
-        if (kls.getJumlahJendela() >= 1) {
-            System.out.println("Jumlah Jendela s");
-            s++;
-        } else {
-            System.out.println("Jumlah Jendela Tidak s");
-            ts++;
-        }
-        inop.output(kls.getPanjangRuang(), kls.getLebarRuang(), kls.getJumlahKursi(),kls.getJumlahPintu() ,kls.getJumlahJendela());
-        
-//        if (ts > s) {
-//            kondisi = 0; 
+//        kls = inop.getRuangKelas();
+//        Luas = kls.getPanjangRuang() * kls.getLebarRuang();
+//        if (kls.getLebarRuang() == kls.getPanjangRuang()) {
+//            System.out.println("Luas = "+Luas);
+//            System.out.println("Luas Tidak s");
+//            ts++;
 //        } else {
-//            kondisi = 1;
+//            System.out.println("Luas = "+Luas);
+//            System.out.println("Luas s");
+//            s++;
 //        }
+//        RasioLuas = Luas / kls.getJumlahKursi();
+//        System.out.println("Rasio : " + RasioLuas);
+//        if(RasioLuas<=0.5){
+//            System.out.println("Rasio Tidak s");
+//        }
+//        else{
+//            System.out.println("Rasio s");
+//            s++;
+//        }
+//        if (kls.getJumlahPintu() >= 2) {
+//            System.out.println("Jumlah Pintu s");
+//            s++;
+//        } else {
+//            System.out.println("Jumlah Pintu Tidak s");
+//            ts++;
+//        }
+//        if (kls.getJumlahJendela() >= 1) {
+//            System.out.println("Jumlah Jendela s");
+//            s++;
+//        } else {
+//            System.out.println("Jumlah Jendela Tidak s");
+//            ts++;
+//        }
+//        inop.output(kls.getPanjangRuang(), kls.getLebarRuang(), kls.getJumlahKursi(),kls.getJumlahPintu() ,kls.getJumlahJendela());
+//        
+////        if (ts > s) {
+////            kondisi = 0; 
+////        } else {
+////            kondisi = 1;
+////        }
         return s;
-    }
-    @Override
+    } 
+   @Override
    void persentaseKondisiRuang(){
        int total = s*25;
         System.out.println("persentase KOndisi Ruang : "+total+"%");
