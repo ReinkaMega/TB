@@ -162,7 +162,7 @@ public class IO extends Proses implements View{
         kls.setKebocoran(in.next());
         System.out.println("Masukkan Kerusakan : ");
         kls.setKerusakan(in.next());
-        System.out.println("Masukkan Keausan : ");
+        System.out.println("Masukkan Keausan (Rusaknya Permukaan Kelas): ");
         kls.setKeausan(in.next());
         rk = new RuangKelas(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKeausan());
         

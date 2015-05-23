@@ -11,12 +11,12 @@ package tbprogress2;
  * @author Deny SQP
  */
 public class DataAwal extends javax.swing.JFrame {
-
     /**
      * Creates new form DataAwal
      */
     public DataAwal() {
         initComponents();
+        setResizable(false);
     }
 
     /**
@@ -157,10 +157,9 @@ public class DataAwal extends javax.swing.JFrame {
 
     private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
         IO x = new IO(NM,LK,FK,JR);
-        IO n = new IO();
         x.IdentitasKelas();
         dispose();
-        n.InputKondisiRuang();
+        x.InputKondisiRuang();
     }//GEN-LAST:event_NextActionPerformed
 
     /**
