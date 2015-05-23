@@ -16,7 +16,7 @@ public abstract class Proses {
     abstract void persentaseKondisiSarana();
     abstract void persentaseKondisiLingkungan();
     abstract void persentaseKondisiKebersihan();
-    abstract void persentaseKenyamanan();
+    abstract void persentaseKenyamanan(int s);
     abstract void persentaseKeamanan(int s);
 //    void Persentase(double point, double total){
 //        double persen;

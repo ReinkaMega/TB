@@ -18,9 +18,14 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
     /**
      * Creates new form KondisiKenyamanan
      */
+    RuangKelas kls = new RuangKelas();
+    int s = 0, ts = 0, kondisi;
     public KondisiKenyamanan() {
         initComponents();
         setResizable(false);
+        PAus.setEditable(false);
+        PBau.setEditable(false);
+        PBising.setEditable(false);
         nyeret1();
         nyeret2();
         nyeret3();
@@ -155,8 +160,8 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Ln = new javax.swing.JButton();
+        Del = new javax.swing.JButton();
         PBising = new javax.swing.JTextField();
         PBau = new javax.swing.JTextField();
         PAus = new javax.swing.JTextField();
@@ -267,9 +272,19 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("%");
 
-        jButton1.setText("Selanjutnya");
+        Ln.setText("Selanjutnya");
+        Ln.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LnActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Hapus");
+        Del.setText("Hapus");
+        Del.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DelActionPerformed(evt);
+            }
+        });
 
         PBising.setText("Parameter");
 
@@ -329,16 +344,16 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(RBanyak)
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(RSedang)
                                         .addGap(18, 18, 18)
                                         .addComponent(RSedikit))
-                                    .addComponent(jButton1))
+                                    .addComponent(Ln, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton3)
-                                    .addComponent(RNon))))
+                                    .addComponent(RNon)
+                                    .addComponent(Del, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,8 +415,8 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
                     .addComponent(RNon))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
+                    .addComponent(Ln)
+                    .addComponent(Del))
                 .addGap(36, 36, 36))
         );
 
@@ -477,6 +492,68 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
        RSedikit.setSelected(false);
     }//GEN-LAST:event_RNonActionPerformed
 
+    private void DelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelActionPerformed
+       PersenAus.setText(null);
+       PersenBau.setText(null);
+       PersenBising.setText(null);
+       PAus.setText(null);
+       PBising.setText(null);
+       PBau.setText(null);
+       BBanyak.setSelected(false);
+       BSedang.setSelected(false);
+       BSedikit.setSelected(false);
+       BNon.setSelected(false);
+       RBanyak.setSelected(false);
+       RSedang.setSelected(false);
+       RSedikit.setSelected(false);
+       RNon.setSelected(false); 
+    }//GEN-LAST:event_DelActionPerformed
+    //JTextField Bising,JTextField PersenBising,JTextField Bau,JTextField PersenBau,JTextField Aus,JTextField PersenAus
+    private void LnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LnActionPerformed
+        IO x = new IO(PBising,PersenBising,PBau,PersenBau,PAus,PersenAus,BBanyak, BSedang, BSedikit, BNon, RBanyak, RSedang, RSedikit, RNon);
+        Sistem n = new Sistem();
+        kls = x.getRuangKelas();
+        //String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x
+       x.output(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKerusakan(),null);
+       System.out.println("==============Analisis==================");
+       if ("Tidak Bising".equalsIgnoreCase(kls.getKebisingan())||"Sepi/Tenang".equalsIgnoreCase(kls.getKebisingan())) {
+            System.out.println("Kebisingan : Tidak Bising");
+            s++;
+        } else {
+            System.out.println("Kebisingan : Bising");
+            ts++;
+        }
+        if ("Tidak Bau".equalsIgnoreCase(kls.getBau())||"Wangi".equalsIgnoreCase(kls.getBau())) {
+            System.out.println("Bau : Enak");
+            s++;
+        } else {
+            System.out.println("Bau : Tidak Sedap");
+            ts++;
+        }
+        if ("Tidak Begitu Parah".equalsIgnoreCase(kls.getKerusakan())||"Keadaan Baik".equalsIgnoreCase(kls.getKerusakan())) {
+            System.out.println("Kerusakan : Tidak Rusak");
+            s++;
+        } else {
+            System.out.println("Kerusakan : Rusak");
+            ts++;
+        }
+        if ("Tidak Aus".equalsIgnoreCase(kls.getKeausan())) {
+            System.out.println("Keausan : Tidak Ada");
+            s++;
+        } else {
+            System.out.println("Keausan : Ada");
+            ts++;
+        }
+//        if (s == 1) {
+//            System.out.println("s");
+//            kon = 1;
+//        } else {
+//            System.out.println("Tidak s");
+//            kon = 0;
+//        }
+        n.persentaseKenyamanan(s);
+    }//GEN-LAST:event_LnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -517,6 +594,8 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
     private javax.swing.JCheckBox BNon;
     private javax.swing.JCheckBox BSedang;
     private javax.swing.JCheckBox BSedikit;
+    private javax.swing.JButton Del;
+    private javax.swing.JButton Ln;
     private javax.swing.JTextField PAus;
     private javax.swing.JTextField PBau;
     private javax.swing.JTextField PBising;
@@ -530,8 +609,6 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
     private javax.swing.JSlider Saus;
     private javax.swing.JSlider Sbau;
     private javax.swing.JSlider Sbising;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

@@ -408,7 +408,7 @@ public class Sistem extends Proses{
         return s;
     }
     @Override
-    void persentaseKenyamanan(){
+    void persentaseKenyamanan(int s){
      int total = s*25;
     System.out.println("persentase Kondisi Kenyamanan : "+total+"%");
     System.out.println("======================================");

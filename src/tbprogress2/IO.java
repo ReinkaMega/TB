@@ -52,6 +52,37 @@ public class IO extends Proses implements View{
         rk = new RuangKelas(kls.getKekokohan(),kls.getKunciPintuJendela(),kls.getBahaya()); 
     
     }
+    public IO(JTextField Bising,JTextField PBising,JTextField Bau,JTextField PBau,JTextField Aus,JTextField PAus,JCheckBox BBanyak,JCheckBox BSedang,JCheckBox BSedikit,JCheckBox BNon,JCheckBox RBanyak,JCheckBox RSedang,JCheckBox RSedikit,JCheckBox RNon){
+        if(BBanyak.isSelected()){
+            kls.setKebocoran("Sangat Parah");
+        }
+        else if(BSedang.isSelected()){
+            kls.setKebocoran("Parah");
+        }
+        else if(BSedikit.isSelected()){
+            kls.setKebocoran("Tidak Begitu Parah");
+        }
+        else if(BNon.isSelected()){
+            kls.setKebocoran("Keadaan Baik");
+        }
+            if(RBanyak.isSelected()){
+                kls.setKerusakan("Sangat Parah");
+            }
+            else if(RSedang.isSelected()){
+                kls.setKerusakan("Parah");
+            }
+            else if(RSedikit.isSelected()){
+                kls.setKerusakan("Tidak Begitu Parah");
+            }
+            else if(RNon.isSelected()){
+                kls.setKerusakan("Keadaan Baik");
+            }
+        kls.setKebisingan(Bising.getText());
+        kls.setKeausan(Aus.getText());
+        kls.setBau(Bau.getText());
+        //String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x
+        rk = new RuangKelas(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKeausan(),null); 
+    }         
     public IO(){
         
     }
@@ -244,7 +275,7 @@ public class IO extends Proses implements View{
  
     @Override
     public void output(String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x){
-        System.out.println("===============Keamanan===============");
+        System.out.println("===============Kenyamanan===============");
         System.out.println("Kebisingan : "+Kebisingan);
         System.out.println("Bau : "+Bau);
         System.out.println("Kebocoran : "+Kebocoran);
@@ -281,7 +312,7 @@ public class IO extends Proses implements View{
     }
 
     @Override
-    void persentaseKenyamanan() {
+    void persentaseKenyamanan(int s) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
