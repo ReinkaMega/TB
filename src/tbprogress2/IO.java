@@ -30,6 +30,28 @@ public class IO extends Proses implements View{
         System.out.println(""+kls.getPanjangRuang());
         rk = new RuangKelas(kls.getPanjangRuang(),kls.getLebarRuang(),kls.getJumlahKursi(),kls.getJumlahPintu(),kls.getJumlahJendela()); 
     }
+    public IO(JCheckBox Kokoh,JCheckBox TKokoh,JCheckBox Adakunci,JCheckBox Tkunci,JCheckBox Aman,JCheckBox Bahaya){
+        if(Kokoh.isSelected()){
+            kls.setKekokohan("Kokoh");
+        }
+        else if(TKokoh.isSelected()){
+            kls.setKekokohan("Rapuh");
+        }
+        if(Adakunci.isSelected()){
+            kls.setKunciPintuJendela("Terkunci");
+        }
+        else if(Tkunci.isSelected()){
+            kls.setKunciPintuJendela("Terbuka");
+        }
+        if(Aman.isSelected()){
+            kls.setBahaya("Aman");
+        }
+        else if(Bahaya.isSelected()){
+            kls.setBahaya("Berbahaya");
+        }
+        rk = new RuangKelas(kls.getKekokohan(),kls.getKunciPintuJendela(),kls.getBahaya()); 
+    
+    }
     public IO(){
         
     }
@@ -148,13 +170,14 @@ public class IO extends Proses implements View{
     
     @Override
     public void inputKondisiKeamanan(){
-        System.out.println("Masukkan Kekokohan : ");
-        kls.setKekokohan(in.next());
-        System.out.println("Masukkan Kunci Pintu dan Jendela : ");
-        kls.setKunciPintuJendela(in.next());
-        System.out.println("Masukkan Bahaya : ");
-        kls.setBahaya(in.next());
-        rk = new RuangKelas(kls.getKekokohan(),kls.getKunciPintuJendela(),kls.getBahaya());
+        new KondisiKeamanan().setVisible(true);
+//        System.out.println("Apakah Bangunan Masih Kokoh ? : ");
+//        kls.setKekokohan(in.next());
+//        System.out.println("Apakah Ada Kunci Pintu dan Jendela ? : ");
+//        kls.setKunciPintuJendela(in.next());
+//        System.out.println("Apakah Ruangan Tidak Berbahaya ? : ");
+//        kls.setBahaya(in.next());
+//        rk = new RuangKelas(kls.getKekokohan(),kls.getKunciPintuJendela(),kls.getBahaya());
 
     }
     
@@ -238,7 +261,7 @@ public class IO extends Proses implements View{
     } 
 
     @Override
-    void persentaseKondisiRuang() {
+    void persentaseKondisiRuang(int s) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -263,7 +286,7 @@ public class IO extends Proses implements View{
     }
 
     @Override
-    void persentaseKeamanan() {
+    void persentaseKeamanan(int s) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

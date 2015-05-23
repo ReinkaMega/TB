@@ -45,7 +45,7 @@ public class Sistem extends Proses{
     }
 
     double CheckKondisiRuang() {
-        inop.InputKondisiRuang();
+//        inop.InputKondisiRuang();
 //        kls = inop.getRuangKelas();
 //        Luas = kls.getPanjangRuang() * kls.getLebarRuang();
 //        if (kls.getLebarRuang() == kls.getPanjangRuang()) {
@@ -90,12 +90,12 @@ public class Sistem extends Proses{
         return s;
     } 
    @Override
-   void persentaseKondisiRuang(){
-       int total = s*25;
+   void persentaseKondisiRuang(int s){
+        int total = s*25;
         System.out.println("persentase KOndisi Ruang : "+total+"%");
         System.out.println("======================================");
         System.out.println("::Anda Masuk CheckKondisiSarana::");
-       
+
     }
 
     double CheckKondisiSarana() {
@@ -417,6 +417,8 @@ public class Sistem extends Proses{
 
     int CheckKondisiKeamanan() {
         int kon;
+        inop.inputKondisiLingkungan();
+        kls = inop.getRuangKelas();
         if ("s".equalsIgnoreCase(kls.getKekokohan())) {
             System.out.println("Kekokohan : s");
             s++;
@@ -448,7 +450,7 @@ public class Sistem extends Proses{
         return s;
     }
     @Override
-    void persentaseKeamanan(){
+    void persentaseKeamanan(int s){
     double total = s*33.3;
     System.out.println("persentase Kondisi Kenyamanan : "+total+"%");
     System.out.println("======================================"); 

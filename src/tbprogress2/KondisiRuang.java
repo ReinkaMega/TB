@@ -23,7 +23,7 @@ public class KondisiRuang extends javax.swing.JFrame {
      * Creates new form KondisiRuang
      */
     RuangKelas kls = new RuangKelas();
-     int s = 0, ts = 0, kondisi;
+    int s = 0, ts = 0, kondisi;
     private double Luas, RasioLuas;
     public double getLuas() {
         return Luas;

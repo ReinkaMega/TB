@@ -12,12 +12,12 @@ package tbprogress2;
  */
 public abstract class Proses {
     public void IdentitasKelas(){}
-    abstract void persentaseKondisiRuang();
+    abstract void persentaseKondisiRuang(int s);
     abstract void persentaseKondisiSarana();
     abstract void persentaseKondisiLingkungan();
     abstract void persentaseKondisiKebersihan();
     abstract void persentaseKenyamanan();
-    abstract void persentaseKeamanan();
+    abstract void persentaseKeamanan(int s);
 //    void Persentase(double point, double total){
 //        double persen;
 //        persen = point/total;
