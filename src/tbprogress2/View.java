@@ -26,5 +26,5 @@ public interface View {
     void output(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban, int Suhu);
     void output(String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x);
     void output (String Kekokohan,String KunciPintuJendela,String Bahaya);
-      
+    
 }

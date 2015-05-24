@@ -116,6 +116,22 @@ public class IO extends Proses implements View{
         }
         rk = new RuangKelas(kls.getKondisiLantai(),kls.getKondisiDinding(),kls.getKondisiAtap(),kls.getKondisiPintu(),kls.getKondisiJendela()); 
     }
+    public IO(JCheckBox SUL,JCheckBox SUT,JTextField PC  ,JTextField PL ,JTextField PS ){
+        if(SUL.isSelected()){
+            kls.setSirkulasiUdara("Lancar");
+        }
+        else if(SUT.isSelected()){
+            kls.setSirkulasiUdara("Tidak Lancar");
+        }
+        int cahaya = Integer.parseInt(PC.getText());
+        int lembab = Integer.parseInt(PL.getText());
+        int suhu = Integer.parseInt(PC.getText());
+        kls.setNilaiPencahayaan(cahaya);
+        kls.setKelembaban(lembab);
+        kls.setSuhu(suhu);
+        rk = new RuangKelas(kls.getSirkulasiUdara(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu()); 
+    
+    }
     public IO(){
         
     }
@@ -190,8 +206,8 @@ public class IO extends Proses implements View{
     }
     
     @Override
-    public void inputKondisiLingkungan(){
-        new KondisiLingkungan().setVisible(true);
+    public void inputKondisiKebersihan(){
+        new KondisiKebersihan().setVisible(true);
     
 //        System.out.println("Masukkan Kondisi Lantai : ");
 //        kls.setKondisiLantai(in.next());
@@ -207,7 +223,7 @@ public class IO extends Proses implements View{
     }
     
     @Override
-    public void inputKondisiKebersihan(){
+    public void inputKondisiLingkungan(){
         System.out.println("Masukkan Sirkulasi Udara: ");
         kls.setSirkulasiUdara(in.next());
         System.out.println("Masukkan Nilai Pencahayaan : ");
@@ -304,9 +320,9 @@ public class IO extends Proses implements View{
     public void output(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban, int Suhu){
         System.out.println("===============Kenyamanan================");
         System.out.println("Sirkulasi Udara : "+SirkulasiUdara);
-        System.out.println("Nilai Pencahayaan "+NilaiPencahayaan);
-        System.out.println("Kelembaban : "+Kelembaban);
-        System.out.println("Suhu : "+Suhu);
+        System.out.println("Nilai Pencahayaan "+NilaiPencahayaan+" %");
+        System.out.println("Kelembaban : "+Kelembaban+" %");
+        System.out.println("Suhu : "+Suhu+" Celcius");
  }
  
     @Override
