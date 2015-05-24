@@ -337,7 +337,8 @@ public class KondisiRuang extends javax.swing.JFrame {
 //            kondisi = 1;
 //        }
          n.persentaseKondisiRuang(s);
-         dispose();    
+         dispose();
+         x.inputKondisiLingkungan();
     }//GEN-LAST:event_LanjutActionPerformed
 
     private void DelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelActionPerformed

@@ -82,7 +82,40 @@ public class IO extends Proses implements View{
         kls.setBau(Bau.getText());
         //String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x
         rk = new RuangKelas(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKeausan(),null); 
-    }         
+    }
+    public IO(JCheckBox LB,JCheckBox LBR,JCheckBox DB,JCheckBox DBR,JCheckBox AB,JCheckBox ABR,JCheckBox PB,JCheckBox PBR,JCheckBox JB,JCheckBox JBR){
+        if(LB.isSelected()){
+            kls.setKondisiLantai("Lantai Bersih");
+        }
+        else if(LBR.isSelected()){
+            kls.setKondisiLantai("Lantai Kotor");
+        }
+        if(DB.isSelected()){
+            kls.setKondisiDinding("Dinding Bersih/Baik");
+        }
+        else if(DBR.isSelected()){
+            kls.setKondisiDinding("Dinding Kotor");
+        }
+        if(AB.isSelected()){
+            kls.setKondisiAtap("Atap Bersih");
+        }
+        else if(ABR.isSelected()){
+            kls.setKondisiAtap("Atap Kotor");
+        }
+        if(PB.isSelected()){
+            kls.setKondisiPintu("Pintu Bersih/Baik");
+        }
+        else if(PBR.isSelected()){
+            kls.setKondisiPintu("Pintu Kotor");
+        }
+        if(JB.isSelected()){
+            kls.setKondisiJendela("Jendela Bersih/Baik");
+        }
+        else if(JBR.isSelected()){
+            kls.setKondisiJendela("Jendela Kotor");
+        }
+        rk = new RuangKelas(kls.getKondisiLantai(),kls.getKondisiDinding(),kls.getKondisiAtap(),kls.getKondisiPintu(),kls.getKondisiJendela()); 
+    }
     public IO(){
         
     }
@@ -158,17 +191,19 @@ public class IO extends Proses implements View{
     
     @Override
     public void inputKondisiLingkungan(){
-        System.out.println("Masukkan Kondisi Lantai : ");
-        kls.setKondisiLantai(in.next());
-        System.out.println("Masukkan Kondisi Dinding : ");
-        kls.setKondisiDinding(in.next());
-        System.out.println("Masukkan Kondisi Atap : ");
-        kls.setKondisiAtap(in.next());
-        System.out.println("Masukkan Kondisi Pintu : ");
-        kls.setKondisiPintu(in.next());
-        System.out.println("Masukkan Kondisi Jendela : ");
-        kls.setKondisiJendela(in.next());
-        rk = new RuangKelas(kls.getKondisiLantai(),kls.getKondisiDinding(),kls.getKondisiAtap(),kls.getKondisiPintu(),kls.getKondisiJendela());
+        new KondisiLingkungan().setVisible(true);
+    
+//        System.out.println("Masukkan Kondisi Lantai : ");
+//        kls.setKondisiLantai(in.next());
+//        System.out.println("Masukkan Kondisi Dinding : ");
+//        kls.setKondisiDinding(in.next());
+//        System.out.println("Masukkan Kondisi Atap : ");
+//        kls.setKondisiAtap(in.next());
+//        System.out.println("Masukkan Kondisi Pintu : ");
+//        kls.setKondisiPintu(in.next());
+//        System.out.println("Masukkan Kondisi Jendela : ");
+//        kls.setKondisiJendela(in.next());
+//        rk = new RuangKelas(kls.getKondisiLantai(),kls.getKondisiDinding(),kls.getKondisiAtap(),kls.getKondisiPintu(),kls.getKondisiJendela());
     }
     
     @Override
@@ -185,18 +220,19 @@ public class IO extends Proses implements View{
     }
     @Override
       public void inputKondisiKenyamanan(){
-        System.out.println("Masukkan Kebisingan : ");
-        kls.setKebisingan(in.next());
-        System.out.println("Masukkan Bau : ");
-        kls.setBau(in.next());
-        System.out.println("Masukkan Kebocoran : ");
-        kls.setKebocoran(in.next());
-        System.out.println("Masukkan Kerusakan : ");
-        kls.setKerusakan(in.next());
-        System.out.println("Masukkan Keausan (Rusaknya Permukaan Kelas): ");
-        kls.setKeausan(in.next());
-        rk = new RuangKelas(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKeausan());
-        
+          new KondisiKenyamanan().setVisible(true);
+//        System.out.println("Masukkan Kebisingan : ");
+//        kls.setKebisingan(in.next());
+//        System.out.println("Masukkan Bau : ");
+//        kls.setBau(in.next());
+//        System.out.println("Masukkan Kebocoran : ");
+//        kls.setKebocoran(in.next());
+//        System.out.println("Masukkan Kerusakan : ");
+//        kls.setKerusakan(in.next());
+//        System.out.println("Masukkan Keausan (Rusaknya Permukaan Kelas): ");
+//        kls.setKeausan(in.next());
+//        rk = new RuangKelas(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKeausan());
+//        
     }
     
     @Override
@@ -302,12 +338,12 @@ public class IO extends Proses implements View{
     }
 
     @Override
-    void persentaseKondisiLingkungan() {
+    void persentaseKondisiLingkungan(int s) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    void persentaseKondisiKebersihan() {
+    void persentaseKondisiKebersihan(int s) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

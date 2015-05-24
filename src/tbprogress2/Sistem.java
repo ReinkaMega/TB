@@ -95,7 +95,6 @@ public class Sistem extends Proses{
         System.out.println("persentase KOndisi Ruang : "+total+"%");
         System.out.println("======================================");
         System.out.println("::Anda Masuk CheckKondisiSarana::");
-
     }
 
     double CheckKondisiSarana() {
@@ -252,63 +251,63 @@ public class Sistem extends Proses{
     }
     @Override
     void persentaseKondisiSarana(){
-         int total = s*5;
+        int total = s*5;
         System.out.println("persentase KOndisi Sarana : "+total+"%");
         System.out.println("======================================");
         System.out.println("::Anda Masuk CheckKondisiLingkungan::");
        
     }
     int CheckKondisiLingkungan() {
-        inop.inputKondisiLingkungan();
-        kls = inop.getRuangKelas();
-        int kon;
-        if (kls.getKondisiLantai().equalsIgnoreCase("bersih")) {
-            System.out.println("getKondisiLantai : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if (kls.getKondisiDinding().equalsIgnoreCase("bersih")){
-            System.out.println("KondisiDinding : s");
-            s++;
-        }else {
-            ts++;
-            System.out.println("Tidak s");
-        }
-        if (kls.getKondisiAtap().equalsIgnoreCase("bersih")){
-            System.out.println("KondisiAtap : s");
-            s++;
-        }else{
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if (kls.getKondisiPintu().equalsIgnoreCase("bersih")){
-            System.out.println("KondisiPintu : s");
-            s++;
-        }else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if (kls.getKondisiJendela().equalsIgnoreCase("bersih")){
-            System.out.println("getKondisiJendela : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        
-        if (s > ts) {
-            System.out.println("Bersih");
-            kon = 1;
-        } else {
-            System.out.println("Kotor");
-            kon = 0;
-        }
+//        inop.inputKondisiLingkungan();
+//        kls = inop.getRuangKelas();
+//        int kon;
+//        if (kls.getKondisiLantai().equalsIgnoreCase("bersih")) {
+//            System.out.println("getKondisiLantai : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if (kls.getKondisiDinding().equalsIgnoreCase("bersih")){
+//            System.out.println("KondisiDinding : s");
+//            s++;
+//        }else {
+//            ts++;
+//            System.out.println("Tidak s");
+//        }
+//        if (kls.getKondisiAtap().equalsIgnoreCase("bersih")){
+//            System.out.println("KondisiAtap : s");
+//            s++;
+//        }else{
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if (kls.getKondisiPintu().equalsIgnoreCase("bersih")){
+//            System.out.println("KondisiPintu : s");
+//            s++;
+//        }else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if (kls.getKondisiJendela().equalsIgnoreCase("bersih")){
+//            System.out.println("getKondisiJendela : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        
+//        if (s > ts) {
+//            System.out.println("Bersih");
+//            kon = 1;
+//        } else {
+//            System.out.println("Kotor");
+//            kon = 0;
+//        }
         return s;
     }
     @Override
-    void persentaseKondisiLingkungan(){
+    void persentaseKondisiLingkungan(int s){
         int total = s*20;
         System.out.println("persentase KOndisi Lingkungan : "+total+"%");
         System.out.println("======================================");
@@ -361,7 +360,7 @@ public class Sistem extends Proses{
         return s;
     }
     @Override
-    void persentaseKondisiKebersihan(){
+    void persentaseKondisiKebersihan(int s){
     int total = s*25;
     System.out.println("persentase Kondisi Kebersihan : "+total+"%");
     System.out.println("======================================");
@@ -369,42 +368,42 @@ public class Sistem extends Proses{
     }
   
     int CheckKondisiKenyamanan() {
-        int kon;
-        if ("s".equalsIgnoreCase(kls.getKebisingan())) {
-            System.out.println("Kebisingan : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if ("s".equalsIgnoreCase(kls.getBau())) {
-            System.out.println("Bau : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if ("s".equalsIgnoreCase(kls.getKerusakan())) {
-            System.out.println("Kerusakan : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if ("s".equalsIgnoreCase(kls.getKeausan())) {
-            System.out.println("Keausan : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if (s == 1) {
-            System.out.println("s");
-            kon = 1;
-        } else {
-            System.out.println("Tidak s");
-            kon = 0;
-        }
+//        int kon;
+//        if ("s".equalsIgnoreCase(kls.getKebisingan())) {
+//            System.out.println("Kebisingan : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if ("s".equalsIgnoreCase(kls.getBau())) {
+//            System.out.println("Bau : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if ("s".equalsIgnoreCase(kls.getKerusakan())) {
+//            System.out.println("Kerusakan : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if ("s".equalsIgnoreCase(kls.getKeausan())) {
+//            System.out.println("Keausan : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if (s == 1) {
+//            System.out.println("s");
+//            kon = 1;
+//        } else {
+//            System.out.println("Tidak s");
+//            kon = 0;
+//        }
         return s;
     }
     @Override
@@ -416,42 +415,42 @@ public class Sistem extends Proses{
     }
 
     int CheckKondisiKeamanan() {
-        int kon;
-        inop.inputKondisiLingkungan();
-        kls = inop.getRuangKelas();
-        if ("s".equalsIgnoreCase(kls.getKekokohan())) {
-            System.out.println("Kekokohan : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if ("s".equalsIgnoreCase(kls.getKunciPintuJendela())) {
-            System.out.println("KunciPintuJendela : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if ("s".equalsIgnoreCase(kls.getBahaya())) {
-            System.out.println("Bahaya : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if (s == 1) {
-            System.out.println("s");
-            kon = 1;
-        } else {
-            System.out.println("Tidak s");
-            kon = 0;
-        }  
+//        int kon;
+//        inop.inputKondisiLingkungan();
+//        kls = inop.getRuangKelas();
+//        if ("s".equalsIgnoreCase(kls.getKekokohan())) {
+//            System.out.println("Kekokohan : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if ("s".equalsIgnoreCase(kls.getKunciPintuJendela())) {
+//            System.out.println("KunciPintuJendela : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if ("s".equalsIgnoreCase(kls.getBahaya())) {
+//            System.out.println("Bahaya : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if (s == 1) {
+//            System.out.println("s");
+//            kon = 1;
+//        } else {
+//            System.out.println("Tidak s");
+//            kon = 0;
+//        }  
         return s;
     }
     @Override
     void persentaseKeamanan(int s){
-    double total = s*33.3;
+    double total = s*100/3;
     System.out.println("persentase Kondisi Kenyamanan : "+total+"%");
     System.out.println("======================================"); 
     }
