@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+
 package tbprogress2;
 
 import java.awt.Dimension;
@@ -24,6 +25,7 @@ public class DataAwal extends javax.swing.JFrame {
     /**
      * Creates new form DataAwal
      */
+    DatabaseWork da = new DatabaseWork();
     private Integer baris;
     private Connect aplikasi_inventaris = new Connect();
     private JTable Tabelku = new JTable();
@@ -31,20 +33,69 @@ public class DataAwal extends javax.swing.JFrame {
     private TableColumn kolom;
     private String a, b,c,d,e,f,g;
     private String C,D,E,F,G;
+    private boolean DiEdit() {
+        boolean nilai = false;
+        a = NM.getText();
+        b = JR.getText();
+        c = NM2.getText();
+        d = JR2.getText();
+        E = LK.getText();
+        F = FK.getText();
+        e = LK2.getText();
+        f = FK2.getText();
+
+       try {
+            if (a.equals("") || E.equals("") || b.equals("") || F.equals("")) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                nilai=true;
+                clearTEXT();
+            } else if (a.equals(c) && E.equals(e) && b.equals(d) && F.equals(f)) {
+                JOptionPane.showMessageDialog(null, "Tidak ada data yang di perbaharui!");
+                nilai = false;
+            } else {
+                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "update identitas set "
+                        + "nama=" + "'" + a + "', "
+                        + "lokasi=" + "'" + E + "', "
+                        + "prodi=" + "'" + b + "', "
+                        + "fakultas=" + "'" + F + "' "
+                        + "where nama ='" + c + "'");
+
+                tampilDataKeTabel();
+                JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
+                nilai=false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Data gagal diperbaharui! : " + ex);
+        }
+       return nilai;
+    }
+    
     public DataAwal() {
         initComponents();
+        Save.setVisible(false);
+        btnSelesai.setVisible(false);
+        setLocationRelativeTo(null);
         setResizable(false);
+        setResizable(false);
+        setTitle("Identitas Ruang");
         aplikasi_inventaris.konekkeDatabase();
         tampilDataKeTabel();
 //        enableBtn(false);
 //        enviBtnSave(true);
 //        enviBtnSave2(false);
 //        enviBtnNew(false);
-//        NM.setVisible(false);
-//        LK.setVisible(false);
-//        JR.setVisible(false);
-//        FK.setVisible(false);
-
+        Delete.setVisible(false);
+        Edit.setVisible(false);
+        NM.setEditable(false);
+        LK.setEditable(false);
+        JR.setEditable(false);
+        FK.setEditable(false);
+        NM2.setVisible(false);
+        LK2.setVisible(false);
+        JR2.setVisible(false);
+        FK2.setVisible(false);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Dimension frameSize = this.getSize();
         if (frameSize.height > screenSize.height) {
@@ -56,21 +107,21 @@ public class DataAwal extends javax.swing.JFrame {
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
     
     }
-    private void kondisiHapus() {
-        g = NM.getText();
-
-        try {
-            Statement st = aplikasi_inventaris.config.getConnection().createStatement();
-            st.executeUpdate(
-                    " delete from identitas where nama ='" + g + "'");
-            clearTEXT();
-            tampilDataKeTabel();
-
-            JOptionPane.showMessageDialog(this, "Data berhasil dihapus");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Data gagal dihapus: " + ex);
-        }
-    }
+//    private void kondisiHapus() {
+//        g = NM.getText();
+//
+//        try {
+//            Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+//            st.executeUpdate(
+//                    " delete from identitas where nama ='" + g + "'");
+//            clearTEXT();
+//            tampilDataKeTabel();
+//
+//            JOptionPane.showMessageDialog(this, "Data berhasil dihapus");
+//        } catch (SQLException ex) {
+//            JOptionPane.showMessageDialog(this, "Data gagal dihapus: " + ex);
+//        }
+//    }
     private void klikTabel(JTable jTabel) {
         jTabel.setRowSelectionAllowed(true);
         baris = jTabel.getSelectedRow();
@@ -86,11 +137,24 @@ public class DataAwal extends javax.swing.JFrame {
         JR.setText(kolom4);
         //cmb_fakultas.setSelectedItem(kolom5);
         FK.setText(kolom5);
+        NM2.setText(kolom2);
+        LK2.setText(kolom3);
+        JR2.setText(kolom4);
+        FK2.setText(kolom5);
+        Delete.setVisible(true);
+        Edit.setVisible(true);
+        Save.setVisible(false);
+        
     }
     private void tableModel(JTable jTabel1) {
         try {
             Object[] field = {"No", "Nama", "Lokasi", "Prodi", "Fakultas"};
-            DefaultTabelku = new DefaultTableModel(null, field);
+            DefaultTabelku = new DefaultTableModel(null, field){
+                public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+    };
+            
             jTabel1.setModel(DefaultTabelku);
 
             String sql = "Select * from identitas";
@@ -135,6 +199,7 @@ public class DataAwal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         NM = new javax.swing.JTextField();
@@ -145,15 +210,23 @@ public class DataAwal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnSelesai = new javax.swing.JButton();
+        NM2 = new javax.swing.JTextField();
+        LK2 = new javax.swing.JTextField();
+        FK2 = new javax.swing.JTextField();
+        JR2 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         Delete = new javax.swing.JButton();
         Next = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        ADD = new javax.swing.JButton();
         Save = new javax.swing.JButton();
+        Edit = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -172,6 +245,14 @@ public class DataAwal extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Fakultas        :");
 
+        btnSelesai.setText("Selesai");
+        btnSelesai.setToolTipText("Klik Jika Selesai Dirubah");
+        btnSelesai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelesaiActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -189,11 +270,23 @@ public class DataAwal extends javax.swing.JFrame {
                     .addComponent(LK)
                     .addComponent(NM)
                     .addComponent(JR))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JR2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(NM2)
+                        .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(119, 119, 119))
+                .addContainerGap(147, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(119, 119, 119))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnSelesai)
+                        .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,19 +298,25 @@ public class DataAwal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(NM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel2)
+                            .addComponent(NM2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(FK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(JR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JR2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(btnSelesai))
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -239,6 +338,7 @@ public class DataAwal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         Delete.setText("Hapus");
+        Delete.setToolTipText("Klik untuk Menghapus Data pada Kolom");
         Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteActionPerformed(evt);
@@ -246,23 +346,34 @@ public class DataAwal extends javax.swing.JFrame {
         });
 
         Next.setText("Selanjutnya");
+        Next.setToolTipText("Klik Untuk Pergi Ke Langkah Berikutnya");
         Next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NextActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Add");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ADD.setText("Add");
+        ADD.setToolTipText("Klik untuk menambahkan ruang");
+        ADD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ADDActionPerformed(evt);
             }
         });
 
         Save.setText("Save");
+        Save.setToolTipText("Klik Untuk Menyimpan Data");
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
+            }
+        });
+
+        Edit.setText("Edit");
+        Edit.setToolTipText("Klik Untuk Merubah Data");
+        Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditActionPerformed(evt);
             }
         });
 
@@ -275,21 +386,25 @@ public class DataAwal extends javax.swing.JFrame {
                 .addComponent(Save)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Delete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ADD)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                .addComponent(Next))
+                .addComponent(Edit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(Next)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Save)
                     .addComponent(Delete)
-                    .addComponent(Next)
-                    .addComponent(jButton1)
-                    .addComponent(Save))
-                .addGap(52, 52, 52))
+                    .addComponent(ADD)
+                    .addComponent(Edit)
+                    .addComponent(Next))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -299,12 +414,11 @@ public class DataAwal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(14, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                 .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
@@ -312,11 +426,11 @@ public class DataAwal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -331,106 +445,153 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MousePressed
 
     private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
-        IO x = new IO(NM,LK,FK,JR);
-        x.IdentitasKelas();
-        dispose();
-        x.InputKondisiRuang();
+        if(NM.getText().equals("") || LK.getText().equals("") || FK.getText().equals("") || JR.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+            ADD.setVisible(true);
+            Save.setVisible(false);
+        }
+        else{
+            IO x = new IO(NM,LK,FK,JR);
+            x.IdentitasKelas();
+            dispose();
+            x.InputKondisiRuang();
+        }        
     }//GEN-LAST:event_NextActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        kondisiSave();
+        da.kondisiSave(NM, LK, JR, FK);
+        tampilDataKeTabel();
+        Save.setVisible(false);
+        ADD.setVisible(true);
         clearTEXT();
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-
-        kondisiHapus();
+        da.kondisiHapus(NM);
+        clearTEXT();
+        tampilDataKeTabel();
     }//GEN-LAST:event_DeleteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
        NM.setEditable(true);
         FK.setEditable(true);
         LK.setEditable(true);
         JR.setEditable(true);
         clearTEXT();
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Save.setVisible(true);
+        Edit.setVisible(false);
+        Delete.setVisible(false);
+        ADD.setVisible(false);
+    }//GEN-LAST:event_ADDActionPerformed
+
+    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
+        btnSelesai.setVisible(true);
+        NM.setEditable(true);
+        FK.setEditable(true);
+        LK.setEditable(true);
+        JR.setEditable(true);
+        Delete.setVisible(false);
+        ADD.setVisible(false);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        
+    }//GEN-LAST:event_EditActionPerformed
+
+    private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
+        btnSelesai.setVisible(DiEdit());
+        Delete.setVisible(true);
+        ADD.setVisible(true);
+        Edit.setVisible(true);
+        Next.setVisible(true);
+    }//GEN-LAST:event_btnSelesaiActionPerformed
     private void tampilDataKeTabel() {
         Tabelku = jTable1;
         tableModel(Tabelku);
     }
-     private void clearTEXT() {
+    void clearTEXT() {
         NM.setText("");
         JR.setText("");
         LK.setText("");
         FK.setText("");
     }
-    private void kondisiSave() {
-
-        a = NM.getText();
-        b = JR.getText();
-        C = LK.getText();
-        D = FK.getText();
-        try {
-            if (a.equals("") || C.equals("") || b.equals("") || D.equals("")) {
-                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
-                clearTEXT();
-            } else {
-                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
-                st.executeUpdate(
-                        "insert into identitas"
-                        + "(nama, lokasi, prodi, fakultas) values ('" + a + "','" + C + "','" + b + "','" + D + "')");
-
-                tampilDataKeTabel();
-                JOptionPane.showMessageDialog(this, "Data berhasil disimpan");
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Data gagal disimpan! : " + ex);
-        }
-    }
+//    private void kondisiSave() {
+//
+//        a = NM.getText();
+//        b = JR.getText();
+//        C = LK.getText();
+//        D = FK.getText();
+//        try {
+//            if (a.equals("") || C.equals("") || b.equals("") || D.equals("")) {
+//                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+//                clearTEXT();
+//            } else {
+//                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+//                st.executeUpdate(
+//                        "insert into identitas"
+//                        + "(nama, lokasi, prodi, fakultas) values ('" + a + "','" + C + "','" + b + "','" + D + "')");
+// 
+//                tampilDataKeTabel();
+//                JOptionPane.showMessageDialog(this, "Data berhasil disimpan");
+//            }
+//        } catch (SQLException ex) {
+//            JOptionPane.showMessageDialog(this, "Data gagal disimpan! : " + ex);
+//        }
+//        NM.setEditable(false);
+//        FK.setEditable(false);
+//        LK.setEditable(false);
+//        JR.setEditable(false);
+//        
+//    }
     /**
      * @param args the command line arguments
      */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(DataAwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(DataAwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(DataAwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(DataAwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new DataAwal().setVisible(true);
-//            }
-//        });
-//    }
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(DataAwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(DataAwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(DataAwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(DataAwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new DataAwal().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADD;
     private javax.swing.JButton Delete;
+    private javax.swing.JButton Edit;
     private javax.swing.JTextField FK;
+    private javax.swing.JTextField FK2;
     private javax.swing.JTextField JR;
+    private javax.swing.JTextField JR2;
     private javax.swing.JTextField LK;
+    private javax.swing.JTextField LK2;
     private javax.swing.JTextField NM;
+    private javax.swing.JTextField NM2;
     private javax.swing.JButton Next;
     private javax.swing.JButton Save;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSelesai;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -441,5 +602,6 @@ public class DataAwal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
