@@ -12,6 +12,8 @@ import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -32,7 +34,7 @@ public class DataAwal extends javax.swing.JFrame {
     private DefaultTableModel DefaultTabelku;
     private TableColumn kolom;
     private String a, b,c,d,e,f,g;
-    private String C,D,E,F,G;
+    private String C,D,E,F,G,kode;
     private boolean DiEdit() {
         boolean nilai = false;
         a = NM.getText();
@@ -86,6 +88,8 @@ public class DataAwal extends javax.swing.JFrame {
 //        enviBtnSave(true);
 //        enviBtnSave2(false);
 //        enviBtnNew(false);
+        
+        CODE.setVisible(false);
         Delete.setVisible(false);
         Edit.setVisible(false);
         NM.setEditable(false);
@@ -130,10 +134,12 @@ public class DataAwal extends javax.swing.JFrame {
         String kolom3 = jTabel.getValueAt(baris, 2).toString();
         String kolom4 = jTabel.getValueAt(baris, 3).toString();
         String kolom5 = jTabel.getValueAt(baris, 4).toString();
+        String kolom6 = jTabel.getValueAt(baris, 5).toString();
+        
         NM.setText(kolom2);
         //txt_nama2.setText(kolom2);
         LK.setText(kolom3);
-     
+       
         JR.setText(kolom4);
         //cmb_fakultas.setSelectedItem(kolom5);
         FK.setText(kolom5);
@@ -141,14 +147,16 @@ public class DataAwal extends javax.swing.JFrame {
         LK2.setText(kolom3);
         JR2.setText(kolom4);
         FK2.setText(kolom5);
+        CODE.setText(kolom6);
         Delete.setVisible(true);
         Edit.setVisible(true);
         Save.setVisible(false);
         
+        
     }
     private void tableModel(JTable jTabel1) {
         try {
-            Object[] field = {"No", "Nama", "Lokasi", "Prodi", "Fakultas"};
+            Object[] field = {"No", "Nama", "Lokasi", "Prodi", "Fakultas","ID"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -169,21 +177,28 @@ public class DataAwal extends javax.swing.JFrame {
                 String kolom3 = set.getString("lokasi");
                 String kolom4 = set.getString("prodi");
                 String kolom5 = set.getString("fakultas");
-                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5};
+                String kolom6 = set.getString("id");
+                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6};
                 DefaultTabelku.addRow(data);
             }
 
             jTabel1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+            
             kolom = jTabel1.getColumnModel().getColumn(0);
             kolom.setPreferredWidth(40);
             kolom = jTabel1.getColumnModel().getColumn(1);
             kolom.setPreferredWidth(145);
             kolom = jTabel1.getColumnModel().getColumn(2);
             kolom.setPreferredWidth(217);
-            kolom = jTabel1.getColumnModel().getColumn(2);
+            kolom = jTabel1.getColumnModel().getColumn(3);
             kolom.setPreferredWidth(220);
-            kolom = jTabel1.getColumnModel().getColumn(2);
+            kolom = jTabel1.getColumnModel().getColumn(4);
             kolom.setPreferredWidth(240);
+            kolom = jTabel1.getColumnModel().getColumn(5);
+            kolom.setPreferredWidth(0);
+            kolom.setMinWidth(0);
+            kolom.setMaxWidth(0);
+            kolom.setWidth(0);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
         }
@@ -215,6 +230,7 @@ public class DataAwal extends javax.swing.JFrame {
         LK2 = new javax.swing.JTextField();
         FK2 = new javax.swing.JTextField();
         JR2 = new javax.swing.JTextField();
+        CODE = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
@@ -246,7 +262,7 @@ public class DataAwal extends javax.swing.JFrame {
         jLabel5.setText("Fakultas        :");
 
         btnSelesai.setText("Selesai");
-        btnSelesai.setToolTipText("Klik Jika Selesai Dirubah");
+        btnSelesai.setToolTipText("Klik jika selesai edit");
         btnSelesai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSelesaiActionPerformed(evt);
@@ -257,36 +273,38 @@ public class DataAwal extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(147, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(119, 119, 119))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FK)
-                    .addComponent(LK)
-                    .addComponent(NM)
-                    .addComponent(JR))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JR2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(NM2)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(119, 119, 119))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSelesai)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FK)
+                            .addComponent(LK)
+                            .addComponent(NM)
+                            .addComponent(JR))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JR2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(NM2)
+                                .addContainerGap())))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,8 +333,14 @@ public class DataAwal extends javax.swing.JFrame {
                             .addComponent(JR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JR2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(btnSelesai))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 8, Short.MAX_VALUE)
+                        .addComponent(btnSelesai))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -331,6 +355,9 @@ public class DataAwal extends javax.swing.JFrame {
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jTable1MousePressed(evt);
             }
@@ -437,11 +464,13 @@ public class DataAwal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
+//         try{
         klikTabel(Tabelku);
+        
         NM.setEditable(false);
         FK.setEditable(false);
         LK.setEditable(false);
-        JR.setEditable(false);
+        JR.setEditable(false);          
     }//GEN-LAST:event_jTable1MousePressed
 
     private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
@@ -467,7 +496,7 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        da.kondisiHapus(NM);
+        da.kondisiHapus(CODE.getText());
         clearTEXT();
         tampilDataKeTabel();
     }//GEN-LAST:event_DeleteActionPerformed
@@ -504,6 +533,11 @@ public class DataAwal extends javax.swing.JFrame {
         Edit.setVisible(true);
         Next.setVisible(true);
     }//GEN-LAST:event_btnSelesaiActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        
+           
+    }//GEN-LAST:event_jTable1MouseClicked
     private void tampilDataKeTabel() {
         Tabelku = jTable1;
         tableModel(Tabelku);
@@ -579,6 +613,7 @@ public class DataAwal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ADD;
+    private javax.swing.JTextField CODE;
     private javax.swing.JButton Delete;
     private javax.swing.JButton Edit;
     private javax.swing.JTextField FK;

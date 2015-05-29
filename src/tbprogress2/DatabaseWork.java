@@ -28,7 +28,6 @@ DatabaseWork(){
      DefaultTableModel DefaultTabelku;
      TableColumn kolom;
      String a, b,c,d,e,f,g;
-     String C,D,E,F,G;
 //     DataAwal DA = new DataAwal();
      
     void kondisiSave(JTextField NM,JTextField LK,JTextField JR, JTextField FK) {
@@ -60,13 +59,59 @@ DatabaseWork(){
         LK.setEditable(false);
         JR.setEditable(false);
     }
-     void kondisiHapus(JTextField NM) {
-        g = NM.getText();
+     void kondisiHapus(String id) {
+        //g = id.getText();
         try {
             Statement st = aplikasi_inventaris.config.getConnection().createStatement();
             st.executeUpdate(
-                    " delete from identitas where nama ='" + g + "'");
+                    " delete from identitas where id ='" + id + "'");
             
+            JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal dihapus: " + ex);
+        }
+    }
+    void kondisiSave(JTextField txtValue1,JTextField txtValue2,JTextField kursi,JTextField pintu,JTextField jendela) {
+        
+        a = txtValue1.getText();
+        b = txtValue2.getText();
+        c = kursi.getText();
+        d = pintu.getText();
+        e = jendela.getText();
+        try {
+            if (a.equals("") || c.equals("") || b.equals("") || d.equals("") || e.equals("")) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                
+            } else {
+                
+                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into kondisi"
+                        + "(panjang, lebar, kursi, pintu, jendela) values ('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+        txtValue1.setEditable(false);
+        txtValue2.setEditable(false);
+        kursi.setEditable(false);
+        pintu.setEditable(false);
+        jendela.setEditable(false);
+    }
+     void kondisiHapus(JTextField panjang,JTextField lebar,JTextField kursi,JTextField pintu,JTextField jendela) {
+        a = panjang.getText();
+        b = lebar.getText();
+        c = kursi.getText();
+        d = pintu.getText();
+        e = jendela.getText();
+        try {
+            Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+            st.executeUpdate(
+                    " delete from kondisi where panjang ='" + a +"'"+"and"+" lebar ='"+b+"'");
+//                    +"and"+" lebar ='"+c+"'"+"and"+" lebar ='"+d+"'"+"and"+" lebar ='"+e+"'");
+//            
             JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Data gagal dihapus: " + ex);
