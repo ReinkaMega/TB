@@ -97,9 +97,9 @@ public class KondisiKeamanan extends javax.swing.JFrame {
                         + "kunci=" + "'" + b + "', "
                         + "bahaya=" + "'" + c + "' "
                         + "where id_keamanan ='" + CODE.getText() 
-                        +" and " +"kokoh=" + "'" + d + "' "+"and "
-                                + "kunci=" + "'" + e + "' "+"and "
-                                + "bahaya=" + "'" + f 
+//                        +" and " +"kokoh=" + "'" + d + "' "+"and "
+//                                + "kunci=" + "'" + e + "' "+"and "
+//                                + "bahaya=" + "'" + f 
                                 +"'");
 
                 tampilDataKeTabel();
