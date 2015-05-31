@@ -801,7 +801,6 @@ public class KondisiRuang extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ADD;
     private javax.swing.JTextField CODE;

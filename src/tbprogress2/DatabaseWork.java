@@ -88,6 +88,25 @@ DatabaseWork(){
         pintu.setEditable(false);
         jendela.setEditable(false);
     }
+    void kondisiSave(String Kokoh,String Adakunci,String Aman) {
+       
+        try {
+            if (Kokoh.equals("") || Adakunci.equals("") || Aman.equals("")) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                
+            } else {
+                
+                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into keamanan"
+                        + "(kokoh, kunci, bahaya) values ('" +  Kokoh+ "','" + Adakunci + "','" + Aman + "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+    }
 
      void kondisiHapus(String Tabel,String Arrow,String id) {
         //g = id.getText();

@@ -33,7 +33,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         nyeret2();
         nyeret3();
     }
-public void nyeret1(){
+    public void nyeret1(){
                 PC.setEditable(false);	
 	        PC.setText(String.valueOf(SC.getValue()));	
 	        SC.setMinorTickSpacing(5);	
@@ -321,9 +321,8 @@ public void nyeret1(){
                 .addComponent(PSR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel13)
-                        .addComponent(SUL))
+                    .addComponent(SUL)
+                    .addComponent(jLabel13)
                     .addComponent(SUT))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
