@@ -35,44 +35,7 @@ public class DataAwal extends javax.swing.JFrame {
     private TableColumn kolom;
     private String a, b,c,d,e,f,g;
     private String C,D,E,F,G,kode;
-    private boolean DiEdit() {
-        boolean nilai = false;
-        a = NM.getText();
-        b = JR.getText();
-        c = NM2.getText();
-        d = JR2.getText();
-        E = LK.getText();
-        F = FK.getText();
-        e = LK2.getText();
-        f = FK2.getText();
-
-       try {
-            if (a.equals("") || E.equals("") || b.equals("") || F.equals("")) {
-                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
-                nilai=true;
-                clearTEXT();
-            } else if (a.equals(c) && E.equals(e) && b.equals(d) && F.equals(f)) {
-                JOptionPane.showMessageDialog(null, "Tidak ada data yang di perbaharui!");
-                nilai = false;
-            } else {
-                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
-                st.executeUpdate(
-                        "update identitas set "
-                        + "nama=" + "'" + a + "', "
-                        + "lokasi=" + "'" + E + "', "
-                        + "prodi=" + "'" + b + "', "
-                        + "fakultas=" + "'" + F + "' "
-                        + "where nama ='" + c + "'");
-
-                tampilDataKeTabel();
-                JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
-                nilai=false;
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Data gagal diperbaharui! : " + ex);
-        }
-       return nilai;
-    }
+    
     
     public DataAwal() {
         initComponents();
@@ -111,21 +74,44 @@ public class DataAwal extends javax.swing.JFrame {
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
     
     }
-//    private void kondisiHapus() {
-//        g = NM.getText();
-//
-//        try {
-//            Statement st = aplikasi_inventaris.config.getConnection().createStatement();
-//            st.executeUpdate(
-//                    " delete from identitas where nama ='" + g + "'");
-//            clearTEXT();
-//            tampilDataKeTabel();
-//
-//            JOptionPane.showMessageDialog(this, "Data berhasil dihapus");
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(this, "Data gagal dihapus: " + ex);
-//        }
-//    }
+    private boolean DiEdit() {
+        boolean nilai = false;
+        a = NM.getText();
+        b = JR.getText();
+        c = NM2.getText();
+        d = JR2.getText();
+        E = LK.getText();
+        F = FK.getText();
+        e = LK2.getText();
+        f = FK2.getText();
+
+       try {
+            if (a.equals("") || E.equals("") || b.equals("") || F.equals("")) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                nilai=true;
+                clearTEXT();
+            } else if (a.equals(c) && E.equals(e) && b.equals(d) && F.equals(f)) {
+                JOptionPane.showMessageDialog(null, "Tidak ada data yang di perbaharui!");
+                nilai = false;
+            } else {
+                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "update identitas set "
+                        + "nama=" + "'" + a + "', "
+                        + "lokasi=" + "'" + E + "', "
+                        + "prodi=" + "'" + b + "', "
+                        + "fakultas=" + "'" + F + "' "
+                        + "where nama ='" + c + "'");
+
+                tampilDataKeTabel();
+                JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
+                nilai=false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Data gagal diperbaharui! : " + ex);
+        }
+       return nilai;
+    }
     private void klikTabel(JTable jTabel) {
         jTabel.setRowSelectionAllowed(true);
         baris = jTabel.getSelectedRow();
@@ -202,6 +188,12 @@ public class DataAwal extends javax.swing.JFrame {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
         }
+    }
+    void clearTEXT() {
+        NM.setText("");
+        JR.setText("");
+        LK.setText("");
+        FK.setText("");
     }
 
     /**
@@ -496,7 +488,7 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        da.kondisiHapus(CODE.getText());
+        da.kondisiHapus("identitas","id",CODE.getText());
         clearTEXT();
         tampilDataKeTabel();
     }//GEN-LAST:event_DeleteActionPerformed
@@ -542,40 +534,7 @@ public class DataAwal extends javax.swing.JFrame {
         Tabelku = jTable1;
         tableModel(Tabelku);
     }
-    void clearTEXT() {
-        NM.setText("");
-        JR.setText("");
-        LK.setText("");
-        FK.setText("");
-    }
-//    private void kondisiSave() {
-//
-//        a = NM.getText();
-//        b = JR.getText();
-//        C = LK.getText();
-//        D = FK.getText();
-//        try {
-//            if (a.equals("") || C.equals("") || b.equals("") || D.equals("")) {
-//                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
-//                clearTEXT();
-//            } else {
-//                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
-//                st.executeUpdate(
-//                        "insert into identitas"
-//                        + "(nama, lokasi, prodi, fakultas) values ('" + a + "','" + C + "','" + b + "','" + D + "')");
-// 
-//                tampilDataKeTabel();
-//                JOptionPane.showMessageDialog(this, "Data berhasil disimpan");
-//            }
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(this, "Data gagal disimpan! : " + ex);
-//        }
-//        NM.setEditable(false);
-//        FK.setEditable(false);
-//        LK.setEditable(false);
-//        JR.setEditable(false);
-//        
-//    }
+    
     /**
      * @param args the command line arguments
      */

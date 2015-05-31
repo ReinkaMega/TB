@@ -59,18 +59,6 @@ DatabaseWork(){
         LK.setEditable(false);
         JR.setEditable(false);
     }
-     void kondisiHapus(String id) {
-        //g = id.getText();
-        try {
-            Statement st = aplikasi_inventaris.config.getConnection().createStatement();
-            st.executeUpdate(
-                    " delete from identitas where id ='" + id + "'");
-            
-            JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Data gagal dihapus: " + ex);
-        }
-    }
     void kondisiSave(JTextField txtValue1,JTextField txtValue2,JTextField kursi,JTextField pintu,JTextField jendela) {
         
         a = txtValue1.getText();
@@ -100,22 +88,18 @@ DatabaseWork(){
         pintu.setEditable(false);
         jendela.setEditable(false);
     }
-     void kondisiHapus(JTextField panjang,JTextField lebar,JTextField kursi,JTextField pintu,JTextField jendela) {
-        a = panjang.getText();
-        b = lebar.getText();
-        c = kursi.getText();
-        d = pintu.getText();
-        e = jendela.getText();
+
+     void kondisiHapus(String Tabel,String Arrow,String id) {
+        //g = id.getText();
         try {
             Statement st = aplikasi_inventaris.config.getConnection().createStatement();
             st.executeUpdate(
-                    " delete from kondisi where panjang ='" + a +"'"+"and"+" lebar ='"+b+"'");
-//                    +"and"+" lebar ='"+c+"'"+"and"+" lebar ='"+d+"'"+"and"+" lebar ='"+e+"'");
-//            
+                    " delete from "+Tabel+" where "+Arrow+" ='" + id + "'");
+            
             JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Data gagal dihapus: " + ex);
         }
     }
-}
+}  
 //
