@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+//SLIDER BELUM FIXXXX
 package tbprogress2;
 
 import java.awt.Color;
@@ -69,6 +69,7 @@ public class KondisiRuang extends javax.swing.JFrame {
     }
     public KondisiRuang() {
                 initComponents();
+                CODE.setVisible(false);
         Save.setVisible(false);
         btnSelesai.setVisible(false);
         setLocationRelativeTo(null);
@@ -142,7 +143,8 @@ public class KondisiRuang extends javax.swing.JFrame {
         C = kursi1.getText();
         D = jendela.getText();
         E = jendela1.getText();
-
+        String H = CODE.getText();
+          System.out.println(H);
        try {
             if (a.equals("") || b.equals("") || e.equals("") || g.equals("")||D.equals("")) {
                 JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
@@ -154,15 +156,13 @@ public class KondisiRuang extends javax.swing.JFrame {
             } else {
                 Statement st = aplikasi_inventaris.config.getConnection().createStatement();
                 st.executeUpdate(
-                        "update identitas set "
+                        "update kondisi set "
                         + "panjang=" + "'" + a + "', "
                         + "lebar=" + "'" + b + "', "
                         + "kursi=" + "'" + g + "', "
                         + "pintu=" + "'" + e + "', "
                         + "jendela=" + "'" + D + "' "
-                        + "where panjang ='" + c + "'"+"and"+" lebar ='"+d+"'"
-                        + "and"+" kursi ='"+C+"'"+"and"+" pintu ='"+f+"'"
-                        + "and"+" jendela ='"+E+"'");
+                        + "where id_kondisi ='" + H + "'");
 
                 tampilDataKeTabel();
                 JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
@@ -173,8 +173,9 @@ public class KondisiRuang extends javax.swing.JFrame {
         }
        return nilai;
     }
-     void gerak(){
-         slider2.addChangeListener (	
+     void gerak(boolean bisa){
+         if(bisa==true){
+             slider2.addChangeListener (	
 	            new ChangeListener() {	 
 	                public void stateChanged (ChangeEvent e) {	
 	                    txtValue2.setText ( String.valueOf(slider2.getValue()) );	
@@ -188,7 +189,25 @@ public class KondisiRuang extends javax.swing.JFrame {
                         }	
 	            }
 	        );
-     }
+            }
+         else{
+             slider2.addChangeListener (	
+	            new ChangeListener() {	 
+	                public void stateChanged (ChangeEvent e) {	
+	                    txtValue2.setText ("");	
+                        }	
+	            }
+	        );
+         slider.addChangeListener (	
+	            new ChangeListener() {	 
+	                public void stateChanged (ChangeEvent e) {	
+	                    txtValue.setText ("");	
+                        }	
+	            }
+	        );
+         }
+    }
+         
      void clearTEXT(){
         txtValue.setText(null);
         txtValue2.setText(null);
@@ -205,27 +224,27 @@ public class KondisiRuang extends javax.swing.JFrame {
         String kolom4 = jTabel.getValueAt(baris, 3).toString();
         String kolom5 = jTabel.getValueAt(baris, 4).toString();
         String kolom6 = jTabel.getValueAt(baris, 5).toString();
+        String kolom7 = jTabel.getValueAt(baris, 6).toString();
         txtValue.setText(kolom2);
         //txt_nama2.setText(kolom2);
         txtValue2.setText(kolom3);
-     
-        pintu.setText(kolom4);
+
+        pintu.setText(kolom5);
         //cmb_fakultas.setSelectedItem(kolom5);
-        kursi.setText(kolom5);
+        kursi.setText(kolom4);
         jendela.setText(kolom6)
                 ;
         pintu1.setText(kolom4);
         kursi1.setText(kolom5);
         jendela1.setText(kolom6);
-        
         Delete.setVisible(true);
         Edit.setVisible(true);
         Save.setVisible(false);
-        
+        CODE.setText(kolom7);
     }
     private void tableModel(JTable jTabel1) {
         try {
-            Object[] field = {"No", "Panjang", "Lebar", "Kursi", "Pintu","Jendela"};
+            Object[] field = {"No", "Panjang", "Lebar", "Kursi", "Pintu","Jendela","ID"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -247,7 +266,8 @@ public class KondisiRuang extends javax.swing.JFrame {
                 String kolom4 = set.getString("kursi");
                 String kolom5 = set.getString("pintu");
                 String kolom6 = set.getString("jendela");
-                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5, kolom6};
+                String kolom7 = set.getString("id_kondisi");
+                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5, kolom6,kolom7};
                 DefaultTabelku.addRow(data);
             }
 
@@ -264,6 +284,11 @@ public class KondisiRuang extends javax.swing.JFrame {
             kolom.setPreferredWidth(100);
             kolom = jTabel1.getColumnModel().getColumn(5);
             kolom.setPreferredWidth(100);
+            kolom = jTabel1.getColumnModel().getColumn(6);
+            kolom.setPreferredWidth(0);
+            kolom.setMinWidth(0);
+            kolom.setMaxWidth(0);
+            kolom.setWidth(0);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
         }
@@ -305,6 +330,7 @@ public class KondisiRuang extends javax.swing.JFrame {
         btnSelesai = new javax.swing.JButton();
         txtValue1 = new javax.swing.JTextField();
         txtValue3 = new javax.swing.JTextField();
+        CODE = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -377,9 +403,11 @@ public class KondisiRuang extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(26, 26, 26)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -402,7 +430,7 @@ public class KondisiRuang extends javax.swing.JFrame {
                                                 .addComponent(jLabel8)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(txtValue1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGap(0, 22, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(206, 206, 206)
                                         .addComponent(btnSelesai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -469,7 +497,9 @@ public class KondisiRuang extends javax.swing.JFrame {
                                 .addComponent(pintu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(21, 21, 21)
                                 .addComponent(jendela1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(41, 41, 41))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btnSelesai)
                         .addGap(24, 24, 24))))
@@ -674,7 +704,7 @@ public class KondisiRuang extends javax.swing.JFrame {
     }//GEN-LAST:event_LanjutActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        da.kondisiHapus(txtValue,txtValue2,kursi,pintu,jendela);
+        da.kondisiHapus("kondisi","id_kondisi",CODE.getText());
         clearTEXT();
         tampilDataKeTabel();
     }//GEN-LAST:event_DeleteActionPerformed
@@ -688,6 +718,7 @@ public class KondisiRuang extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
+        gerak(true);
         btnSelesai.setVisible(true);
         kursi.setEditable(true);
         pintu.setEditable(true);
@@ -700,7 +731,7 @@ public class KondisiRuang extends javax.swing.JFrame {
     }//GEN-LAST:event_EditActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
-        gerak();
+        gerak(true);
         kursi.setEditable(true);
         pintu.setEditable(true);
         jendela.setEditable(true);
@@ -716,6 +747,7 @@ public class KondisiRuang extends javax.swing.JFrame {
     }//GEN-LAST:event_kursi1ActionPerformed
 
     private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
+        gerak(false);
         btnSelesai.setVisible(DiEdit());
         Delete.setVisible(true);
         ADD.setVisible(true);
@@ -725,6 +757,7 @@ public class KondisiRuang extends javax.swing.JFrame {
 
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
         klikTabel(Tabelku);
+        gerak(false);
         kursi.setEditable(false);
         pintu.setEditable(false);
         jendela.setEditable(false);
@@ -771,6 +804,7 @@ public class KondisiRuang extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ADD;
+    private javax.swing.JTextField CODE;
     private javax.swing.JButton Delete;
     private javax.swing.JButton Edit;
     private javax.swing.JButton Lanjut;
