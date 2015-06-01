@@ -19,18 +19,18 @@ import javax.swing.table.TableColumn;
 public class DatabaseWork {
 
 DatabaseWork(){
-    aplikasi_inventaris.konekkeDatabase();
+    con.koneksi();
 }
      
      Integer baris;
-     Connect aplikasi_inventaris = new Connect();
+     Connect con = new Connect();
      JTable Tabelku = new JTable();
      DefaultTableModel DefaultTabelku;
      TableColumn kolom;
      String a, b,c,d,e,f,g;
 //     DataAwal DA = new DataAwal();
      
-    void kondisiSave(JTextField NM,JTextField LK,JTextField JR, JTextField FK) {
+    void Save(JTextField NM,JTextField LK,JTextField JR, JTextField FK) {
         
         String a,b,C,D;
         a = NM.getText();
@@ -44,7 +44,7 @@ DatabaseWork(){
                 
             } else {
                 
-                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "insert into identitas"
                         + "(nama, lokasi, prodi, fakultas) values ('" + a + "','" + C + "','" + b + "','" + D + "')");
@@ -59,7 +59,7 @@ DatabaseWork(){
         LK.setEditable(false);
         JR.setEditable(false);
     }
-    void kondisiSave(JTextField txtValue1,JTextField txtValue2,JTextField kursi,JTextField pintu,JTextField jendela) {
+    void Save(JTextField txtValue1,JTextField txtValue2,JTextField kursi,JTextField pintu,JTextField jendela) {
         
         a = txtValue1.getText();
         b = txtValue2.getText();
@@ -72,7 +72,7 @@ DatabaseWork(){
                 
             } else {
                 
-                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "insert into kondisi"
                         + "(panjang, lebar, kursi, pintu, jendela) values ('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "')");
@@ -88,7 +88,8 @@ DatabaseWork(){
         pintu.setEditable(false);
         jendela.setEditable(false);
     }
-    void kondisiSave(String Kokoh,String Adakunci,String Aman) {
+
+    void Save(String Kokoh,String Adakunci,String Aman) {
        
         try {
             if (Kokoh.equals("") || Adakunci.equals("") || Aman.equals("")) {
@@ -96,7 +97,7 @@ DatabaseWork(){
                 
             } else {
                 
-                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "insert into keamanan"
                         + "(kokoh, kunci, bahaya) values ('" +  Kokoh+ "','" + Adakunci + "','" + Aman + "')");
@@ -107,11 +108,77 @@ DatabaseWork(){
             JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
         }
     }
+    
+    
+      void Save(String LB,String DB,String AB,String PB,String JB) {
+       
+        try {
+            if (LB.equals("") || DB.equals("") || AB.equals("") || PB.equals("") || JB.equals("") ) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                
+            } else {
+                
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into kebersihan"
+                        + "(lantai, dinding, atap, pintu, jendela) values ('" +  LB+ "','" + DB + "','" + AB + "','" + PB + "','"+ JB + "')");
 
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+    }
+    
+      
+       void Save(JTextField PBising,JTextField PBau,JTextField PAus,String BBanyak,String RBanyak) {
+           try {
+            if (PBising.equals("") || PBau.equals("") || PAus.equals("") || BBanyak.equals("") || RBanyak.equals("") ) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                
+            } else {
+                
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into kenyamanan"
+                        + "(bising, bau, bocor, rusak, aus) values ('" + PBising + "','" + PBau + "','" + BBanyak + "','" + RBanyak  + "','"+ PAus + "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+       
+       }
+      
+       
+       
+         void Save(JTextField PRC,JTextField PRL,JTextField PSR,String SUL) {
+           try {
+            if (PRC.equals("") || PRL.equals("") || PSR.equals("") || SUL.equals("") ) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                
+            } else {
+                
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into lingkungan"
+                        + "(udara, cahaya, lembab, suhu) values ('" + SUL + "','" + PRC + "','" + PRL + "','" + PSR +  "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+       
+       }
+         
+         
+         
      void kondisiHapus(String Tabel,String Arrow,String id) {
         //g = id.getText();
         try {
-            Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+            Statement st = con.config.getConnection().createStatement();
             st.executeUpdate(
                     " delete from "+Tabel+" where "+Arrow+" ='" + id + "'");
             

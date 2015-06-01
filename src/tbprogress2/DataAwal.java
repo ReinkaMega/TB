@@ -29,7 +29,7 @@ public class DataAwal extends javax.swing.JFrame {
      */
     DatabaseWork da = new DatabaseWork();
     private Integer baris;
-    private Connect aplikasi_inventaris = new Connect();
+    private Connect con = new Connect();
     private JTable Tabelku = new JTable();
     private DefaultTableModel DefaultTabelku;
     private TableColumn kolom;
@@ -45,7 +45,7 @@ public class DataAwal extends javax.swing.JFrame {
         setResizable(false);
         setResizable(false);
         setTitle("Identitas Ruang");
-        aplikasi_inventaris.konekkeDatabase();
+        con.koneksi();
         tampilDataKeTabel();
 //        enableBtn(false);
 //        enviBtnSave(true);
@@ -94,7 +94,7 @@ public class DataAwal extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Tidak ada data yang di perbaharui!");
                 nilai = false;
             } else {
-                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "update identitas set "
                         + "nama=" + "'" + a + "', "
@@ -152,7 +152,7 @@ public class DataAwal extends javax.swing.JFrame {
             jTabel1.setModel(DefaultTabelku);
 
             String sql = "Select * from identitas";
-            Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+            Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
 
             int no = 0;
@@ -480,7 +480,7 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_NextActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        da.kondisiSave(NM, LK, JR, FK);
+        da.Save(NM, LK, JR, FK);
         tampilDataKeTabel();
         Save.setVisible(false);
         ADD.setVisible(true);
