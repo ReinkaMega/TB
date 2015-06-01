@@ -1,4 +1,4 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,25 +7,19 @@
 package tbprogress2;
 
 /**
- * 
+ *
  * @author eko
  */
 public class KondisiSarana extends javax.swing.JFrame {
+
     int s = 0, ts = 0, kondisi;
     RuangKelas kls = new RuangKelas();
-    
-    /**
-     * Creates new form KondisiSarana
-     */
+
     public KondisiSarana() {
         initComponents();
-                kontak.setText("1");
+        kontak.setText("1");
                 jlcd.setText("1");
                 jlampu.setText("1");
-                jka.setText("1");
-	        jac.setText("1");
-                ssid.setText("a");
-                jcctv.setText("1");
     }
 
     /**
@@ -38,107 +32,77 @@ public class KondisiSarana extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        LANJUT = new javax.swing.JButton();
+        hapus = new javax.swing.JButton();
+        kklr = new javax.swing.JCheckBox();
+        kkl = new javax.swing.JCheckBox();
+        jLabel8 = new javax.swing.JLabel();
+        klr = new javax.swing.JCheckBox();
+        klb = new javax.swing.JCheckBox();
+        jLabel12 = new javax.swing.JLabel();
+        plr = new javax.swing.JCheckBox();
+        jLabel6 = new javax.swing.JLabel();
+        jlcd = new javax.swing.JTextField();
+        pskr = new javax.swing.JCheckBox();
+        psk = new javax.swing.JCheckBox();
+        jLabel5 = new javax.swing.JLabel();
+        bsk = new javax.swing.JCheckBox();
+        skr = new javax.swing.JCheckBox();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         kontak = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        bsk = new javax.swing.JCheckBox();
-        jLabel5 = new javax.swing.JLabel();
-        psk = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
-        jlcd = new javax.swing.JTextField();
-        pklr = new javax.swing.JCheckBox();
-        jLabel8 = new javax.swing.JLabel();
-        klb = new javax.swing.JCheckBox();
-        klr = new javax.swing.JCheckBox();
+        jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         pkl = new javax.swing.JCheckBox();
-        pskr = new javax.swing.JCheckBox();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        plb = new javax.swing.JCheckBox();
-        plr = new javax.swing.JCheckBox();
-        kkl = new javax.swing.JCheckBox();
-        kklr = new javax.swing.JCheckBox();
+        pklr = new javax.swing.JCheckBox();
         jLabel13 = new javax.swing.JLabel();
         jlampu = new javax.swing.JTextField();
-        rsk = new javax.swing.JCheckBox();
-        jLabel3 = new javax.swing.JLabel();
-        jka = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        pkar = new javax.swing.JCheckBox();
-        pkab = new javax.swing.JCheckBox();
-        jLabel14 = new javax.swing.JLabel();
-        kkab = new javax.swing.JCheckBox();
-        kkar = new javax.swing.JCheckBox();
-        jLabel15 = new javax.swing.JLabel();
-        jac = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        kacb = new javax.swing.JCheckBox();
-        kacr = new javax.swing.JCheckBox();
-        jLabel17 = new javax.swing.JLabel();
-        pacb = new javax.swing.JCheckBox();
-        pacs = new javax.swing.JCheckBox();
-        pacd = new javax.swing.JCheckBox();
-        selanjutnya = new javax.swing.JButton();
-        ssid = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        bt = new javax.swing.JCheckBox();
-        jLabel18 = new javax.swing.JLabel();
-        bb = new javax.swing.JCheckBox();
-        jLabel19 = new javax.swing.JLabel();
-        jcctv = new javax.swing.JTextField();
-        kcctvr = new javax.swing.JCheckBox();
-        kcctvb = new javax.swing.JCheckBox();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        pcctvb = new javax.swing.JCheckBox();
-        pcctvr = new javax.swing.JCheckBox();
-        hapus = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        plb = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("KONDISI SARANA");
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Jumlah Stop Kontak ?");
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Kondisi Stop Kontak ?");
-
-        bsk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        bsk.setText("Baik");
-        bsk.addActionListener(new java.awt.event.ActionListener() {
+        LANJUT.setText("LANJUT");
+        LANJUT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bskActionPerformed(evt);
+                LANJUTActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Posisi Stop Kontak ?");
-
-        psk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        psk.setText("Dekat Dosen/Pojok Kelas");
-        psk.addActionListener(new java.awt.event.ActionListener() {
+        hapus.setText("jButton1");
+        hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pskActionPerformed(evt);
+                hapusActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Jumlah Kabel Lcd ?");
-
-        pklr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pklr.setText("Samping kelas");
-        pklr.addActionListener(new java.awt.event.ActionListener() {
+        kklr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        kklr.setText("Rusak");
+        kklr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pklrActionPerformed(evt);
+                kklrActionPerformed(evt);
+            }
+        });
+
+        kkl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        kkl.setText("Baik/Berfungsi");
+        kkl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kklActionPerformed(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Kondisi Kabel Lcd ?");
+
+        klr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        klr.setText("Rusak");
+        klr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                klrActionPerformed(evt);
+            }
+        });
 
         klb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         klb.setText("Baik/Berfungsi");
@@ -148,11 +112,73 @@ public class KondisiSarana extends javax.swing.JFrame {
             }
         });
 
-        klr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        klr.setText("Rusak");
-        klr.addActionListener(new java.awt.event.ActionListener() {
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setText("Kondisi Lampu ?");
+
+        plr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        plr.setText("Lain-Lain");
+        plr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                klrActionPerformed(evt);
+                plrActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setText("Jumlah Kabel Lcd ?");
+
+        jlcd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jlcdActionPerformed(evt);
+            }
+        });
+
+        pskr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        pskr.setText("Samping kelas");
+        pskr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pskrActionPerformed(evt);
+            }
+        });
+
+        psk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        psk.setText("Dekat Dosen/Pojok Kelas");
+        psk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pskActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Posisi Stop Kontak ?");
+
+        bsk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bsk.setText("Baik");
+        bsk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bskActionPerformed(evt);
+            }
+        });
+
+        skr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        skr.setText("Rusak");
+        skr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                skrActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("Kondisi Stop Kontak ?");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("KONDISI SARANA");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Jumlah Stop Kontak ?");
+
+        kontak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kontakActionPerformed(evt);
             }
         });
 
@@ -167,19 +193,25 @@ public class KondisiSarana extends javax.swing.JFrame {
             }
         });
 
-        pskr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pskr.setText("Samping kelas");
-        pskr.addActionListener(new java.awt.event.ActionListener() {
+        pklr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        pklr.setText("Samping kelas");
+        pklr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pskrActionPerformed(evt);
+                pklrActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setText("Jumlah Lampu ?");
+
+        jlampu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jlampuActionPerformed(evt);
             }
         });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("Posisi Lampu ? ");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setText("Kondisi Lampu ?");
 
         plb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         plb.setText("Atap Ruangan");
@@ -189,400 +221,141 @@ public class KondisiSarana extends javax.swing.JFrame {
             }
         });
 
-        plr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        plr.setText("Lain-Lain");
-        plr.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plrActionPerformed(evt);
-            }
-        });
-
-        kkl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        kkl.setText("Baik/Berfungsi");
-        kkl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kklActionPerformed(evt);
-            }
-        });
-
-        kklr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        kklr.setText("Rusak");
-        kklr.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kklrActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setText("Jumlah Lampu ?");
-
-        jlampu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlampu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jlampuActionPerformed(evt);
-            }
-        });
-
-        rsk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        rsk.setText("Rusak");
-        rsk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rskActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Jumlah Kipas Angin ?");
-
-        jka.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jkaActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel11.setText("Posisi Kipas Angin ?");
-
-        pkar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pkar.setText("Samping Ruangan");
-        pkar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pkarActionPerformed(evt);
-            }
-        });
-
-        pkab.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pkab.setText("Atap Ruangan");
-        pkab.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pkabActionPerformed(evt);
-            }
-        });
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel14.setText("Kondisi Kipas Angin ?");
-
-        kkab.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        kkab.setText("Baik");
-        kkab.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kkabActionPerformed(evt);
-            }
-        });
-
-        kkar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        kkar.setText("Rusak");
-        kkar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kkarActionPerformed(evt);
-            }
-        });
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setText("Jumlah AC ?");
-
-        jac.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setText("Kondisi AC ?");
-
-        kacb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        kacb.setText("Baik");
-        kacb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kacbActionPerformed(evt);
-            }
-        });
-
-        kacr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        kacr.setText("Rusak");
-        kacr.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kacrActionPerformed(evt);
-            }
-        });
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel17.setText("Posisi AC ?");
-
-        pacb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pacb.setText("Belakang");
-        pacb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pacbActionPerformed(evt);
-            }
-        });
-
-        pacs.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pacs.setText("Samping");
-        pacs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pacsActionPerformed(evt);
-            }
-        });
-
-        pacd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pacd.setText("Depan");
-        pacd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pacdActionPerformed(evt);
-            }
-        });
-
-        selanjutnya.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        selanjutnya.setText("Selanjutnya");
-        selanjutnya.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selanjutnyaActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pkl)
+                    .addComponent(pklr)
+                    .addComponent(jLabel13)
+                    .addComponent(jlampu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(plb))
+                .addGap(0, 16, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pkl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pklr)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel13)
+                .addGap(18, 18, 18)
+                .addComponent(jlampu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addComponent(plb)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(hapus)
+                    .addComponent(LANJUT))
+                .addGap(36, 36, 36))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(kontak, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(161, 161, 161)
+                                .addComponent(jLabel2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(kklr)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kkl)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(178, 178, 178)
-                                .addComponent(kkab)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(172, 172, 172)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(pkab)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(pkar))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel14)
-                                            .addComponent(jLabel17)
-                                            .addComponent(jLabel15)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jac, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel16)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(pacb)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(pacs)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(pacd))
-                                            .addComponent(plb)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jka, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel12)
-                                            .addComponent(klb)
-                                            .addComponent(kacb))
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addContainerGap())))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel2)
-                        .addGap(97, 319, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(pkl)
-                            .addComponent(pklr)
-                            .addComponent(kklr)
-                            .addComponent(pskr)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(psk)
+                            .addComponent(kontak, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(bsk)
                                 .addGap(18, 18, 18)
-                                .addComponent(rsk))
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel13)
-                            .addComponent(jlampu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(skr))
+                            .addComponent(psk)
+                            .addComponent(jLabel6)
+                            .addComponent(pskr)
+                            .addComponent(jLabel1)
+                            .addComponent(kkl)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 240, Short.MAX_VALUE)
-                                .addComponent(klr)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(plr)
-                                .addGap(63, 63, 63))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(kacr)
-                                    .addComponent(kkar))
-                                .addGap(103, 103, 103))
-                            .addComponent(selanjutnya, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(klr)
+                                    .addComponent(plr, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel12)
+                                    .addComponent(klb))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(kontak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(klb)
-                    .addComponent(klr))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel10))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bsk)
-                    .addComponent(rsk)
-                    .addComponent(plb)
-                    .addComponent(plr))
-                .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(psk)
-                    .addComponent(jka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pskr)
-                    .addComponent(jLabel11))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(pkab)
-                    .addComponent(pkar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(67, 67, 67)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel14))
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(kontak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(kkl)
-                            .addComponent(kkab)
-                            .addComponent(kkar))
+                            .addComponent(bsk)
+                            .addComponent(skr))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(kklr)
-                            .addComponent(jLabel15))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(jac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel9)))
-                        .addGap(13, 13, 13)
-                        .addComponent(pkl))
-                    .addComponent(jLabel16))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pklr)
-                    .addComponent(kacb)
-                    .addComponent(kacr))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel17))
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlampu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pacb)
-                    .addComponent(pacs)
-                    .addComponent(pacd))
-                .addGap(78, 78, 78)
-                .addComponent(selanjutnya)
-                .addContainerGap(305, Short.MAX_VALUE))
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(psk)
+                        .addGap(18, 18, 18)
+                        .addComponent(pskr)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(kkl)
+                        .addGap(18, 18, 18)
+                        .addComponent(kklr))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(plr)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(klb)
+                        .addGap(18, 18, 18)
+                        .addComponent(klr)
+                        .addGap(66, 66, 66)))
+                .addComponent(LANJUT)
+                .addGap(38, 38, 38)
+                .addComponent(hapus)
+                .addGap(42, 42, 42))
         );
-
-        ssid.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setText("SSID ?");
-
-        bt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        bt.setText("Tidak");
-        bt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btActionPerformed(evt);
-            }
-        });
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setText("Bandwidth ?");
-
-        bb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        bb.setText("Bisa");
-        bb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bbActionPerformed(evt);
-            }
-        });
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel19.setText("Jumlah CCTV ?");
-
-        jcctv.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        kcctvr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        kcctvr.setText("Rusak");
-        kcctvr.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kcctvrActionPerformed(evt);
-            }
-        });
-
-        kcctvb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        kcctvb.setText("Baik");
-        kcctvb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kcctvbActionPerformed(evt);
-            }
-        });
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel20.setText("Kondisi CCTV ?");
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel21.setText("Posisi CCTV ?");
-
-        pcctvb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pcctvb.setText("DepanBelakang");
-        pcctvb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pcctvbActionPerformed(evt);
-            }
-        });
-
-        pcctvr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pcctvr.setText("Samping");
-
-        hapus.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        hapus.setText("Hapus");
-        hapus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hapusActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -590,144 +363,103 @@ public class KondisiSarana extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(kcctvb)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(kcctvr))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(bb)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(bt))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(ssid, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel7)
-                                            .addComponent(jLabel18)
-                                            .addComponent(jLabel19)
-                                            .addComponent(jcctv, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jLabel21)
-                                            .addComponent(pcctvb)
-                                            .addComponent(pcctvr))
-                                        .addGap(0, 17, Short.MAX_VALUE)))
-                                .addContainerGap())))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(hapus)
-                        .addContainerGap())))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(ssid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(jLabel18)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bb)
-                    .addComponent(bt))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel19)
-                .addGap(18, 18, 18)
-                .addComponent(jcctv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel20)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(kcctvb)
-                    .addComponent(kcctvr))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pcctvb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pcctvr)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(hapus)
-                .addGap(307, 307, 307))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pcctvbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcctvbActionPerformed
-        pcctvr.setSelected(false);
-    }//GEN-LAST:event_pcctvbActionPerformed
+    private void kontakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kontakActionPerformed
+        kontak.setText("2");
+    }//GEN-LAST:event_kontakActionPerformed
 
-    private void kcctvrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kcctvrActionPerformed
-        kcctvb.setSelected(false);
-    }//GEN-LAST:event_kcctvrActionPerformed
+    private void pklActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pklActionPerformed
+        pklr.setSelected(false);
+    }//GEN-LAST:event_pklActionPerformed
 
-    private void kcctvbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kcctvbActionPerformed
-        kcctvr.setSelected(false);
-    }//GEN-LAST:event_kcctvbActionPerformed
+    private void pklrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pklrActionPerformed
+        pkl.setSelected(false);
+    }//GEN-LAST:event_pklrActionPerformed
 
-    private void btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActionPerformed
-        bb.setSelected(false);
-    }//GEN-LAST:event_btActionPerformed
+    private void skrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skrActionPerformed
+        bsk.setSelected(false);
+    }//GEN-LAST:event_skrActionPerformed
 
-    private void bbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbActionPerformed
-        bt.setSelected(false);
-    }//GEN-LAST:event_bbActionPerformed
+    private void bskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bskActionPerformed
+        skr.setSelected(false);
+    }//GEN-LAST:event_bskActionPerformed
 
-    private void pacdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacdActionPerformed
-        pacb.setSelected(false);
-        pacs.setSelected(false);
-    }//GEN-LAST:event_pacdActionPerformed
+    private void pskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pskActionPerformed
+        pskr.setSelected(false);
+    }//GEN-LAST:event_pskActionPerformed
 
-    private void pacsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacsActionPerformed
-        pacb.setSelected(false);
-        pacd.setSelected(false);
-    }//GEN-LAST:event_pacsActionPerformed
+    private void pskrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pskrActionPerformed
+        psk.setSelected(false);
+    }//GEN-LAST:event_pskrActionPerformed
 
-    private void pacbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacbActionPerformed
-        pacs.setSelected(false);
-        pacd.setSelected(false);
-    }//GEN-LAST:event_pacbActionPerformed
+    private void jlcdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlcdActionPerformed
+        jlcd.setText("2");
+    }//GEN-LAST:event_jlcdActionPerformed
 
-    private void kacrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kacrActionPerformed
-        kacb.setSelected(false);
-    }//GEN-LAST:event_kacrActionPerformed
+    private void jlampuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlampuActionPerformed
+        jlampu.setText("2");
+    }//GEN-LAST:event_jlampuActionPerformed
 
-    private void kacbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kacbActionPerformed
-        kacr.setSelected(false);
-    }//GEN-LAST:event_kacbActionPerformed
+    private void plbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plbActionPerformed
+        plr.setSelected(false);
+    }//GEN-LAST:event_plbActionPerformed
 
-    private void kkarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kkarActionPerformed
-        kkab.setSelected(false);
-    }//GEN-LAST:event_kkarActionPerformed
+    private void plrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plrActionPerformed
+        plb.setSelected(false);
+    }//GEN-LAST:event_plrActionPerformed
 
-    private void kkabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kkabActionPerformed
-        kkar.setSelected(false);
-    }//GEN-LAST:event_kkabActionPerformed
+    private void klbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klbActionPerformed
+        klr.setSelected(false);
+    }//GEN-LAST:event_klbActionPerformed
 
-    private void pkabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pkabActionPerformed
-        pkar.setSelected(false);
-    }//GEN-LAST:event_pkabActionPerformed
+    private void klrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klrActionPerformed
+        klb.setSelected(false);
+    }//GEN-LAST:event_klrActionPerformed
 
-    private void pkarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pkarActionPerformed
-        pkab.setSelected(false);
-    }//GEN-LAST:event_pkarActionPerformed
+    private void kklActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kklActionPerformed
+        kklr.setSelected(false);
+    }//GEN-LAST:event_kklActionPerformed
 
-    private void selanjutnyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selanjutnyaActionPerformed
+    private void kklrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kklrActionPerformed
+        kkl.setSelected(false);
+    }//GEN-LAST:event_kklrActionPerformed
+
+    private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
+        kontak.setText(null);
+        bsk.setText(null);
+        skr.setText(null);
+        psk.setText(null);
+        pskr.setText(null);
+        jlcd.setText(null);
+        kkl.setText(null);
+        kklr.setText(null);
+        pkl.setText(null);
+        pklr.setText(null);
+        jlampu.setText(null);
+        klb.setText(null);
+        klr.setText(null);
+        plb.setText(null);
+        plr.setText(null);
+    }//GEN-LAST:event_hapusActionPerformed
+
+    private void LANJUTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LANJUTActionPerformed
         IO x = new IO();
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),
-            kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu(),kls.getJumlahKipasAngin(),kls.getPosisiKipasAngin(),
-            kls.getKondisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),
-            kls.getKondisiCCTV(),kls.getPosisiCCTV());
+            kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu());
         System.out.println("==============Analisis==================");
         if (kls.getJumlahStopKontak() >= 4) {
             System.out.println("Jumlah Stop Kontak : s");
@@ -792,185 +524,9 @@ public class KondisiSarana extends javax.swing.JFrame {
             System.out.println("Tidak s");
             ts++;
         }
-        if(kls.getJumlahKipasAngin()>=2){
-            System.out.println("JumlahKipasAngin : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getPosisiKipasAngin().equalsIgnoreCase("atapruangan")){
-            System.out.println("PosisiKipasAngin : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getKondisiKipasAngin().equalsIgnoreCase("baik")){
-            System.out.println("KondisiKipasAngin : s");
-            s++;
-        }else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getJumlahAC()>=1){
-            System.out.println("JumlahAC : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getKondisiAC().equalsIgnoreCase("baik")){
-            System.out.println("KondisiAC : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            s++;
-        }
-        if(kls.getPosisiAC().equalsIgnoreCase("belakang")|| kls.getPosisiAC().equalsIgnoreCase("samping")){
-            System.out.println("PosisiAC : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getSSID().equalsIgnoreCase("ummhotspot")){
-            System.out.println("getSSID : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getBandwidth().equalsIgnoreCase("bisa")){
-            System.out.println("Bandwidth : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if (kls.getJumlahCCTV()>=2){
-            System.out.println("JumlahCCTV : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getKondisiCCTV().equalsIgnoreCase("baik")){
-            System.out.println("KondisiCCTV : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getPosisiCCTV().equalsIgnoreCase("depanbelakang")){
-            System.out.println("PosisiCCTV : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
         n.persentaseKondisiSarana();
         dispose();
-
-    }//GEN-LAST:event_selanjutnyaActionPerformed
-
-    private void jkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jkaActionPerformed
-
-    }//GEN-LAST:event_jkaActionPerformed
-
-    private void rskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rskActionPerformed
-        bsk.setSelected(false);
-    }//GEN-LAST:event_rskActionPerformed
-
-    private void jlampuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlampuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jlampuActionPerformed
-
-    private void kklrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kklrActionPerformed
-        kkl.setSelected(false);
-    }//GEN-LAST:event_kklrActionPerformed
-
-    private void kklActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kklActionPerformed
-        kklr.setSelected(false);
-    }//GEN-LAST:event_kklActionPerformed
-
-    private void plrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plrActionPerformed
-        plb.setSelected(false);
-    }//GEN-LAST:event_plrActionPerformed
-
-    private void plbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plbActionPerformed
-        plr.setSelected(false);
-    }//GEN-LAST:event_plbActionPerformed
-
-    private void pskrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pskrActionPerformed
-        psk.setSelected(false);
-    }//GEN-LAST:event_pskrActionPerformed
-
-    private void pklActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pklActionPerformed
-        pklr.setSelected(false);
-    }//GEN-LAST:event_pklActionPerformed
-
-    private void klrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klrActionPerformed
-        klb.setSelected(false);
-    }//GEN-LAST:event_klrActionPerformed
-
-    private void klbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klbActionPerformed
-        klr.setSelected(false);
-    }//GEN-LAST:event_klbActionPerformed
-
-    private void pklrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pklrActionPerformed
-        pkl.setSelected(false);
-    }//GEN-LAST:event_pklrActionPerformed
-
-    private void pskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pskActionPerformed
-        pskr.setSelected(false);
-    }//GEN-LAST:event_pskActionPerformed
-
-    private void bskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bskActionPerformed
-        rsk.setSelected(false);
-    }//GEN-LAST:event_bskActionPerformed
-
-    private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
-        kontak.setText(null);
-        bsk.setText(null);
-        rsk.setText(null);
-        psk.setText(null);
-        pskr.setText(null);
-        jlcd.setText(null);
-        kkl.setText(null);
-        kklr.setText(null);
-        pkl.setText(null);
-        pklr.setText(null);
-        jlampu.setText(null);
-        klb.setText(null);
-        klr.setText(null);
-        plb.setText(null);
-        plr.setText(null);
-        jka.setText(null);
-        pkab.setText(null);
-        pkar.setText(null);
-        kkab.setText(null);
-        kkar.setText(null);
-        jac.setText(null);
-        kacb.setText(null);
-        kacr.setText(null);
-        pacb.setText(null);
-        pacs.setText(null);
-        pacd.setText(null);
-        ssid.setAction(null);
-        bb.setText(null);
-        bt.setText(null);
-        jcctv.setText(null);
-        kcctvb.setText(null);
-        kcctvr.setText(null);
-        pcctvb.setText(null);
-        pcctvr.setText(null);
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_hapusActionPerformed
+    }//GEN-LAST:event_LANJUTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1008,63 +564,34 @@ public class KondisiSarana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox bb;
+    private javax.swing.JButton LANJUT;
     private javax.swing.JCheckBox bsk;
-    private javax.swing.JCheckBox bt;
     private javax.swing.JButton hapus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jac;
-    private javax.swing.JTextField jcctv;
-    private javax.swing.JTextField jka;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jlampu;
     private javax.swing.JTextField jlcd;
-    private javax.swing.JCheckBox kacb;
-    private javax.swing.JCheckBox kacr;
-    private javax.swing.JCheckBox kcctvb;
-    private javax.swing.JCheckBox kcctvr;
-    private javax.swing.JCheckBox kkab;
-    private javax.swing.JCheckBox kkar;
     private javax.swing.JCheckBox kkl;
     private javax.swing.JCheckBox kklr;
     private javax.swing.JCheckBox klb;
     private javax.swing.JCheckBox klr;
     private javax.swing.JTextField kontak;
-    private javax.swing.JCheckBox pacb;
-    private javax.swing.JCheckBox pacd;
-    private javax.swing.JCheckBox pacs;
-    private javax.swing.JCheckBox pcctvb;
-    private javax.swing.JCheckBox pcctvr;
-    private javax.swing.JCheckBox pkab;
-    private javax.swing.JCheckBox pkar;
     private javax.swing.JCheckBox pkl;
     private javax.swing.JCheckBox pklr;
     private javax.swing.JCheckBox plb;
     private javax.swing.JCheckBox plr;
     private javax.swing.JCheckBox psk;
     private javax.swing.JCheckBox pskr;
-    private javax.swing.JCheckBox rsk;
-    private javax.swing.JButton selanjutnya;
-    private javax.swing.JTextField ssid;
+    private javax.swing.JCheckBox skr;
     // End of variables declaration//GEN-END:variables
 }

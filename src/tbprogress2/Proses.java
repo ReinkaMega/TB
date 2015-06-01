@@ -14,6 +14,7 @@ public abstract class Proses {
     public void IdentitasKelas(){}
     abstract void persentaseKondisiRuang(int s);
     abstract void persentaseKondisiSarana();
+    abstract void persentaseKondisiSarana2();
     abstract void persentaseKondisiLingkungan(int s);
     abstract void persentaseKondisiKebersihan(int s);
     abstract void persentaseKenyamanan(int s);
