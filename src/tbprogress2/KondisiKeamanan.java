@@ -37,6 +37,9 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     private String C,D,E,F,G,kode;
     public KondisiKeamanan() {
         initComponents();
+        FK.setVisible(false);
+        FPJ.setVisible(false);
+        FB.setVisible(false);
         Save.setVisible(false);
         Next.setVisible(false);
         btnSelesai.setVisible(false);
@@ -45,6 +48,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         setResizable(false);
         setTitle("Keamanan Ruang");
         con.koneksi();
+        
         tampilDataKeTabel();
 //        enableBtn(false);
 //        enviBtnSave(true);
@@ -157,8 +161,9 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Delete.setVisible(true);
         Edit.setVisible(true);
         Save.setVisible(false);
-        
-        
+        Next.setVisible(true);
+        ADD.setVisible(true);
+        jTabel.enable(true);
     }
     private void tableModel(JTable jTabel1) {
         try {
@@ -653,6 +658,9 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         da.kondisiHapus("keamanan","id_keamanan",CODE.getText());
         clearTEXT();
+        Next.setVisible(false);
+        Delete.setVisible(false);
+        Edit.setVisible(false);
         tampilDataKeTabel();
     }//GEN-LAST:event_DeleteActionPerformed
 
@@ -716,6 +724,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Delete.setVisible(false);
         ADD.setVisible(false);
         Next.setVisible(false);
+        jTable1.enable(false);
     }//GEN-LAST:event_ADDActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
@@ -726,11 +735,18 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Save.setVisible(false);
         ADD.setVisible(true);
         clearTEXT();
-        Next.setVisible(true);
+        Next.setVisible(false);
+        Kokoh.setEnabled(false);
+        Tkokoh.setEnabled(false);
+        Adakunci.setEnabled(false);
+        Tkunci.setEnabled(false);
+        Aman.setEnabled(false);
+        Bahaya.setEnabled(false);
+        jTable1.enable(true);
     }//GEN-LAST:event_SaveActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
-        btnSelesai.setVisible(DiEdit());
+        btnSelesai.setVisible(true);
         Kokoh.setEnabled(true);
         Tkokoh.setEnabled(true);
         Adakunci.setEnabled(true);
@@ -741,15 +757,23 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         ADD.setVisible(false);
         Edit.setVisible(false);
         Next.setVisible(false);
-               
+        jTable1.enable(false);
     }//GEN-LAST:event_EditActionPerformed
 
     private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
         btnSelesai.setVisible(DiEdit());
-        Delete.setVisible(true);
+        jTable1.enable(true);
+        Delete.setVisible(false);
         ADD.setVisible(true);
-        Edit.setVisible(true);
-        Next.setVisible(true);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        Kokoh.setEnabled(false);
+        Tkokoh.setEnabled(false);
+        Adakunci.setEnabled(false);
+        Tkunci.setEnabled(false);
+        Aman.setEnabled(false);
+        Bahaya.setEnabled(false);
+        
     }//GEN-LAST:event_btnSelesaiActionPerformed
 
     /**
