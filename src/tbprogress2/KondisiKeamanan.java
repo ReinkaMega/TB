@@ -29,7 +29,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     int s = 0, ts = 0, kondisi;
     DatabaseWork da = new DatabaseWork();
     private Integer baris;
-    private Connect aplikasi_inventaris = new Connect();
+    private Connect con = new Connect();
     private JTable Tabelku = new JTable();
     private DefaultTableModel DefaultTabelku;
     private TableColumn kolom;
@@ -44,7 +44,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         setResizable(false);
         setResizable(false);
         setTitle("Keamanan Ruang");
-        aplikasi_inventaris.konekkeDatabase();
+        con.koneksi();
         tampilDataKeTabel();
 //        enableBtn(false);
 //        enviBtnSave(true);
@@ -89,7 +89,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
                 clearTEXT();
              
             } else {
-                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         
                         "update keamanan set "
@@ -172,7 +172,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             jTabel1.setModel(DefaultTabelku);
 
             String sql = "Select * from keamanan";
-            Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+            Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
 
             int no = 0;
@@ -721,7 +721,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         IO x = new IO(Kokoh,Tkokoh,Adakunci,Tkunci,Aman,Bahaya);
         kls = x.getRuangKelas();
-        da.kondisiSave(kls.getKekokohan(),kls.getKunciPintuJendela() ,kls.getBahaya() );
+        da.Save(kls.getKekokohan(),kls.getKunciPintuJendela() ,kls.getBahaya() );
         tampilDataKeTabel();
         Save.setVisible(false);
         ADD.setVisible(true);

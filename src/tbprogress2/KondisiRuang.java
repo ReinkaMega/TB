@@ -33,7 +33,7 @@ public class KondisiRuang extends javax.swing.JFrame {
      */
     DatabaseWork da = new DatabaseWork();
     private Integer baris;
-    private Connect aplikasi_inventaris = new Connect();
+    private Connect con = new Connect();
     private JTable Tabelku = new JTable();
     private DefaultTableModel DefaultTabelku;
     private TableColumn kolom;
@@ -76,7 +76,7 @@ public class KondisiRuang extends javax.swing.JFrame {
         setResizable(false);
         setResizable(false);
         setTitle("Identitas Ruang");
-        aplikasi_inventaris.konekkeDatabase();
+        con.koneksi();
         tampilDataKeTabel();
 //        enableBtn(false);
 //        enviBtnSave(true);
@@ -154,7 +154,7 @@ public class KondisiRuang extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Tidak ada data yang di perbaharui!");
                 nilai = false;
             } else {
-                Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+                Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "update kondisi set "
                         + "panjang=" + "'" + a + "', "
@@ -254,7 +254,7 @@ public class KondisiRuang extends javax.swing.JFrame {
             jTabel1.setModel(DefaultTabelku);
 
             String sql = "Select * from kondisi";
-            Statement st = aplikasi_inventaris.config.getConnection().createStatement();
+            Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
 
             int no = 0;
@@ -710,7 +710,7 @@ public class KondisiRuang extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        da.kondisiSave(txtValue, txtValue2, kursi, pintu, jendela);
+        da.Save(txtValue, txtValue2, kursi, pintu, jendela);
         tampilDataKeTabel();
         Save.setVisible(false);
         ADD.setVisible(true);
