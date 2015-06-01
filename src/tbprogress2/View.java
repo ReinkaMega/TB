@@ -15,13 +15,15 @@ public interface View {
     public void inputIdentitasKelas();
     public void InputKondisiRuang();
     public void inputKondisiSarana();
+    public void inputKondisiSarana2();
     public void inputKondisiLingkungan();
     public void inputKondisiKebersihan();
     public void inputKondisiKenyamanan();
     public void inputKondisiKeamanan();
     
     void output(int PanjangRuang,int LebarRuang,int JumlahKursi,int JumlahPintu,int JumlahJendela);
-    void output(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV);
+    void output(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu);
+    void output (int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV);
     void output(String KondisiLantai,String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela);
     void output(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban, int Suhu);
     void output(String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x);

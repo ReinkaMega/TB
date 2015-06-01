@@ -164,7 +164,28 @@ public class Sistem extends Proses{
             System.out.println("Tidak s");
             ts++;
         }
-        if(kls.getJumlahKipasAngin()>=2){
+       
+       inop.output(kls.getJumlahStopKontak(), kls.getKondisiStopKontak(), kls.getPosisiStopKontak(), kls.getJumlahKabelLCD(), kls.getKondisiKabelLCD(), kls.getPosisiKabelLCD(),kls.getJumlahLampu(), kls.getKondisiLampu(), kls.getPosisiLampu());
+//        if (ts > s) {
+//            kondisi = 0;
+//        } else {
+//            kondisi = 1;
+//        }
+        return s;
+    }
+    @Override
+    void persentaseKondisiSarana(){
+        int total = s*11;
+        System.out.println("persentase KOndisi Sarana : "+total+"%");
+        System.out.println("======================================");
+        System.out.println("::Anda Masuk CheckKondisiLingkungan::");
+       
+    }
+    double CheckKondisiSarana2() {
+        inop.inputKondisiSarana();
+        kls = inop.getRuangKelas();
+        
+         if(kls.getJumlahKipasAngin()>=2){
             System.out.println("JumlahKipasAngin : s");
             s++;
         } else {
@@ -241,17 +262,12 @@ public class Sistem extends Proses{
             System.out.println("Tidak s");
             ts++;
         }
-       inop.output(kls.getJumlahStopKontak(), kls.getKondisiStopKontak(), kls.getPosisiStopKontak(), kls.getJumlahKabelLCD(), kls.getKondisiKabelLCD(), kls.getPosisiKabelLCD(),kls.getJumlahLampu(), kls.getKondisiLampu(), kls.getPosisiLampu(), kls.getJumlahKipasAngin(), kls.getKondisiKipasAngin(), kls.getPosisiKipasAngin() , kls.getJumlahAC(), kls.getKondisiAC(), kls.getPosisiAC(), kls.getSSID(), kls.getBandwidth(), kls.getJumlahCCTV(), kls.getKondisiCCTV(), kls.getPosisiCCTV());
-//        if (ts > s) {
-//            kondisi = 0;
-//        } else {
-//            kondisi = 1;
-//        }
-        return s;
+        inop.output(kls.getJumlahKipasAngin(), kls.getKondisiKipasAngin(), kls.getPosisiKipasAngin() , kls.getJumlahAC(), kls.getKondisiAC(), kls.getPosisiAC(), kls.getSSID(), kls.getBandwidth(), kls.getJumlahCCTV(), kls.getKondisiCCTV(), kls.getPosisiCCTV());
+    return s;
     }
     @Override
-    void persentaseKondisiSarana(){
-        int total = s*5;
+    void persentaseKondisiSarana2(){
+        int total = s*9;
         System.out.println("persentase KOndisi Sarana : "+total+"%");
         System.out.println("======================================");
         System.out.println("::Anda Masuk CheckKondisiLingkungan::");

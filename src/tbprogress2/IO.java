@@ -180,6 +180,11 @@ public class IO extends Proses implements View{
         kls.setKondisiLampu(in.next());
         System.out.println("Masukkan Posisi Lampu : ");
         kls.setPosisiLampu(in.next());
+        
+        rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu());
+    }
+     @Override
+     public void inputKondisiSarana2(){
         System.out.println("Masukkan Jumlah Kipas Angin : ");
         kls.setJumlahKipasAngin(in.nextInt());
         System.out.println("Masukkan Kondisi Kipas Angin : ");
@@ -202,8 +207,8 @@ public class IO extends Proses implements View{
         kls.setKondisiCCTV(in.next());
         System.out.println("Masukkan Posisi CCTV : ");
         kls.setPosisiCCTV(in.next());
-        rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu(),kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
-    }
+        rk = new RuangKelas (kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
+     }
     
     @Override
     public void inputKondisiKebersihan(){
@@ -283,7 +288,7 @@ public class IO extends Proses implements View{
         System.out.println("Jumlah Jendela : "+JumlahJendela);
     }
     @Override
- public void output(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV) {
+    public void output(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu) {
         System.out.println("=========Kondisi Sarana=========");
         System.out.println("Jumlah Stop Kontak : "+JumlahStopKontak);
         System.out.println("Kondisi Stop Kontak : "+KondisiStopKontak);
@@ -294,6 +299,10 @@ public class IO extends Proses implements View{
         System.out.println("Jumlah Lampu : "+JumlahLampu);
         System.out.println("Kondisi Lampu : "+KondisiLampu);
         System.out.println("Posisi Lampu : "+PosisiLampu);
+        
+ }   
+    @Override
+    public void output (int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV){
         System.out.println("Jumlah Kipas Angin : "+JumlahKipasAngin);
         System.out.println("Kondisi Kipas Angin : "+KondisiKipasAngin);
         System.out.println("Posisi Kipas Angin : "+PosisiKipasAngin);
@@ -305,7 +314,10 @@ public class IO extends Proses implements View{
         System.out.println("Jumlah CCTV : "+JumlahCCTV);
         System.out.println("Kondisi CCTV : "+KondisiCCTV);
         System.out.println("Posisi CCTV : "+PosisiCCTV);
- }   
+    
+    
+    
+    }
     @Override
     public void output(String KondisiLantai,String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
           System.out.println("===============Kondisi Lingkungan=================");
@@ -350,6 +362,10 @@ public class IO extends Proses implements View{
 
     @Override
     void persentaseKondisiSarana() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    @Override
+    void persentaseKondisiSarana2() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

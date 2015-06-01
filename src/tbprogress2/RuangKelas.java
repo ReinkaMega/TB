@@ -451,7 +451,7 @@ private int Edit;
         setJumlahJendela(JumlahJendela);
     }
     //kkjkjkj
-    public RuangKelas(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu,int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV){
+    public RuangKelas(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu){
         setJumlahStopKontak(JumlahStopKontak);
         setKondisiStopKontak(KondisiStopKontak);
         setPosisiStopKontak(PosisiStopKontak);
@@ -461,7 +461,10 @@ private int Edit;
         setJumlahLampu(JumlahLampu);
         setKondisiLampu(KondisiLampu);
         setPosisiLampu(PosisiLampu);
-        setJumlahKipasAngin(JumlahKipasAngin);
+        
+    }
+    public RuangKelas (int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV){
+         setJumlahKipasAngin(JumlahKipasAngin);
         setKondisiKipasAngin(KondisiKipasAngin);
         setPosisiKipasAngin(PosisiKipasAngin);
         setJumlahAC(JumlahAC);
@@ -472,7 +475,8 @@ private int Edit;
         setJumlahCCTV(JumlahCCTV);
         setKondisiCCTV(KondisiCCTV);
         setPosisiCCTV(PosisiCCTV);
-    }
+            
+            }
     
     public RuangKelas(String KondisiLantai,String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
        setKondisiLantai(KondisiLantai);
