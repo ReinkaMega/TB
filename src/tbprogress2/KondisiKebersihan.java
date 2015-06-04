@@ -18,7 +18,7 @@ import javax.swing.table.TableColumn;
 
 /**
  *
- * @author Deny SQP
+ * @author Reinka
  */
 public class KondisiKebersihan extends javax.swing.JFrame {
 
@@ -41,6 +41,12 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         Save.setVisible(false);
         Next.setVisible(false);
         btnselesai.setVisible(false);
+        KL.setVisible(false);
+        KD.setVisible(false);
+        KA.setVisible(false);
+        KP.setVisible(false);
+        KJ.setVisible(false);
+        baik.setVisible(false);
         setLocationRelativeTo(null);
         setResizable(false);
         setResizable(false);
@@ -104,10 +110,12 @@ public class KondisiKebersihan extends javax.swing.JFrame {
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         
-                        "update keamanan set "
-                        + "kokoh=" + "'" + a + "', "
-                        + "kunci=" + "'" + b + "', "
-                        + "bahaya=" + "'" + c + "' "
+                     "update kebersihan set "
+                        + "lantai=" + "'" + a + "', "
+                        + "dinding=" + "'" + b + "', "
+                        + "atap=" + "'" + c + "', "
+                        + "pintu=" + "'" + d + "', "
+                        + "jendela=" + "'" + e + "' "
                         + "where id_kebersihan ='" + CODE.getText() 
 //                        +" and " +"kokoh=" + "'" + d + "' "+"and "
 //                                + "kunci=" + "'" + e + "' "+"and "
@@ -134,15 +142,15 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         String kolom6 = jTabel.getValueAt(baris, 5).toString();
         String kolom7 = jTabel.getValueAt(baris, 6).toString();
       
-        if("Bersih".equalsIgnoreCase(kolom2)){
+        if("Lantai Bersih".equalsIgnoreCase(kolom2)){
             LB.setSelected(true);
             LBR.setSelected(false);
         }
-        else if("Kotor".equalsIgnoreCase(kolom2)) {
+        else if("Lantai Kotor".equalsIgnoreCase(kolom2)) {
             LB.setSelected(false);
             LBR.setSelected(true);
         }
-            if("Bersih".equalsIgnoreCase(kolom3)){
+            if("Dinding Bersih/Baik".equalsIgnoreCase(kolom3)){
                 DB.setSelected(true);
                 DBR.setSelected(false);
             }
@@ -150,25 +158,26 @@ public class KondisiKebersihan extends javax.swing.JFrame {
                 DB.setSelected(false);
                 DBR.setSelected(true);
             }
-                if("Bersih".equalsIgnoreCase(kolom4)){
-                    AB.setSelected(false);
-                    ABR.setSelected(true);
+           
+                if("Atap Bersih".equalsIgnoreCase(kolom4)){
+                    AB.setSelected(true);
+                    ABR.setSelected(false);
                 }
                 else{
                     AB.setSelected(false);
                     ABR.setSelected(true);
                 }
-                 if("Bersih".equalsIgnoreCase(kolom5)){
-                    PB.setSelected(false);
-                    PBR.setSelected(true);
+                 if("Pintu Bersih/Baik".equalsIgnoreCase(kolom5)){
+                    PB.setSelected(true);
+                    PBR.setSelected(false);
                 }
                 else{
                     PB.setSelected(false);
                     PBR.setSelected(true);
                 }
-                  if("Bersih".equalsIgnoreCase(kolom6)){
-                    JB.setSelected(false);
-                    JBR.setSelected(true);
+                  if("Jendela Bersih/Baik".equalsIgnoreCase(kolom6)){
+                    JB.setSelected(true);
+                    JBR.setSelected(false);
                 }
                 else{
                     JB.setSelected(false);
@@ -309,7 +318,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         Add = new javax.swing.JButton();
         Save = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        baik = new javax.swing.JButton();
         Next = new javax.swing.JButton();
         Delete = new javax.swing.JButton();
         Edit = new javax.swing.JButton();
@@ -475,10 +484,10 @@ public class KondisiKebersihan extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Baik Semua");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        baik.setText("Baik Semua");
+        baik.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                baikActionPerformed(evt);
             }
         });
 
@@ -497,6 +506,11 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         });
 
         Edit.setText("Edit");
+        Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -508,7 +522,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Save)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(baik)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Next)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -523,7 +537,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Save)
-                    .addComponent(jButton1)
+                    .addComponent(baik)
                     .addComponent(Next)
                     .addComponent(Delete)
                     .addComponent(Edit)
@@ -559,65 +573,52 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PB)
+                    .addComponent(AB)
+                    .addComponent(DB)
+                    .addComponent(LB)
+                    .addComponent(JB))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DBR)
+                    .addComponent(LBR)
+                    .addComponent(ABR)
+                    .addComponent(PBR)
+                    .addComponent(JBR))
+                .addGap(79, 79, 79)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(KD)
+                    .addComponent(KL)
+                    .addComponent(KA)
+                    .addComponent(KP)
+                    .addComponent(KJ)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(132, 132, 132)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel13)
-                                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(0, 0, Short.MAX_VALUE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(53, 53, 53)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(LB)
-                                                .addComponent(DB)
-                                                .addComponent(AB))
-                                            .addComponent(PB))
-                                        .addGap(59, 59, 59)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(LBR)
-                                            .addComponent(DBR)
-                                            .addComponent(ABR)
-                                            .addComponent(PBR)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(JB)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(JBR)))
-                                .addGap(30, 30, 30)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnselesai)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(KL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(KD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(KA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(KP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(KJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 2, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnselesai)
+                .addGap(39, 39, 39))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -669,15 +670,16 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -762,18 +764,19 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         x.inputKondisiKenyamanan();
     }//GEN-LAST:event_NextActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JB.setSelected(true);
+    private void baikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baikActionPerformed
+
         LB.setSelected(true);
         DB.setSelected(true);
         AB.setSelected(true);
         PB.setSelected(true);
+        JB.setSelected(true);
         JBR.setSelected(false);
         LBR.setSelected(false);
         DBR.setSelected(false);
         ABR.setSelected(false);
         PBR.setSelected(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_baikActionPerformed
 
     private void PBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PBActionPerformed
        PBR.setSelected(false);
@@ -814,7 +817,22 @@ public class KondisiKebersihan extends javax.swing.JFrame {
     }//GEN-LAST:event_AddActionPerformed
 
     private void btnselesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnselesaiActionPerformed
-        // TODO add your handling code here:
+       btnselesai.setVisible(DiEdit());
+        jTable1.enable(true);
+        Delete.setVisible(false);
+        Add.setVisible(true);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        LB.setEnabled(false);
+        LBR.setEnabled(false);
+        DB.setEnabled(false);
+        DBR.setEnabled(false);
+        AB.setEnabled(false);
+        ABR.setEnabled(false);
+        PB.setEnabled(false);
+        PBR.setEnabled(false);
+        JB.setEnabled(false);
+        JBR.setEnabled(false);  
     }//GEN-LAST:event_btnselesaiActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -836,6 +854,25 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         clearTEXT();
         tampilDataKeTabel();        // TODO add your handling code here:
     }//GEN-LAST:event_DeleteActionPerformed
+
+    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
+        btnselesai.setVisible(true);
+        LB.setEnabled(true);
+        LBR.setEnabled(true);
+        DB.setEnabled(true);
+        DBR.setEnabled(true);
+        AB.setEnabled(true);
+        ABR.setEnabled(true);
+        PB.setEnabled(true);
+        PBR.setEnabled(true);
+        JB.setEnabled(true);
+        JBR.setEnabled(true);
+        Delete.setVisible(false);
+        Add.setVisible(false);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        jTable1.enable(false);
+    }//GEN-LAST:event_EditActionPerformed
 
     /**
      * @param args the command line arguments
@@ -894,8 +931,8 @@ public class KondisiKebersihan extends javax.swing.JFrame {
     private javax.swing.JCheckBox PB;
     private javax.swing.JCheckBox PBR;
     private javax.swing.JButton Save;
+    private javax.swing.JButton baik;
     private javax.swing.JButton btnselesai;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
