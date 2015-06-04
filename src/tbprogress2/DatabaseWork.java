@@ -132,6 +132,7 @@ DatabaseWork(){
     
       
        void Save(JTextField PBising,JTextField PBau,JTextField PAus,String BBanyak,String RBanyak) {
+           
            try {
             if (PBising.equals("") || PBau.equals("") || PAus.equals("") || BBanyak.equals("") || RBanyak.equals("") ) {
                 JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
@@ -141,7 +142,7 @@ DatabaseWork(){
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "insert into kenyamanan"
-                        + "(bising, bau, bocor, rusak, aus) values ('" + PBising + "','" + PBau + "','" + BBanyak + "','" + RBanyak  + "','"+ PAus + "')");
+                        + "(bising, bau, bocor, rusak, aus) values ('" + PBising.getText() + "','" + PBau.getText() + "','" + BBanyak + "','" + RBanyak  + "','"+ PAus.getText() + "')");
 
                 JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
             }
@@ -153,9 +154,9 @@ DatabaseWork(){
       
        
        
-         void Save(JTextField PRC,JTextField PRL,JTextField PSR,String SUL) {
+         void Save(int PRC,int PRL,int PSR,String SUL) {
            try {
-            if (PRC.equals("") || PRL.equals("") || PSR.equals("") || SUL.equals("") ) {
+            if (SUL.equals("") ) {
                 JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
                 
             } else {

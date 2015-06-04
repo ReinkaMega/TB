@@ -78,6 +78,8 @@ public class KondisiRuang extends javax.swing.JFrame {
         setTitle("Identitas Ruang");
         con.koneksi();
         tampilDataKeTabel();
+        gerak(false);
+        Lanjut.setVisible(false);
 //        enableBtn(false);
 //        enviBtnSave(true);
 //        enviBtnSave2(false);
@@ -119,6 +121,13 @@ public class KondisiRuang extends javax.swing.JFrame {
 	        slider.setPaintTicks(true);	
 	        slider.setLabelTable(slider.getLabelTable());	
 	        slider.setPaintLabels(true);
+                slider.addChangeListener (	
+	            new ChangeListener() {	 
+	                public void stateChanged (ChangeEvent e) {	
+	                    txtValue.setText ( String.valueOf(slider.getValue()) );	
+                        }	
+	            }
+	        );
                 
     }
      public void nyeret2(){
@@ -129,6 +138,13 @@ public class KondisiRuang extends javax.swing.JFrame {
 	        slider2.setPaintTicks(true);	
 	        slider2.setLabelTable(slider.getLabelTable());	
 	        slider2.setPaintLabels(true);
+                slider2.addChangeListener (	
+	            new ChangeListener() {	 
+	                public void stateChanged (ChangeEvent e) {	
+	                    txtValue2.setText ( String.valueOf(slider2.getValue()) );	
+                        }	
+	            }
+	        );
 	        
      }
       private boolean DiEdit() {
@@ -174,38 +190,8 @@ public class KondisiRuang extends javax.swing.JFrame {
        return nilai;
     }
      void gerak(boolean bisa){
-         if(bisa==true){
-             slider2.addChangeListener (	
-	            new ChangeListener() {	 
-	                public void stateChanged (ChangeEvent e) {	
-	                    txtValue2.setText ( String.valueOf(slider2.getValue()) );	
-                        }	
-	            }
-	        );
-         slider.addChangeListener (	
-	            new ChangeListener() {	 
-	                public void stateChanged (ChangeEvent e) {	
-	                    txtValue.setText ( String.valueOf(slider.getValue()) );	
-                        }	
-	            }
-	        );
-            }
-         else{
-             slider2.addChangeListener (	
-	            new ChangeListener() {	 
-	                public void stateChanged (ChangeEvent e) {	
-	                    txtValue2.setText ("");	
-                        }	
-	            }
-	        );
-         slider.addChangeListener (	
-	            new ChangeListener() {	 
-	                public void stateChanged (ChangeEvent e) {	
-	                    txtValue.setText ("");	
-                        }	
-	            }
-	        );
-         }
+         slider.setEnabled(bisa);
+         slider2.setEnabled(bisa);
     }
          
      void clearTEXT(){
@@ -240,6 +226,8 @@ public class KondisiRuang extends javax.swing.JFrame {
         Delete.setVisible(true);
         Edit.setVisible(true);
         Save.setVisible(false);
+        btnSelesai.setVisible(false);
+        Lanjut.setVisible(true);
         CODE.setText(kolom7);
     }
     private void tableModel(JTable jTabel1) {
@@ -404,13 +392,28 @@ public class KondisiRuang extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(kursi, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(pintu, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jendela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(kursi1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(pintu1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jendela1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addComponent(slider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -424,35 +427,19 @@ public class KondisiRuang extends javax.swing.JFrame {
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addComponent(jLabel9)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGap(18, 18, 18)
                                                 .addComponent(txtValue3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addComponent(jLabel8)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(txtValue1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 22, Short.MAX_VALUE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(206, 206, 206)
-                                        .addComponent(btnSelesai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(26, 26, 26)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(kursi, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pintu, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jendela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(kursi1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pintu1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jendela1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtValue1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnSelesai, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(126, 126, 126)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                .addGap(39, 39, 39))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -500,9 +487,7 @@ public class KondisiRuang extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnSelesai)
-                        .addGap(24, 24, 24))))
+                    .addComponent(btnSelesai, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -530,7 +515,7 @@ public class KondisiRuang extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -707,6 +692,11 @@ public class KondisiRuang extends javax.swing.JFrame {
         da.kondisiHapus("kondisi","id_kondisi",CODE.getText());
         clearTEXT();
         tampilDataKeTabel();
+        Delete.setVisible(false);
+        ADD.setVisible(true);
+        Edit.setVisible(false);
+        Lanjut.setVisible(false);
+        btnSelesai.setVisible(false);
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
@@ -715,6 +705,7 @@ public class KondisiRuang extends javax.swing.JFrame {
         Save.setVisible(false);
         ADD.setVisible(true);
         clearTEXT();
+        gerak(false);
     }//GEN-LAST:event_SaveActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
@@ -749,10 +740,11 @@ public class KondisiRuang extends javax.swing.JFrame {
     private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
         gerak(false);
         btnSelesai.setVisible(DiEdit());
-        Delete.setVisible(true);
+        Delete.setVisible(false);
         ADD.setVisible(true);
-        Edit.setVisible(true);
-        Lanjut.setVisible(true);
+        Edit.setVisible(false);
+        Lanjut.setVisible(false);
+        clearTEXT();
     }//GEN-LAST:event_btnSelesaiActionPerformed
 
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed

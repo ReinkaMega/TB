@@ -44,6 +44,7 @@ public class DataAwal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setResizable(false);
+        Next.setVisible(false);
         setTitle("Identitas Ruang");
         con.koneksi();
         tampilDataKeTabel();
@@ -101,7 +102,7 @@ public class DataAwal extends javax.swing.JFrame {
                         + "lokasi=" + "'" + E + "', "
                         + "prodi=" + "'" + b + "', "
                         + "fakultas=" + "'" + F + "' "
-                        + "where nama ='" + c + "'");
+                        + "where id ='" + CODE.getText() + "'");
 
                 tampilDataKeTabel();
                 JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
@@ -137,8 +138,8 @@ public class DataAwal extends javax.swing.JFrame {
         Delete.setVisible(true);
         Edit.setVisible(true);
         Save.setVisible(false);
-        
-        
+        btnSelesai.setVisible(false);
+        ADD.setVisible(true);
     }
     private void tableModel(JTable jTabel1) {
         try {
@@ -458,7 +459,7 @@ public class DataAwal extends javax.swing.JFrame {
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
 //         try{
         klikTabel(Tabelku);
-        
+        Next.setVisible(true);
         NM.setEditable(false);
         FK.setEditable(false);
         LK.setEditable(false);
@@ -485,12 +486,14 @@ public class DataAwal extends javax.swing.JFrame {
         Save.setVisible(false);
         ADD.setVisible(true);
         clearTEXT();
+        Next.setVisible(false);
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         da.kondisiHapus("identitas","id",CODE.getText());
         clearTEXT();
         tampilDataKeTabel();
+        Next.setVisible(false);
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
@@ -503,6 +506,7 @@ public class DataAwal extends javax.swing.JFrame {
         Edit.setVisible(false);
         Delete.setVisible(false);
         ADD.setVisible(false);
+        Next.setVisible(false);
     }//GEN-LAST:event_ADDActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
@@ -520,10 +524,15 @@ public class DataAwal extends javax.swing.JFrame {
 
     private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
         btnSelesai.setVisible(DiEdit());
-        Delete.setVisible(true);
+        Delete.setVisible(false);
         ADD.setVisible(true);
-        Edit.setVisible(true);
-        Next.setVisible(true);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        clearTEXT();
+        NM.setEditable(false);
+        FK.setEditable(false);
+        LK.setEditable(false);
+        JR.setEditable(false);
     }//GEN-LAST:event_btnSelesaiActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
