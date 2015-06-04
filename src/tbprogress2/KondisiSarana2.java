@@ -68,6 +68,21 @@ public class KondisiSarana2 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lanjut = new javax.swing.JButton();
         hapus = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        kabaik = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        karusak = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        acbaik = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        acrusak = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        cctvbaik = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        cctvrusak = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -265,6 +280,69 @@ public class KondisiSarana2 extends javax.swing.JFrame {
             }
         });
 
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel22.setText("Baik");
+
+        kabaik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kabaikActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel23.setText("Rusak");
+
+        karusak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                karusakActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel24.setText("Baik");
+
+        acbaik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acbaikActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel25.setText("Rusak");
+
+        acrusak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acrusakActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Buah");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("Buah");
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel26.setText("Baik");
+
+        cctvbaik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cctvbaikActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel27.setText("Rusak");
+
+        cctvrusak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cctvrusakActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Buah");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -274,10 +352,22 @@ public class KondisiSarana2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
                             .addComponent(jLabel11)
-                            .addComponent(jka, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(205, 205, 205)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(kabaik, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel23)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(karusak, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jka, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)))
+                        .addGap(123, 123, 123)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
@@ -287,69 +377,83 @@ public class KondisiSarana2 extends javax.swing.JFrame {
                                     .addComponent(ssid, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel18))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addGap(268, 268, 268)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(kcctvb)
-                                .addGap(116, 126, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(pcctvr)
-                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lanjut)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(hapus))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jac, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(81, 81, 81)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(pacd)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(195, 195, 195)
+                                        .addComponent(jLabel1))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(pkab)
+                                        .addGap(219, 219, 219)
+                                        .addComponent(bb))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(pkar)
+                                        .addGap(195, 195, 195)
+                                        .addComponent(bt))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel16)
+                                            .addComponent(kacb)
+                                            .addComponent(jLabel24)
+                                            .addComponent(kacr))
+                                        .addGap(252, 252, 252)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(pcctvb)
+                                            .addComponent(pcctvr)
+                                            .addComponent(jLabel21)
+                                            .addComponent(kcctvr)
+                                            .addComponent(kcctvb)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel25)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(acrusak, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(pacs)
+                                    .addComponent(jLabel17)
                                     .addComponent(kkar)
-                                    .addComponent(kacr)))
-                            .addComponent(kkab)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16)
-                            .addComponent(kacb))
-                        .addGap(150, 150, 150)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jcctv, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pcctvb)
-                                    .addComponent(jLabel21)
-                                    .addComponent(jLabel19))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel14)
+                                            .addComponent(kkab)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel15)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jac, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel2))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(48, 48, 48)
+                                                .addComponent(acbaik, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(170, 170, 170)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel26)
+                                                    .addComponent(jLabel27))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(cctvrusak, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                                                    .addComponent(cctvbaik)))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel19)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jcctv, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel5))
+                                            .addComponent(jLabel20))))
+                                .addGap(0, 2, Short.MAX_VALUE)))
+                        .addGap(45, 45, 45))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(kcctvr)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(pacb)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(195, 195, 195)
-                                            .addComponent(jLabel1))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(pkab)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(pkar)
-                                            .addGap(80, 80, 80)
-                                            .addComponent(bb)))
-                                    .addGap(49, 49, 49)
-                                    .addComponent(bt))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(pacs)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lanjut)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(hapus)
-                        .addGap(27, 27, 27))))
+                        .addComponent(pacb)
+                        .addGap(18, 18, 18)
+                        .addComponent(pacd)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,157 +463,173 @@ public class KondisiSarana2 extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ssid, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel4))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ssid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22)
+                            .addComponent(kabaik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel23)
+                            .addComponent(karusak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pkab)
-                            .addComponent(pkar)
-                            .addComponent(bb)
-                            .addComponent(bt))
-                        .addGap(15, 15, 15)
+                            .addComponent(bb))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bt)
+                            .addComponent(pkar))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(jLabel19))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcctv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(kkab)
-                            .addComponent(kkar)
-                            .addComponent(jcctv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
+                            .addComponent(jLabel26))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cctvbaik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(cctvrusak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kkar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel15)
+                    .addComponent(jac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel20))
+                            .addComponent(jLabel25)
+                            .addComponent(acrusak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel16))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(kcctvb, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24)
+                            .addComponent(acbaik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(kcctvr)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel21)
+                        .addGap(5, 5, 5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(kacb)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(kacr)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kcctvr)
-                            .addComponent(kcctvb, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel21))
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(kacb)
-                            .addComponent(kacr)
-                            .addComponent(pcctvb)))
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel18))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17)
-                    .addComponent(pcctvr))
+                            .addComponent(pacb)
+                            .addComponent(pacd))
+                        .addGap(8, 8, 8)
+                        .addComponent(pacs))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(pcctvb)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pcctvr)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(pacd)
-                            .addComponent(pacb))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pacs)
-                        .addGap(35, 35, 35))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hapus)
-                            .addComponent(lanjut))
-                        .addContainerGap())))
+                    .addComponent(hapus)
+                    .addComponent(lanjut))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pcctvbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcctvbActionPerformed
-        pcctvr.setSelected(false);
-    }//GEN-LAST:event_pcctvbActionPerformed
+    private void cctvrusakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cctvrusakActionPerformed
+        cctvrusak.setText("");
+    }//GEN-LAST:event_cctvrusakActionPerformed
 
-    private void bbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbActionPerformed
-        bt.setSelected(false);
-    }//GEN-LAST:event_bbActionPerformed
+    private void cctvbaikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cctvbaikActionPerformed
+        cctvbaik.setText("");
+    }//GEN-LAST:event_cctvbaikActionPerformed
 
-    private void btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActionPerformed
-        bb.setSelected(false);
-    }//GEN-LAST:event_btActionPerformed
+    private void acrusakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acrusakActionPerformed
+        acrusak.setText("");
+    }//GEN-LAST:event_acrusakActionPerformed
 
-    private void kcctvbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kcctvbActionPerformed
-        kcctvr.setSelected(false);
-    }//GEN-LAST:event_kcctvbActionPerformed
+    private void acbaikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acbaikActionPerformed
+        acbaik.setText("");
+    }//GEN-LAST:event_acbaikActionPerformed
 
-    private void kcctvrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kcctvrActionPerformed
-        kcctvb.setSelected(false);
-    }//GEN-LAST:event_kcctvrActionPerformed
+    private void karusakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_karusakActionPerformed
+        karusak.setText("");
+    }//GEN-LAST:event_karusakActionPerformed
 
-    private void pacdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacdActionPerformed
-        pacb.setSelected(false);
-        pacs.setSelected(false);
-    }//GEN-LAST:event_pacdActionPerformed
+    private void kabaikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kabaikActionPerformed
+        kabaik.setText("");
+    }//GEN-LAST:event_kabaikActionPerformed
 
-    private void pacsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacsActionPerformed
-        pacb.setSelected(false);
-        pacd.setSelected(false);
-    }//GEN-LAST:event_pacsActionPerformed
+    private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
+        jka.setText(null);
+        pkab.setText(null);
+        pkar.setText(null);
+        kkab.setText(null);
+        kkar.setText(null);
+        jac.setText(null);
+        kacb.setText(null);
+        kacr.setText(null);
+        pacb.setText(null);
+        pacs.setText(null);
+        pacd.setText(null);
+        ssid.setAction(null);
+        bb.setText(null);
+        bt.setText(null);
+        jcctv.setText(null);
+        kcctvb.setText(null);
+        kcctvr.setText(null);
+        pcctvb.setText(null);
+        pcctvr.setText(null);
 
-    private void pacbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacbActionPerformed
-        pacs.setSelected(false);
-        pacd.setSelected(false);
-    }//GEN-LAST:event_pacbActionPerformed
-
-    private void kacbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kacbActionPerformed
-        kacr.setSelected(false);
-    }//GEN-LAST:event_kacbActionPerformed
-
-    private void kacrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kacrActionPerformed
-        kacb.setSelected(false);
-    }//GEN-LAST:event_kacrActionPerformed
-
-    private void kkabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kkabActionPerformed
-        kkar.setSelected(false);
-    }//GEN-LAST:event_kkabActionPerformed
-
-    private void kkarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kkarActionPerformed
-        kkab.setSelected(false);
-    }//GEN-LAST:event_kkarActionPerformed
-
-    private void pkabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pkabActionPerformed
-        pkar.setSelected(false);
-    }//GEN-LAST:event_pkabActionPerformed
-
-    private void pkarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pkarActionPerformed
-        pkab.setSelected(false);
-    }//GEN-LAST:event_pkarActionPerformed
-
-    private void jkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jkaActionPerformed
-
-    }//GEN-LAST:event_jkaActionPerformed
+    }//GEN-LAST:event_hapusActionPerformed
 
     private void lanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjutActionPerformed
         IO x = new IO();
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
-        
+
         x.output(kls.getJumlahKipasAngin(),kls.getPosisiKipasAngin(),kls.getKondisiKipasAngin(),kls.getJumlahAC(),
-                kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),
-                kls.getKondisiCCTV(),kls.getPosisiCCTV());
-            if(kls.getJumlahKipasAngin()>=2){
+            kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),
+            kls.getKondisiCCTV(),kls.getPosisiCCTV());
+        if(kls.getJumlahKipasAngin()>=2){
             System.out.println("JumlahKipasAngin : s");
             s++;
         } else {
@@ -535,7 +655,7 @@ public class KondisiSarana2 extends javax.swing.JFrame {
             s++;
         } else {
             System.out.println("Tidak s");
-            ts++;
+            ts++; 
         }
         if(kls.getKondisiAC().equalsIgnoreCase("baik")){
             System.out.println("KondisiAC : s");
@@ -590,40 +710,80 @@ public class KondisiSarana2 extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_lanjutActionPerformed
 
-    private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
-       jka.setText(null);
-        pkab.setText(null);
-        pkar.setText(null);
-        kkab.setText(null);
-        kkar.setText(null);
-        jac.setText(null);
-        kacb.setText(null);
-        kacr.setText(null);
-        pacb.setText(null);
-        pacs.setText(null);
-        pacd.setText(null);
-        ssid.setAction(null);
-        bb.setText(null);
-        bt.setText(null);
-        jcctv.setText(null);
-        kcctvb.setText(null);
-        kcctvr.setText(null);
-        pcctvb.setText(null);
-        pcctvr.setText(null);
-    
-    }//GEN-LAST:event_hapusActionPerformed
+    private void jkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jkaActionPerformed
+
+    }//GEN-LAST:event_jkaActionPerformed
+
+    private void pkarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pkarActionPerformed
+        pkab.setSelected(false);
+    }//GEN-LAST:event_pkarActionPerformed
+
+    private void pkabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pkabActionPerformed
+        pkar.setSelected(false);
+    }//GEN-LAST:event_pkabActionPerformed
+
+    private void kkarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kkarActionPerformed
+        kkab.setSelected(false);
+    }//GEN-LAST:event_kkarActionPerformed
+
+    private void kkabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kkabActionPerformed
+        kkar.setSelected(false);
+    }//GEN-LAST:event_kkabActionPerformed
 
     private void jacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jacActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jacActionPerformed
 
-    private void ssidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ssidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ssidActionPerformed
+    private void kacrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kacrActionPerformed
+        kacb.setSelected(false);
+    }//GEN-LAST:event_kacrActionPerformed
+
+    private void kacbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kacbActionPerformed
+        kacr.setSelected(false);
+    }//GEN-LAST:event_kacbActionPerformed
+
+    private void pacbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacbActionPerformed
+        pacs.setSelected(false);
+        pacd.setSelected(false);
+    }//GEN-LAST:event_pacbActionPerformed
+
+    private void pacsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacsActionPerformed
+        pacb.setSelected(false);
+        pacd.setSelected(false);
+    }//GEN-LAST:event_pacsActionPerformed
+
+    private void pacdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacdActionPerformed
+        pacb.setSelected(false);
+        pacs.setSelected(false);
+    }//GEN-LAST:event_pacdActionPerformed
+
+    private void kcctvrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kcctvrActionPerformed
+        kcctvb.setSelected(false);
+    }//GEN-LAST:event_kcctvrActionPerformed
+
+    private void kcctvbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kcctvbActionPerformed
+        kcctvr.setSelected(false);
+    }//GEN-LAST:event_kcctvbActionPerformed
 
     private void jcctvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcctvActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcctvActionPerformed
+
+    private void btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActionPerformed
+        bb.setSelected(false);
+    }//GEN-LAST:event_btActionPerformed
+
+    private void bbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbActionPerformed
+        bt.setSelected(false);
+    }//GEN-LAST:event_bbActionPerformed
+
+    private void ssidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ssidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ssidActionPerformed
+
+    private void pcctvbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcctvbActionPerformed
+        pcctvr.setSelected(false);
+    }//GEN-LAST:event_pcctvbActionPerformed
 
     /**
      * @param args the command line arguments
@@ -661,8 +821,12 @@ public class KondisiSarana2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField acbaik;
+    private javax.swing.JTextField acrusak;
     private javax.swing.JCheckBox bb;
     private javax.swing.JCheckBox bt;
+    private javax.swing.JTextField cctvbaik;
+    private javax.swing.JTextField cctvrusak;
     private javax.swing.JButton hapus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -672,16 +836,27 @@ public class KondisiSarana2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jac;
     private javax.swing.JTextField jcctv;
     private javax.swing.JTextField jka;
+    private javax.swing.JTextField kabaik;
     private javax.swing.JCheckBox kacb;
     private javax.swing.JCheckBox kacr;
+    private javax.swing.JTextField karusak;
     private javax.swing.JCheckBox kcctvb;
     private javax.swing.JCheckBox kcctvr;
     private javax.swing.JCheckBox kkab;
