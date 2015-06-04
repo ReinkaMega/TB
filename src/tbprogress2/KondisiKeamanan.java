@@ -728,10 +728,18 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     }//GEN-LAST:event_ADDActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        if(!Kokoh.isSelected()||!Tkokoh.isSelected()
+            || !Adakunci.isSelected()|| !Tkunci.isSelected()  
+            || !Aman.isSelected() || !Bahaya.isSelected()    ){
+            JOptionPane.showMessageDialog(null, "Semua Data Harus Diisi");
+        }
+        else{
         IO x = new IO(Kokoh,Tkokoh,Adakunci,Tkunci,Aman,Bahaya);
         kls = x.getRuangKelas();
         da.Save(kls.getKekokohan(),kls.getKunciPintuJendela() ,kls.getBahaya() );
         tampilDataKeTabel();
+        
+        }
         Save.setVisible(false);
         ADD.setVisible(true);
         clearTEXT();
