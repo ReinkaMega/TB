@@ -111,7 +111,7 @@ DatabaseWork(){
     
     
       void Save(String LB,String DB,String AB,String PB,String JB) {
-       
+        //  System.out.println(""+LB+DB+AB);
         try {
             if (LB.equals("") || DB.equals("") || AB.equals("") || PB.equals("") || JB.equals("") ) {
                 JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
@@ -155,6 +155,8 @@ DatabaseWork(){
        
        
          void Save(int PRC,int PRL,int PSR,String SUL) {
+             System.out.println(""+SUL);
+             System.out.println(""+PSR);
            try {
             if (SUL.equals("") ) {
                 JOptionPane.showMessageDialog(null, "Data harus diisi semua!");

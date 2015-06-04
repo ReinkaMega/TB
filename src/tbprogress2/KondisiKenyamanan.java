@@ -335,7 +335,7 @@ private boolean DiEdit() {
         Edit.setVisible(true);
         Save.setVisible(false);
         Ln.setVisible(true);
-        
+        btnSelesai.setVisible(false);
     }
     private void tableModel(JTable jTabel1) {
         try {
@@ -1034,19 +1034,19 @@ private boolean DiEdit() {
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
         btnSelesai.setVisible(true);
-       
+        //jTable1.setEnabled(false);
         cekbokenable(true);
         SliderEnable(true);
         Delete.setVisible(false);
         ADD.setVisible(false);
         Edit.setVisible(false);
         Ln.setVisible(false);
-        jTable1.enable(false);
+        //jTable1.enable(false);
     }//GEN-LAST:event_EditActionPerformed
 
     private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
         btnSelesai.setVisible(DiEdit());
-        jTable1.enable(true);
+       // jTable1.setEnabled(true);
         Delete.setVisible(false);
         ADD.setVisible(true);
         Edit.setVisible(false);
