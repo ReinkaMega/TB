@@ -28,7 +28,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
      * Creates new form KondisiLingkunga
      */
       
-       RuangKelas kls = new RuangKelas();
+    RuangKelas kls = new RuangKelas();
     int s = 0, ts = 0, kondisi;
     DatabaseWork da = new DatabaseWork();
     private Integer baris;
@@ -173,10 +173,10 @@ System.out.println("ghjg");
                     SUT.setSelected(true);
                 }
               
-        NP.setText(kolom3);
-        K.setText(kolom4);
-        S.setText(kolom5);
-        SU.setText(kolom2);
+        PRC.setText(kolom3);
+        PL.setText(kolom4);
+        PRL.setText(kolom5);
+        PSR.setText(kolom2);
         PC.setEnabled(false);
         PL.setEnabled(false);
         PS.setEnabled(false);
@@ -814,7 +814,7 @@ System.out.println("ghjg");
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
          IO x = new IO(SUL,SUT,PC,PL,PS);
         kls = x.getRuangKelas();
-        da.Save(kls.getSirkulasiUdara(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu());
+        da.Save(kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu(),kls.getSirkulasiUdara());
         tampilDataKeTabel();
         Save.setVisible(false);
         Add.setVisible(true);
@@ -857,7 +857,7 @@ System.out.println("ghjg");
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         klikTabel(Tabelku);
-       PC.setEnabled(false);
+        PC.setEnabled(false);
         PL.setEnabled(false);
         PS.setEnabled(false);
         SUL.setEnabled(false);
