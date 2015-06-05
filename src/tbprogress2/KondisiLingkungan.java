@@ -801,6 +801,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         }
         n.persentaseKondisiLingkungan(s);
         dispose();
+        x.inputKondisiKenyamanan(IDKelas.getText());
     }//GEN-LAST:event_NextActionPerformed
 
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed

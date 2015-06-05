@@ -128,6 +128,8 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         String kolom3 = jTabel.getValueAt(baris, 2).toString();
         String kolom4 = jTabel.getValueAt(baris, 3).toString();
         String kolom5 = jTabel.getValueAt(baris, 4).toString();
+        String kolom6 = jTabel.getValueAt(baris, 5).toString();
+        if(IDKelas.getText().equals(kolom6)){
         if("Kokoh".equalsIgnoreCase(kolom2)){
             Kokoh.setSelected(true);
             Tkokoh.setSelected(false);
@@ -169,10 +171,20 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Next.setVisible(true);
         ADD.setVisible(true);
         jTabel.enable(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "ID KELAS BERBEDA");
+            Delete.setVisible(false);
+            Edit.setVisible(false);
+            Save.setVisible(false);
+            btnSelesai.setVisible(false);
+            Next.setVisible(false);
+            ADD.setVisible(true);
+        }
     }
     private void tableModel(JTable jTabel1) {
         try {
-            Object[] field = {"No", "Kekokohan", "Kunci Pintu Jendela", "Bahaya", "ID"};
+            Object[] field = {"No", "Kekokohan", "Kunci Pintu Jendela", "Bahaya", "ID","ID RUANG"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -193,7 +205,8 @@ public class KondisiKeamanan extends javax.swing.JFrame {
                 String kolom3 = set.getString("kunci");
                 String kolom4 = set.getString("bahaya");
                 String kolom5 = set.getString("id_keamanan");
-                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5};
+                String kolom6 = set.getString("id")
+                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6};
                 DefaultTabelku.addRow(data);
             }
 
@@ -212,6 +225,8 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             kolom.setMinWidth(0);
             kolom.setMaxWidth(0);
             kolom.setWidth(0);
+             kolom = jTabel1.getColumnModel().getColumn(5);
+            kolom.setPreferredWidth(220);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
         }
@@ -723,7 +738,6 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         dispose();
             x.IdentitasKelas();
             dispose();
-        
     }//GEN-LAST:event_NextActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
@@ -802,37 +816,37 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(KondisiKeamanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(KondisiKeamanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(KondisiKeamanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(KondisiKeamanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new KondisiKeamanan("Kode").setVisible(true);
-//            }
-//        });
-//    }
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(KondisiKeamanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(KondisiKeamanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(KondisiKeamanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(KondisiKeamanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new KondisiKeamanan("Kode").setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ADD;

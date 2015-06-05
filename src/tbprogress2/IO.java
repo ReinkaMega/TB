@@ -212,7 +212,7 @@ public class IO extends Proses implements View{
     
     @Override
     public void inputKondisiKebersihan(String Kode){
-        new KondisiKebersihan().setVisible(true);
+        new KondisiKebersihan(Kode).setVisible(true);
     
 //        System.out.println("Masukkan Kondisi Lantai : ");
 //        kls.setKondisiLantai(in.next());
@@ -243,7 +243,7 @@ public class IO extends Proses implements View{
     }
     @Override
       public void inputKondisiKenyamanan(String Kode){
-          new KondisiKenyamanan().setVisible(true);
+          new KondisiKenyamanan(Kode).setVisible(true);
 //        System.out.println("Masukkan Kebisingan : ");
 //        kls.setKebisingan(in.next());
 //        System.out.println("Masukkan Bau : ");

@@ -68,8 +68,8 @@ public class KondisiRuang extends javax.swing.JFrame {
         return RasioLuas;
     }
     KondisiRuang(String KR) {
-                initComponents();
-                CODE.setVisible(false);
+        initComponents();
+        CODE.setVisible(false);
         Save.setVisible(false);
         btnSelesai.setVisible(false);
         setLocationRelativeTo(null);
@@ -468,11 +468,11 @@ public class KondisiRuang extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel10)))
+                        .addComponent(jLabel10))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
@@ -712,7 +712,7 @@ public class KondisiRuang extends javax.swing.JFrame {
 //        }
          n.persentaseKondisiRuang(s);
          dispose();
-         x.inputKondisiLingkungan(IDKelas.getText());
+         x.inputKondisiKebersihan(IDKelas.getText());
     }//GEN-LAST:event_LanjutActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed

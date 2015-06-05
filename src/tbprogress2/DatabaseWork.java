@@ -110,7 +110,7 @@ DatabaseWork(){
     }
     
     
-      void Save(String LB,String DB,String AB,String PB,String JB) {
+      void Save(String id,String LB,String DB,String AB,String PB,String JB) {
         //  System.out.println(""+LB+DB+AB);
         try {
             if (LB.equals("") || DB.equals("") || AB.equals("") || PB.equals("") || JB.equals("") ) {
@@ -121,7 +121,7 @@ DatabaseWork(){
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "insert into kebersihan"
-                        + "(lantai, dinding, atap, pintu, jendela) values ('" +  LB+ "','" + DB + "','" + AB + "','" + PB + "','"+ JB + "')");
+                        + "(id,lantai, dinding, atap, pintu, jendela) values ('" +  id+ "','" +  LB+ "','" + DB + "','" + AB + "','" + PB + "','"+ JB + "')");
 
                 JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
             }
@@ -131,7 +131,7 @@ DatabaseWork(){
     }
     
       
-       void Save(JTextField PBising,JTextField PBau,JTextField PAus,String BBanyak,String RBanyak) {
+       void Save(String id,JTextField PBising,JTextField PBau,JTextField PAus,String BBanyak,String RBanyak) {
            
            try {
             if (PBising.equals("") || PBau.equals("") || PAus.equals("") || BBanyak.equals("") || RBanyak.equals("") ) {
@@ -142,7 +142,7 @@ DatabaseWork(){
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "insert into kenyamanan"
-                        + "(bising, bau, bocor, rusak, aus) values ('" + PBising.getText() + "','" + PBau.getText() + "','" + BBanyak + "','" + RBanyak  + "','"+ PAus.getText() + "')");
+                        + "(id,bising, bau, bocor, rusak, aus) values ('" + id + "','" + PBising.getText() + "','" + PBau.getText() + "','" + BBanyak + "','" + RBanyak  + "','"+ PAus.getText() + "')");
 
                 JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
             }
