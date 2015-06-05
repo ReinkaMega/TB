@@ -97,82 +97,82 @@ public class Sistem extends Proses{
         System.out.println("::Anda Masuk CheckKondisiSarana::");
     }
 
-    double CheckKondisiSarana() {
-        inop.inputKondisiSarana();
-        kls = inop.getRuangKelas();
-        
-        if (kls.getJumlahStopKontak() >= 4) {
-            System.out.println("Jumlah Stop Kontak : s");
-            s++;
-        } else {
-            System.out.println("Tidak Sesusai");
-            ts++;
-        }
-        if (kls.getKondisiStopKontak().equalsIgnoreCase("baik")){
-            System.out.println("KondisiStopKontak : s");
-            s++;
-        } else {
-            System.out.println("Tidak Sesuai");
-        }
-        if (kls.getPosisiStopKontak().equalsIgnoreCase("DekatDosen") || kls.getPosisiStopKontak().equalsIgnoreCase("PojokKelas")) {
-            System.out.println("PosisiStopKontak : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getJumlahKabelLCD()>=1){
-            System.out.println("JumlahKabelLCD : s");
-            s++;
-
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getKondisiKabelLCD().equalsIgnoreCase("baik")|| kls.getKondisiKabelLCD().equalsIgnoreCase("berfungsi")){
-            System.out.println("KondisiKabelLCD : s");
-            s++;
-        }else{
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getPosisiKabelLCD().equalsIgnoreCase("dekatdosen")){
-            System.out.println("PosisiKabelLCD : s");
-            s++;
-        }else{
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getJumlahLampu()>=18){
-            System.out.println("JumlahLampu : s");
-            s++;
-        }else{
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getKondisiLampu().equalsIgnoreCase("baik")){
-            System.out.println("KondisiLampu : s");
-            s++;
-        }else{
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getPosisiLampu().equalsIgnoreCase("atapruangan")){
-            System.out.println("PosisiLampu : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-       
-       inop.output(kls.getJumlahStopKontak(), kls.getKondisiStopKontak(), kls.getPosisiStopKontak(), kls.getJumlahKabelLCD(), kls.getKondisiKabelLCD(), kls.getPosisiKabelLCD(),kls.getJumlahLampu(), kls.getKondisiLampu(), kls.getPosisiLampu());
-//        if (ts > s) {
-//            kondisi = 0;
+//    double CheckKondisiSarana() {
+//        inop.inputKondisiSarana();
+//        kls = inop.getRuangKelas();
+//        
+//        if (kls.getJumlahStopKontak() >= 4) {
+//            System.out.println("Jumlah Stop Kontak : s");
+//            s++;
 //        } else {
-//            kondisi = 1;
+//            System.out.println("Tidak Sesusai");
+//            ts++;
 //        }
-        return s;
-    }
+//        if (kls.getKondisiStopKontak().equalsIgnoreCase("baik")){
+//            System.out.println("KondisiStopKontak : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak Sesuai");
+//        }
+//        if (kls.getPosisiStopKontak().equalsIgnoreCase("DekatDosen") || kls.getPosisiStopKontak().equalsIgnoreCase("PojokKelas")) {
+//            System.out.println("PosisiStopKontak : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getJumlahKabelLCD()>=1){
+//            System.out.println("JumlahKabelLCD : s");
+//            s++;
+//
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getKondisiKabelLCD().equalsIgnoreCase("baik")|| kls.getKondisiKabelLCD().equalsIgnoreCase("berfungsi")){
+//            System.out.println("KondisiKabelLCD : s");
+//            s++;
+//        }else{
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getPosisiKabelLCD().equalsIgnoreCase("dekatdosen")){
+//            System.out.println("PosisiKabelLCD : s");
+//            s++;
+//        }else{
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getJumlahLampu()>=18){
+//            System.out.println("JumlahLampu : s");
+//            s++;
+//        }else{
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getKondisiLampu().equalsIgnoreCase("baik")){
+//            System.out.println("KondisiLampu : s");
+//            s++;
+//        }else{
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getPosisiLampu().equalsIgnoreCase("atapruangan")){
+//            System.out.println("PosisiLampu : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//       
+//       inop.output(kls.getJumlahStopKontak(), kls.getKondisiStopKontak(), kls.getPosisiStopKontak(), kls.getJumlahKabelLCD(), kls.getKondisiKabelLCD(), kls.getPosisiKabelLCD(),kls.getJumlahLampu(), kls.getKondisiLampu(), kls.getPosisiLampu());
+////        if (ts > s) {
+////            kondisi = 0;
+////        } else {
+////            kondisi = 1;
+////        }
+//        return s;
+//    }
     @Override
     void persentaseKondisiSarana(){
         int total = s*11;
@@ -181,90 +181,90 @@ public class Sistem extends Proses{
         System.out.println("::Anda Masuk CheckKondisiLingkungan::");
        
     }
-    double CheckKondisiSarana2() {
-        inop.inputKondisiSarana();
-        kls = inop.getRuangKelas();
-        
-         if(kls.getJumlahKipasAngin()>=2){
-            System.out.println("JumlahKipasAngin : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getPosisiKipasAngin().equalsIgnoreCase("atapruangan")){
-            System.out.println("PosisiKipasAngin : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getKondisiKipasAngin().equalsIgnoreCase("baik")){
-            System.out.println("KondisiKipasAngin : s");
-            s++;
-        }else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getJumlahAC()>=1){
-            System.out.println("JumlahAC : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getKondisiAC().equalsIgnoreCase("baik")){
-            System.out.println("KondisiAC : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            s++;
-        }
-        if(kls.getPosisiAC().equalsIgnoreCase("belakang")|| kls.getPosisiAC().equalsIgnoreCase("samping")){
-            System.out.println("PosisiAC : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getSSID().equalsIgnoreCase("ummhotspot")){
-            System.out.println("getSSID : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getBandwidth().equalsIgnoreCase("bisa")){
-            System.out.println("Bandwidth : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if (kls.getJumlahCCTV()>=2){
-            System.out.println("JumlahCCTV : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getKondisiCCTV().equalsIgnoreCase("baik")){
-            System.out.println("KondisiCCTV : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getPosisiCCTV().equalsIgnoreCase("depanbelakang")){
-            System.out.println("PosisiCCTV : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        inop.output(kls.getJumlahKipasAngin(), kls.getKondisiKipasAngin(), kls.getPosisiKipasAngin() , kls.getJumlahAC(), kls.getKondisiAC(), kls.getPosisiAC(), kls.getSSID(), kls.getBandwidth(), kls.getJumlahCCTV(), kls.getKondisiCCTV(), kls.getPosisiCCTV());
-    return s;
-    }
+//    double CheckKondisiSarana2() {
+//        inop.inputKondisiSarana();
+//        kls = inop.getRuangKelas();
+//        
+//         if(kls.getJumlahKipasAngin()>=2){
+//            System.out.println("JumlahKipasAngin : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getPosisiKipasAngin().equalsIgnoreCase("atapruangan")){
+//            System.out.println("PosisiKipasAngin : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getKondisiKipasAngin().equalsIgnoreCase("baik")){
+//            System.out.println("KondisiKipasAngin : s");
+//            s++;
+//        }else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getJumlahAC()>=1){
+//            System.out.println("JumlahAC : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getKondisiAC().equalsIgnoreCase("baik")){
+//            System.out.println("KondisiAC : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            s++;
+//        }
+//        if(kls.getPosisiAC().equalsIgnoreCase("belakang")|| kls.getPosisiAC().equalsIgnoreCase("samping")){
+//            System.out.println("PosisiAC : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getSSID().equalsIgnoreCase("ummhotspot")){
+//            System.out.println("getSSID : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getBandwidth().equalsIgnoreCase("bisa")){
+//            System.out.println("Bandwidth : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if (kls.getJumlahCCTV()>=2){
+//            System.out.println("JumlahCCTV : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getKondisiCCTV().equalsIgnoreCase("baik")){
+//            System.out.println("KondisiCCTV : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        if(kls.getPosisiCCTV().equalsIgnoreCase("depanbelakang")){
+//            System.out.println("PosisiCCTV : s");
+//            s++;
+//        } else {
+//            System.out.println("Tidak s");
+//            ts++;
+//        }
+//        inop.output(kls.getJumlahKipasAngin(), kls.getKondisiKipasAngin(), kls.getPosisiKipasAngin() , kls.getJumlahAC(), kls.getKondisiAC(), kls.getPosisiAC(), kls.getSSID(), kls.getBandwidth(), kls.getJumlahCCTV(), kls.getKondisiCCTV(), kls.getPosisiCCTV());
+//    return s;
+//    }
     @Override
     void persentaseKondisiSarana2(){
         int total = s*9;
