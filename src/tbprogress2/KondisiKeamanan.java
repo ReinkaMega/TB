@@ -205,7 +205,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
                 String kolom3 = set.getString("kunci");
                 String kolom4 = set.getString("bahaya");
                 String kolom5 = set.getString("id_keamanan");
-                String kolom6 = set.getString("id")
+                String kolom6 = set.getString("id");
                 String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6};
                 DefaultTabelku.addRow(data);
             }
