@@ -988,7 +988,7 @@ private boolean DiEdit() {
 //        }
         n.persentaseKenyamanan(s);
         dispose();
-        x.inputKondisiKeamanan();
+        //x.inputKondisiKeamanan();
     }//GEN-LAST:event_LnActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed

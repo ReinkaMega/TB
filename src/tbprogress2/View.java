@@ -13,13 +13,13 @@ package tbprogress2;
 public interface View {
     void IdentitasKelas();
     public void inputIdentitasKelas();
-    public void InputKondisiRuang();
-    public void inputKondisiSarana();
-    public void inputKondisiSarana2();
-    public void inputKondisiLingkungan();
-    public void inputKondisiKebersihan();
-    public void inputKondisiKenyamanan();
-    public void inputKondisiKeamanan();
+    public void InputKondisiRuang(String Kode);
+    public void inputKondisiSarana(String kode);
+    public void inputKondisiSarana2(String kode);
+    public void inputKondisiLingkungan(String kode);
+    public void inputKondisiKebersihan(String kode);
+    public void inputKondisiKenyamanan(String kode);
+    public void inputKondisiKeamanan(String kode);
     
     void output(int PanjangRuang,int LebarRuang,int JumlahKursi,int JumlahPintu,int JumlahJendela);
     void output(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu);

@@ -59,7 +59,7 @@ DatabaseWork(){
         LK.setEditable(false);
         JR.setEditable(false);
     }
-    void Save(JTextField txtValue1,JTextField txtValue2,JTextField kursi,JTextField pintu,JTextField jendela) {
+    void Save(String KodeR,JTextField txtValue1,JTextField txtValue2,JTextField kursi,JTextField pintu,JTextField jendela) {
         
         a = txtValue1.getText();
         b = txtValue2.getText();
@@ -75,7 +75,7 @@ DatabaseWork(){
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "insert into kondisi"
-                        + "(panjang, lebar, kursi, pintu, jendela) values ('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "')");
+                        + "(id ,panjang, lebar, kursi, pintu, jendela) values ('" + KodeR + "','" + a + "','" + b + "','" + c + "','" + d + "','" + e + "')");
 
                 JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
             }
@@ -89,7 +89,7 @@ DatabaseWork(){
         jendela.setEditable(false);
     }
 
-    void Save(String Kokoh,String Adakunci,String Aman) {
+    void Save(String Kokoh,String Adakunci,String Aman,String KodeR) {
        
         try {
             if (Kokoh.equals("") || Adakunci.equals("") || Aman.equals("")) {
@@ -100,7 +100,7 @@ DatabaseWork(){
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "insert into keamanan"
-                        + "(kokoh, kunci, bahaya) values ('" +  Kokoh+ "','" + Adakunci + "','" + Aman + "')");
+                        + "(id,kokoh, kunci, bahaya) values ('" +  KodeR+ "','"+  Kokoh+ "','" + Adakunci + "','" + Aman + "')");
 
                 JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
             }
@@ -178,13 +178,39 @@ DatabaseWork(){
          
          
          
+     void kondisiHapus(String id){
+          try {
+            Statement st = con.config.getConnection().createStatement();
+            Statement stk = con.config.getConnection().createStatement();
+            Statement st1 = con.config.getConnection().createStatement();
+            Statement st2 = con.config.getConnection().createStatement();
+            Statement st3 = con.config.getConnection().createStatement();
+            Statement st4 = con.config.getConnection().createStatement();
+            st.executeUpdate(
+                    " delete from "+"identitas"+" where "+"id"+" ='" + id + "'");
+            stk.executeUpdate(
+                    " delete from "+"keamanan"+" where "+"id"+" ='" + id + "'"); 
+            st1.executeUpdate(
+                    " delete from "+"kebersihan"+" where "+"id"+" ='" + id + "'"); 
+            st2.executeUpdate(
+                    " delete from "+"kondisi"+" where "+"id"+" ='" + id + "'"); 
+            st3.executeUpdate(
+                    " delete from "+"kenyamanan"+" where "+"id"+" ='" + id + "'"); 
+            st4.executeUpdate(
+                    " delete from "+"lingkungan"+" where "+"id"+" ='" + id + "'"); 
+            JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal dihapus: " + ex);
+        }
+     }
+         
      void kondisiHapus(String Tabel,String Arrow,String id) {
         //g = id.getText();
         try {
             Statement st = con.config.getConnection().createStatement();
             st.executeUpdate(
                     " delete from "+Tabel+" where "+Arrow+" ='" + id + "'");
-            
+                    
             JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Data gagal dihapus: " + ex);

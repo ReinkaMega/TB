@@ -145,8 +145,8 @@ public class IO extends Proses implements View{
         
     }
     @Override
-    public void InputKondisiRuang(){
-       new KondisiRuang().setVisible(true);
+    public void InputKondisiRuang(String Kode){
+       new KondisiRuang(Kode).setVisible(true);
 //        System.out.println("Masukkan Panjang Ruang : ");
 //        kls.setPanjangRuang(in.nextInt());
 //        System.out.println("Masukkan Lebar Ruang : ");
@@ -161,7 +161,7 @@ public class IO extends Proses implements View{
 //        
     }
     @Override
-    public void inputKondisiSarana(){
+    public void inputKondisiSarana(String Kode){
         System.out.println("Masukkan Jumlah Stop Kontak : ");
         kls.setJumlahStopKontak(in.nextInt());
         System.out.println("Masukkan Kondisi Stop Kontak : ");
@@ -184,7 +184,7 @@ public class IO extends Proses implements View{
         rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu());
     }
      @Override
-     public void inputKondisiSarana2(){
+     public void inputKondisiSarana2(String Kode){
         System.out.println("Masukkan Jumlah Kipas Angin : ");
         kls.setJumlahKipasAngin(in.nextInt());
         System.out.println("Masukkan Kondisi Kipas Angin : ");
@@ -211,7 +211,7 @@ public class IO extends Proses implements View{
      }
     
     @Override
-    public void inputKondisiKebersihan(){
+    public void inputKondisiKebersihan(String Kode){
         new KondisiKebersihan().setVisible(true);
     
 //        System.out.println("Masukkan Kondisi Lantai : ");
@@ -228,7 +228,7 @@ public class IO extends Proses implements View{
     }
     
     @Override
-    public void inputKondisiLingkungan(){
+    public void inputKondisiLingkungan(String Kode){
         System.out.println("Masukkan Sirkulasi Udara: ");
         kls.setSirkulasiUdara(in.next());
         System.out.println("Masukkan Nilai Pencahayaan : ");
@@ -240,7 +240,7 @@ public class IO extends Proses implements View{
         rk = new RuangKelas(kls.getSirkulasiUdara(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu());   
     }
     @Override
-      public void inputKondisiKenyamanan(){
+      public void inputKondisiKenyamanan(String Kode){
           new KondisiKenyamanan().setVisible(true);
 //        System.out.println("Masukkan Kebisingan : ");
 //        kls.setKebisingan(in.next());
@@ -257,8 +257,10 @@ public class IO extends Proses implements View{
     }
     
     @Override
-    public void inputKondisiKeamanan(){
-        new KondisiKeamanan().setVisible(true);
+    public void inputKondisiKeamanan(String KR){
+                new KondisiKeamanan(KR).setVisible(true);
+        
+        //new KondisiKeamanan().setVisible(true);
 //        System.out.println("Apakah Bangunan Masih Kokoh ? : ");
 //        kls.setKekokohan(in.next());
 //        System.out.println("Apakah Ada Kunci Pintu dan Jendela ? : ");

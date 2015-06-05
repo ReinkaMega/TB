@@ -760,7 +760,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         }
         n.persentaseKondisiLingkungan(s);
         dispose();
-        x.inputKondisiKenyamanan();
+        //x.inputKondisiKenyamanan();
     }//GEN-LAST:event_NextActionPerformed
 
     private void baikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baikActionPerformed

@@ -114,7 +114,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         H = K.getText();
         //int h = Integer.parseInt(H);
         I = S.getText();
-        int i = Integer.parseInt(I);System.out.println("iiigg");
+       // int i = Integer.parseInt(I);System.out.println("iiigg");
        
        try {System.out.println("gnmmg");
             if (PC.getText().equals("") || PL.getText().equals("") || PS.getText().equals("")) {
@@ -136,7 +136,6 @@ public class KondisiLingkungan extends javax.swing.JFrame {
 //                                + "kunci=" + "'" + e + "' "+"and "
 //                                + "bahaya=" + "'" + f 
                                 +"'");
-System.out.println("ghjg");
                 tampilDataKeTabel();System.out.println("gklg");
                 JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
                 nilai=false;
@@ -789,6 +788,7 @@ System.out.println("ghjg");
         SC.setEnabled(true);
         SS.setEnabled(true);
         SL.setEnabled(true);
+        jTable1.setEnabled(false);
         clearTEXT();
         Save.setVisible(true);
         Edit.setVisible(false);
@@ -820,15 +820,17 @@ System.out.println("ghjg");
         Save.setVisible(false);
         Add.setVisible(true);
         clearTEXT();
+        
         PRC.setText(null);
         PRL.setText(null);
         PSR.setText(null);
-        Next.setVisible(true);
+        Next.setVisible(false);
         SC.setEnabled(false);
         SS.setEnabled(false);
         SL.setEnabled(false);
         SUL.setEnabled(false);
         SUT.setEnabled(false);
+        jTable1.setEnabled(true);
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
@@ -837,6 +839,7 @@ System.out.println("ghjg");
         tampilDataKeTabel();
         Delete.setVisible(false);
         Edit.setVisible(false);
+        Next.setVisible(false);
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed

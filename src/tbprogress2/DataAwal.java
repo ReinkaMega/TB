@@ -73,7 +73,7 @@ public class DataAwal extends javax.swing.JFrame {
             frameSize.width = screenSize.width;
         }
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-    
+        
     }
     private boolean DiEdit() {
         boolean nilai = false;
@@ -475,8 +475,10 @@ public class DataAwal extends javax.swing.JFrame {
         else{
             IO x = new IO(NM,LK,FK,JR);
             x.IdentitasKelas();
+            JOptionPane.showMessageDialog(null, "ID Ruang Anda = "+CODE.getText());
+            //x.InputKondisiRuang();
             dispose();
-            x.InputKondisiRuang();
+            x.InputKondisiRuang(CODE.getText());
         }        
     }//GEN-LAST:event_NextActionPerformed
 
@@ -490,7 +492,8 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        da.kondisiHapus("identitas","id",CODE.getText());
+        //da.kondisiHapus("identitas","id",CODE.getText());
+        da.kondisiHapus(CODE.getText());
         clearTEXT();
         tampilDataKeTabel();
         Next.setVisible(false);
