@@ -712,7 +712,7 @@ public class KondisiRuang extends javax.swing.JFrame {
 //        }
          n.persentaseKondisiRuang(s);
          dispose();
-        // x.inputKondisiKebersihan();
+         x.inputKondisiLingkungan(IDKelas.getText());
     }//GEN-LAST:event_LanjutActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed

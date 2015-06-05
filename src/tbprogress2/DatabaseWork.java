@@ -154,7 +154,7 @@ DatabaseWork(){
       
        
        
-         void Save(int PRC,int PRL,int PSR,String SUL) {
+         void Save(String KodeR,int PRC,int PRL,int PSR,String SUL) {
              System.out.println(""+SUL);
              System.out.println(""+PSR);
            try {
@@ -166,7 +166,7 @@ DatabaseWork(){
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
                         "insert into lingkungan"
-                        + "(udara, cahaya, lembab, suhu) values ('" + SUL + "','" + PRC + "','" + PRL + "','" + PSR +  "')");
+                        + "(id,udara, cahaya, lembab, suhu) values ('" + KodeR + "','" + SUL + "','" + PRC + "','" + PRL + "','" + PSR +  "')");
 
                 JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
             }

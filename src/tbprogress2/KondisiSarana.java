@@ -774,10 +774,6 @@ public class KondisiSarana extends javax.swing.JFrame {
         kskr.setText("");
     }//GEN-LAST:event_kskrActionPerformed
 
-    private void pskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pskActionPerformed
-        psk.setText("");
-    }//GEN-LAST:event_pskActionPerformed
-
     private void pskbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pskbActionPerformed
      pskb.setText("");
     }//GEN-LAST:event_pskbActionPerformed
@@ -785,10 +781,6 @@ public class KondisiSarana extends javax.swing.JFrame {
     private void pskrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pskrActionPerformed
      pskr.setText("");
     }//GEN-LAST:event_pskrActionPerformed
-
-    private void kskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kskActionPerformed
-       ksk.setText("");
-    }//GEN-LAST:event_kskActionPerformed
 
     private void pklcdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pklcdActionPerformed
         pklcd.setText("");
@@ -839,6 +831,14 @@ public class KondisiSarana extends javax.swing.JFrame {
     private void klActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klActionPerformed
         kl.setText("");
     }//GEN-LAST:event_klActionPerformed
+
+    private void pskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pskActionPerformed
+        psk.setText("");
+    }//GEN-LAST:event_pskActionPerformed
+
+    private void kskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kskActionPerformed
+        ksk.setText("");
+    }//GEN-LAST:event_kskActionPerformed
 
     /** 
      * @param args the command line arguments

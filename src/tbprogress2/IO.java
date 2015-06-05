@@ -229,15 +229,17 @@ public class IO extends Proses implements View{
     
     @Override
     public void inputKondisiLingkungan(String Kode){
-        System.out.println("Masukkan Sirkulasi Udara: ");
-        kls.setSirkulasiUdara(in.next());
-        System.out.println("Masukkan Nilai Pencahayaan : ");
-        kls.setNilaiPencahayaan(in.nextInt());
-        System.out.println("Masukkan Kelembaban (%) : ");
-        kls.setKelembaban(in.nextInt());
-        System.out.println("Masukkan Suhu (celcius) : ");
-        kls.setSuhu(in.nextInt());
-        rk = new RuangKelas(kls.getSirkulasiUdara(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu());   
+        new KondisiLingkungan(Kode).setVisible(true);
+//        System.out.println("Masukkan Sirkulasi Udara: ");
+//        kls.setSirkulasiUdara(in.next());
+//        System.out.println("Masukkan Nilai Pencahayaan : ");
+//        kls.setNilaiPencahayaan(in.nextInt());
+//        System.out.println("Masukkan Kelembaban (%) : ");
+//        kls.setKelembaban(in.nextInt());
+//        System.out.println("Masukkan Suhu (celcius) : ");
+//        kls.setSuhu(in.nextInt());
+//        rk = new RuangKelas(kls.getSirkulasiUdara(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu());   
+//    }
     }
     @Override
       public void inputKondisiKenyamanan(String Kode){
