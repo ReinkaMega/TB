@@ -86,10 +86,10 @@ public class IO extends Proses implements View{
         m = Integer.parseInt(klb.getText());
         n = Integer.parseInt(klr.getText());
         if(m>=n){
-            kls.setPosisiKabelLCD("Atap Ruangan");
+            kls.setPosisiLampu("Atap Ruangan");
         }
         else{
-            kls.setPosisiKabelLCD("Selain Atap Ruangan");
+            kls.setPosisiLampu("Selain Atap Ruangan");
         }
         rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu()); 
     }
@@ -298,26 +298,27 @@ public class IO extends Proses implements View{
     }
     @Override
     public void inputKondisiSarana(String Kode){
-        System.out.println("Masukkan Jumlah Stop Kontak : ");
-        kls.setJumlahStopKontak(in.nextInt());
-        System.out.println("Masukkan Kondisi Stop Kontak : ");
-        kls.setKondisiStopKontak(in.next());
-        System.out.println("Masukkan Posisi Stop Kontak : ");
-        kls.setPosisiStopKontak(in.next());
-        System.out.println("Masukkan Jumlah Kabel LCD : ");
-        kls.setJumlahKabelLCD(in.nextInt());
-        System.out.println("Masukkan Kondisi Kabel LCD : ");
-        kls.setKondisiKabelLCD(in.next());
-        System.out.println("Masukkan Posisi Kabel LCD : ");
-        kls.setPosisiKabelLCD(in.next());
-        System.out.println("Masukkan Jumlah Lampu : ");
-        kls.setJumlahLampu(in.nextInt());
-        System.out.println("Masukkan Kondisi Lampu : ");
-        kls.setKondisiLampu(in.next());
-        System.out.println("Masukkan Posisi Lampu : ");
-        kls.setPosisiLampu(in.next());
-        
-        rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu());
+        new KondisiSarana(Kode).setVisible(true);
+//        System.out.println("Masukkan Jumlah Stop Kontak : ");
+//        kls.setJumlahStopKontak(in.nextInt());
+//        System.out.println("Masukkan Kondisi Stop Kontak : ");
+//        kls.setKondisiStopKontak(in.next());
+//        System.out.println("Masukkan Posisi Stop Kontak : ");
+//        kls.setPosisiStopKontak(in.next());
+//        System.out.println("Masukkan Jumlah Kabel LCD : ");
+//        kls.setJumlahKabelLCD(in.nextInt());
+//        System.out.println("Masukkan Kondisi Kabel LCD : ");
+//        kls.setKondisiKabelLCD(in.next());
+//        System.out.println("Masukkan Posisi Kabel LCD : ");
+//        kls.setPosisiKabelLCD(in.next());
+//        System.out.println("Masukkan Jumlah Lampu : ");
+//        kls.setJumlahLampu(in.nextInt());
+//        System.out.println("Masukkan Kondisi Lampu : ");
+//        kls.setKondisiLampu(in.next());
+//        System.out.println("Masukkan Posisi Lampu : ");
+//        kls.setPosisiLampu(in.next());
+//        
+        //rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu());
     }
      @Override
      public void inputKondisiSarana2(String Kode){
