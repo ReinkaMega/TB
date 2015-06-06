@@ -131,6 +131,38 @@ private boolean DiEdit() {
 //        }
        return true;
    }
+   void kondisiklik(boolean x){
+       label_bsk.setEnabled(x);
+       label_rsk.setEnabled(x);
+       label_bkl.setEnabled(x);
+       label_rkl.setEnabled(x);
+       label_bl.setEnabled(x);
+       label_rl.setEnabled(x);
+       label_DosenSK.setEnabled(x);
+       label_sampingsk.setEnabled(x);
+       label_pojoksk.setEnabled(x);
+       label_dosenlcd.setEnabled(x);
+       label_sampinglcd.setEnabled(x);
+       label_pojoklcd.setEnabled(x);
+       label_atap.setEnabled(x);
+       label_exatap.setEnabled(x);
+       
+       kskb.setEnabled(x);
+       kskr.setEnabled(x);
+       kklb.setEnabled(x);
+       kklr.setEnabled(x);
+       plb.setEnabled(x);
+       plr.setEnabled(x);
+       pskb.setEnabled(x);
+       Pojok.setEnabled(x);
+       pskr.setEnabled(x);
+       pklb.setEnabled(x);
+       pklr.setEnabled(x);
+       Pojok1.setEnabled(x);
+       klb.setEnabled(x);
+       klr.setEnabled(x);
+       
+   }
     private void klikTabel(JTable jTabel) {
         jTabel.setRowSelectionAllowed(true);
         baris = jTabel.getSelectedRow();
@@ -148,7 +180,30 @@ private boolean DiEdit() {
         String kolom12 = jTabel.getValueAt(baris, 11).toString();
       
         if(IDKelas.getText().equals(kolom12)){
+        
+        kondisiklik(false);
+        KondisiSK.setEditable(false);
+        KondisiKL.setEditable(false);
+        KondisiL.setEditable(false);
+        
+        PosisiKL.setEditable(false);
+        PosisiL.setEditable(false);
+        PosisiSK.setEditable(false);
+        
+        KondisiSK.setEnabled(true);
+        KondisiKL.setEnabled(true);
+        KondisiL.setEnabled(true);
+        
+        PosisiKL.setEnabled(true);
+        PosisiL.setEnabled(true);
+        PosisiSK.setEnabled(true);
+        
+        kontak.setEnabled(true);
+        jlcd.setEnabled(true);
+        jlampu.setEnabled(true);
+        
         kontak.setText(kolom2);
+        
         KondisiSK.setText(kolom3);
         PosisiSK.setText(kolom4);
         
@@ -179,26 +234,28 @@ private boolean DiEdit() {
         klb.setText("");
         klr.setText("");
         
-        kontak.setEnabled(false);
+        kontak.setEnabled(true);
         kskb.setEnabled(false);
         kskr.setEnabled(false);
         pskb.setEnabled(false);
         Pojok.setEnabled(false);
         pskr.setEnabled(false);
         
-        jlcd.setEnabled(false);
+        //jlcd.setEnabled(true);
         kklb.setEnabled(false);
         kklr.setEnabled(false);
         pklb.setEnabled(false);
         Pojok1.setEnabled(false);
         pklr.setEnabled(false);
         
-        jlampu.setEnabled(false);
+        //jlampu.setEnabled(true);
         plb.setEnabled(false);
         plr.setEnabled(false);
         klb.setEnabled(false);
         klr.setEnabled(false);
-        CODE.setText(kolom12);
+        CODE.setText(kolom11);
+        IDKelas.setText(kolom12);
+            System.out.println(""+CODE.getText());
        // System.out.println(""+CODE.getText());
         Delete.setVisible(true);
         Edit.setVisible(true);
@@ -335,30 +392,30 @@ private boolean DiEdit() {
         jLabel13 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jlampu = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        label_bsk = new javax.swing.JLabel();
         kskb = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
+        label_rsk = new javax.swing.JLabel();
         kskr = new javax.swing.JTextField();
         pskb = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
+        label_sampingsk = new javax.swing.JLabel();
         pskr = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        label_rkl = new javax.swing.JLabel();
+        label_bkl = new javax.swing.JLabel();
         kklb = new javax.swing.JTextField();
         kklr = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
+        label_sampinglcd = new javax.swing.JLabel();
         pklb = new javax.swing.JTextField();
         pklr = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
+        label_atap = new javax.swing.JLabel();
         plb = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
+        label_exatap = new javax.swing.JLabel();
         plr = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
+        label_bl = new javax.swing.JLabel();
         klb = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
+        label_rl = new javax.swing.JLabel();
         klr = new javax.swing.JTextField();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        label_DosenSK = new javax.swing.JLabel();
+        label_dosenlcd = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
@@ -367,8 +424,8 @@ private boolean DiEdit() {
         ADD = new javax.swing.JButton();
         Edit = new javax.swing.JButton();
         Next = new javax.swing.JButton();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
+        label_pojoksk = new javax.swing.JLabel();
+        label_pojoklcd = new javax.swing.JLabel();
         Pojok = new javax.swing.JTextField();
         Pojok1 = new javax.swing.JTextField();
         IDKelas = new javax.swing.JTextField();
@@ -437,8 +494,8 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Baik");
+        label_bsk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_bsk.setText("Baik");
 
         kskb.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         kskb.addActionListener(new java.awt.event.ActionListener() {
@@ -447,8 +504,8 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setText("Rusak");
+        label_rsk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_rsk.setText("Rusak");
 
         kskr.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         kskr.addActionListener(new java.awt.event.ActionListener() {
@@ -464,8 +521,8 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel20.setText("Samping kelas");
+        label_sampingsk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_sampingsk.setText("Samping kelas");
 
         pskr.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         pskr.addActionListener(new java.awt.event.ActionListener() {
@@ -474,11 +531,11 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel19.setText("Rusak");
+        label_rkl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_rkl.setText("Rusak");
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel21.setText("Baik");
+        label_bkl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_bkl.setText("Baik");
 
         kklb.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         kklb.addActionListener(new java.awt.event.ActionListener() {
@@ -494,8 +551,8 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel22.setText("Samping kelas");
+        label_sampinglcd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_sampinglcd.setText("Samping kelas");
 
         pklb.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         pklb.addActionListener(new java.awt.event.ActionListener() {
@@ -511,8 +568,8 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel23.setText("Atap Ruangan");
+        label_atap.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_atap.setText("Atap Ruangan");
 
         plb.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         plb.addActionListener(new java.awt.event.ActionListener() {
@@ -521,8 +578,8 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel24.setText("Selain Atap Ruangan");
+        label_exatap.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_exatap.setText("Selain Atap Ruangan");
 
         plr.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         plr.addActionListener(new java.awt.event.ActionListener() {
@@ -531,8 +588,8 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel25.setText("Baik");
+        label_bl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_bl.setText("Baik");
 
         klb.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         klb.addActionListener(new java.awt.event.ActionListener() {
@@ -541,8 +598,8 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel26.setText("Rusak");
+        label_rl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_rl.setText("Rusak");
 
         klr.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         klr.addActionListener(new java.awt.event.ActionListener() {
@@ -551,11 +608,11 @@ private boolean DiEdit() {
             }
         });
 
-        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel27.setText("Dekat Dosen");
+        label_DosenSK.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_DosenSK.setText("Dekat Dosen");
 
-        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel28.setText("Dekat Dosen");
+        label_dosenlcd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_dosenlcd.setText("Dekat Dosen");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -645,11 +702,11 @@ private boolean DiEdit() {
                 .addContainerGap())
         );
 
-        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel29.setText("Pojok Kelas");
+        label_pojoksk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_pojoksk.setText("Pojok Kelas");
 
-        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel30.setText("Pojok Kelas");
+        label_pojoklcd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_pojoklcd.setText("Pojok Kelas");
 
         Pojok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Pojok.addActionListener(new java.awt.event.ActionListener() {
@@ -694,70 +751,70 @@ private boolean DiEdit() {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSelesai, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(label_pojoksk, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel18)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addComponent(jLabel20))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(kskr, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(kskb, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(PosisiSK, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                                        .addComponent(KondisiSK)
-                                        .addComponent(kontak))
-                                    .addComponent(pskr, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(pskb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                                .addComponent(Pojok, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(27, 27, 27)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel1)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(label_bsk, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel4)
+                                                    .addComponent(label_rsk)
+                                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(label_DosenSK, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addComponent(label_sampingsk))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(kontak, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(KondisiSK, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(kskb, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(kskr, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(pskb, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(PosisiSK, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(Pojok, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(pskr, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(9, 9, 9))))
+                                    .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel19)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_rkl)
+                                    .addComponent(label_bkl, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel22))
+                                    .addComponent(label_dosenlcd)
+                                    .addComponent(label_pojoklcd)
+                                    .addComponent(label_sampinglcd))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(KondisiKL, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                                        .addComponent(kklr, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(PosisiKL)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(pklb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Pojok1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(pklr, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(kklb, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(39, 39, 39))))
+                                        .addComponent(pklr, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(PosisiKL, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(kklr, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(kklb, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGap(43, 43, 43)
+                                    .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(KondisiKL, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(45, 45, 45)
@@ -766,60 +823,68 @@ private boolean DiEdit() {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel13)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(label_bl, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(jLabel12)
-                                                .addComponent(jLabel26)
+                                                .addComponent(label_rl)
                                                 .addComponent(jLabel10)
-                                                .addComponent(jLabel23)))
+                                                .addComponent(label_atap)))
                                         .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(plr, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(KondisiL)
-                                                .addComponent(jlampu)
-                                                .addComponent(plb, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(PosisiL, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
-                                            .addComponent(klb, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel24)
-                                        .addGap(34, 34, 34)
-                                        .addComponent(klr, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(plr, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(plb, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(KondisiL, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                                            .addComponent(klb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(PosisiL)
+                                            .addComponent(jlampu)))
+                                    .addComponent(klr, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(label_exatap))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 105, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSelesai, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 13, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(kontak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(kontak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(pskr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel22)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, Short.MAX_VALUE)
-                                .addComponent(jLabel20))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(pskr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label_sampinglcd))
+                            .addComponent(label_sampingsk, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel8)
@@ -830,20 +895,20 @@ private boolean DiEdit() {
                                     .addComponent(jLabel4))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel21)
-                                    .addComponent(jLabel25)
+                                    .addComponent(label_bkl)
+                                    .addComponent(label_bl)
                                     .addComponent(plb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(kskb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(kklb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(label_bsk)
+                                    .addComponent(kklb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(kskb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel19)
+                                    .addComponent(label_rkl)
                                     .addComponent(kklr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel26)
+                                    .addComponent(label_rl)
                                     .addComponent(plr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(kskr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel18))
+                                    .addComponent(label_rsk))
                                 .addGap(31, 31, 31)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel9)
@@ -860,20 +925,20 @@ private boolean DiEdit() {
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pklb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28)
-                            .addComponent(jLabel23)
+                            .addComponent(label_dosenlcd)
+                            .addComponent(label_atap)
                             .addComponent(klb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pskb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel27))
+                            .addComponent(label_DosenSK))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel30)
+                            .addComponent(label_pojoklcd)
                             .addComponent(Pojok1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Pojok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel29))
+                            .addComponent(label_pojoksk))
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel24)
+                            .addComponent(label_exatap)
                             .addComponent(klr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pklr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(33, 33, 33)
@@ -892,7 +957,7 @@ private boolean DiEdit() {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -902,6 +967,177 @@ private boolean DiEdit() {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
+        btnSelesai.setVisible(DiEdit());
+        jTable1.enable(true);
+        Delete.setVisible(false);
+        ADD.setVisible(true);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        kontak.setEnabled(false);
+        kskb.setEnabled(false);
+        kskr.setEnabled(false);
+        pskb.setEnabled(false);
+        Pojok.setEnabled(false);
+        pskr.setEnabled(false);
+
+        jlcd.setEnabled(false);
+        kklb.setEnabled(false);
+        kklr.setEnabled(false);
+        pklb.setEnabled(false);
+        Pojok1.setEnabled(false);
+        pklr.setEnabled(false);
+
+        jlampu.setEnabled(false);
+        plb.setEnabled(false);
+        plr.setEnabled(false);
+        klb.setEnabled(false);
+        klr.setEnabled(false);
+    }//GEN-LAST:event_btnSelesaiActionPerformed
+
+    private void Pojok1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pojok1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Pojok1ActionPerformed
+
+    private void PojokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PojokActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PojokActionPerformed
+
+    private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
+
+        IO x = new IO(kontak,kskb, kskr, pskb,Pojok, pskr,jlcd,kklb,kklr,pklb,Pojok1,pklr,jlampu,plb,plr,klb,klr);
+        Sistem n = new Sistem();
+        kls = x.getRuangKelas();
+        x.output(kls.getJumlahStopKontak(),kls.getKondisiStopKontak() ,kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getLokasiRuang() );
+        n.CheckKondisiSarana(kls);
+        dispose();
+        x.inputKondisiKebersihan(IDKelas.getText());
+    }//GEN-LAST:event_NextActionPerformed
+
+    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
+        kondisiklik(true);
+        btnSelesai.setVisible(true);
+        kontak.setEnabled(true);
+        kskb.setEnabled(true);
+        kskr.setEnabled(true);
+        pskb.setEnabled(true);
+        Pojok.setEnabled(true);
+        pskr.setEnabled(true);
+
+        jlcd.setEnabled(true);
+        kklb.setEnabled(true);
+        kklr.setEnabled(true);
+        pklb.setEnabled(true);
+        Pojok1.setEnabled(true);
+        pklr.setEnabled(true);
+
+        jlampu.setEnabled(true);
+        plb.setEnabled(true);
+        plr.setEnabled(true);
+        klb.setEnabled(true);
+        klr.setEnabled(true);
+        Delete.setVisible(false);
+        ADD.setVisible(false);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        jTable1.enable(false);
+    }//GEN-LAST:event_EditActionPerformed
+
+    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
+        kondisiklik(true);
+        kontak.setEnabled(true);
+        kskb.setEnabled(true);
+        kskr.setEnabled(true);
+        pskb.setEnabled(true);
+        Pojok.setEnabled(true);
+        pskr.setEnabled(true);
+
+        jlcd.setEnabled(true);
+        kklb.setEnabled(true);
+        kklr.setEnabled(true);
+        pklb.setEnabled(true);
+        Pojok1.setEnabled(true);
+        pklr.setEnabled(true);
+
+        jlampu.setEnabled(true);
+        plb.setEnabled(true);
+        plr.setEnabled(true);
+        klb.setEnabled(true);
+        klr.setEnabled(true);
+        clearTEXT();
+        Save.setVisible(true);
+        Edit.setVisible(false);
+        Delete.setVisible(false);
+        ADD.setVisible(false);
+        Next.setVisible(false);
+        jTable1.enable(false);
+    }//GEN-LAST:event_ADDActionPerformed
+
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        kondisiklik(true);
+        da.kondisiHapus("jkp_sarana","id_sarana",CODE.getText());
+        clearTEXT();
+        Next.setVisible(false);
+        Delete.setVisible(false);
+        Edit.setVisible(false);
+        tampilDataKeTabel();
+    }//GEN-LAST:event_DeleteActionPerformed
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        IO x = new IO(kontak,kskb, kskr, pskb,Pojok, pskr,jlcd,kklb,kklr,pklb,Pojok1,pklr,jlampu,plb,plr,klb,klr);
+        kls = x.getRuangKelas();
+        da.Save(IDKelas.getText(),kontak,kls.getKondisiStopKontak() ,kls.getPosisiStopKontak(),jlcd,kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),jlampu,kls.getKondisiLampu(),kls.getPosisiLampu());
+        tampilDataKeTabel();
+        Save.setVisible(false);
+        ADD.setVisible(true);
+        clearTEXT();
+        kondisiklik(true);
+        Next.setVisible(false);
+        kontak.setEnabled(false);
+        kskb.setEnabled(false);
+        kskr.setEnabled(false);
+        pskb.setEnabled(false);
+        Pojok.setEnabled(false);
+        pskr.setEnabled(false);
+
+        jlcd.setEnabled(false);
+        kklb.setEnabled(false);
+        kklr.setEnabled(false);
+        pklb.setEnabled(false);
+        Pojok1.setEnabled(false);
+        pklr.setEnabled(false);
+
+        jlampu.setEnabled(false);
+        plb.setEnabled(false);
+        plr.setEnabled(false);
+        klb.setEnabled(false);
+        klr.setEnabled(false);
+        jTable1.enable(true);
+    }//GEN-LAST:event_SaveActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        klikTabel(Tabelku);
+        //kontak.setEnabled(false);
+        kskb.setEnabled(false);
+        kskr.setEnabled(false);
+        pskb.setEnabled(false);
+        Pojok.setEnabled(false);
+        pskr.setEnabled(false);
+
+     //   jlcd.setEnabled(false);
+        kklb.setEnabled(false);
+        kklr.setEnabled(false);
+        pklb.setEnabled(false);
+        Pojok1.setEnabled(false);
+        pklr.setEnabled(false);
+
+       // jlampu.setEnabled(false);
+        plb.setEnabled(false);
+        plr.setEnabled(false);
+        klb.setEnabled(false);
+        klr.setEnabled(false);
+    }//GEN-LAST:event_jTable1MouseClicked
+
     private void klrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klrActionPerformed
         klr.setText("");
     }//GEN-LAST:event_klrActionPerformed
@@ -909,6 +1145,14 @@ private boolean DiEdit() {
     private void klbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klbActionPerformed
         klb.setText("");
     }//GEN-LAST:event_klbActionPerformed
+
+    private void plrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plrActionPerformed
+        plr.setText("");
+    }//GEN-LAST:event_plrActionPerformed
+
+    private void plbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plbActionPerformed
+        plb.setText("");
+    }//GEN-LAST:event_plbActionPerformed
 
     private void pklrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pklrActionPerformed
         pklr.setText("");
@@ -954,182 +1198,6 @@ private boolean DiEdit() {
         jlcd.setText("2");
     }//GEN-LAST:event_jlcdActionPerformed
 
-    private void plrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plrActionPerformed
-        plr.setText("");
-    }//GEN-LAST:event_plrActionPerformed
-
-    private void plbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plbActionPerformed
-        plb.setText("");
-    }//GEN-LAST:event_plbActionPerformed
-
-    private void PojokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PojokActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PojokActionPerformed
-
-    private void Pojok1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pojok1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Pojok1ActionPerformed
-
-    private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
-        btnSelesai.setVisible(DiEdit());
-        jTable1.enable(true);
-        Delete.setVisible(false);
-        ADD.setVisible(true);
-        Edit.setVisible(false);
-        Next.setVisible(false);
-        kontak.setEnabled(false);
-        kskb.setEnabled(false);
-        kskr.setEnabled(false);
-        pskb.setEnabled(false);
-        Pojok.setEnabled(false);
-        pskr.setEnabled(false);
-        
-        jlcd.setEnabled(false);
-        kklb.setEnabled(false);
-        kklr.setEnabled(false);
-        pklb.setEnabled(false);
-        Pojok1.setEnabled(false);
-        pklr.setEnabled(false);
-        
-        jlampu.setEnabled(false);
-        plb.setEnabled(false);
-        plr.setEnabled(false);
-        klb.setEnabled(false);
-        klr.setEnabled(false);
-
-    }//GEN-LAST:event_btnSelesaiActionPerformed
-
-    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
-        kontak.setEnabled(true);
-        kskb.setEnabled(true);
-        kskr.setEnabled(true);
-        pskb.setEnabled(true);
-        Pojok.setEnabled(true);
-        pskr.setEnabled(true);
-        
-        jlcd.setEnabled(true);
-        kklb.setEnabled(true);
-        kklr.setEnabled(true);
-        pklb.setEnabled(true);
-        Pojok1.setEnabled(true);
-        pklr.setEnabled(true);
-        
-        jlampu.setEnabled(true);
-        plb.setEnabled(true);
-        plr.setEnabled(true);
-        klb.setEnabled(true);
-        klr.setEnabled(true);
-        clearTEXT();
-        Save.setVisible(true);
-        Edit.setVisible(false);
-        Delete.setVisible(false);
-        ADD.setVisible(false);
-        Next.setVisible(false);
-        jTable1.enable(false);
-    }//GEN-LAST:event_ADDActionPerformed
-
-    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        IO x = new IO(kontak,kskb, kskr, pskb,Pojok, pskr,jlcd,kklb,kklr,pklb,Pojok1,pklr,jlampu,plb,plr,klb,klr);
-        kls = x.getRuangKelas();
-        da.Save(IDKelas.getText(),kontak,kls.getKondisiStopKontak() ,kls.getPosisiStopKontak(),jlcd,kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),jlampu,kls.getKondisiLampu(),kls.getPosisiLampu());
-        tampilDataKeTabel();
-        Save.setVisible(false);
-        ADD.setVisible(true);
-        clearTEXT();
-        Next.setVisible(false);
-        kontak.setEnabled(false);
-        kskb.setEnabled(false);
-        kskr.setEnabled(false);
-        pskb.setEnabled(false);
-        Pojok.setEnabled(false);
-        pskr.setEnabled(false);
-        
-        jlcd.setEnabled(false);
-        kklb.setEnabled(false);
-        kklr.setEnabled(false);
-        pklb.setEnabled(false);
-        Pojok1.setEnabled(false);
-        pklr.setEnabled(false);
-        
-        jlampu.setEnabled(false);
-        plb.setEnabled(false);
-        plr.setEnabled(false);
-        klb.setEnabled(false);
-        klr.setEnabled(false);
-        jTable1.enable(true);
-    }//GEN-LAST:event_SaveActionPerformed
-
-    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
-        btnSelesai.setVisible(true);
-        kontak.setEnabled(true);
-        kskb.setEnabled(true);
-        kskr.setEnabled(true);
-        pskb.setEnabled(true);
-        Pojok.setEnabled(true);
-        pskr.setEnabled(true);
-        
-        jlcd.setEnabled(true);
-        kklb.setEnabled(true);
-        kklr.setEnabled(true);
-        pklb.setEnabled(true);
-        Pojok1.setEnabled(true);
-        pklr.setEnabled(true);
-        
-        jlampu.setEnabled(true);
-        plb.setEnabled(true);
-        plr.setEnabled(true);
-        klb.setEnabled(true);
-        klr.setEnabled(true);
-        Delete.setVisible(false);
-        ADD.setVisible(false);
-        Edit.setVisible(false);
-        Next.setVisible(false);
-        jTable1.enable(false);
-    }//GEN-LAST:event_EditActionPerformed
-
-    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        da.kondisiHapus("inventaris","jkp_sarana",CODE.getText());
-        clearTEXT();
-        Next.setVisible(false);
-        Delete.setVisible(false);
-        Edit.setVisible(false);
-        tampilDataKeTabel();
-    }//GEN-LAST:event_DeleteActionPerformed
-
-    private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
-       
-        IO x = new IO(kontak,kskb, kskr, pskb,Pojok, pskr,jlcd,kklb,kklr,pklb,Pojok1,pklr,jlampu,plb,plr,klb,klr);
-        Sistem n = new Sistem();
-        kls = x.getRuangKelas();
-        x.output(kls.getJumlahStopKontak(),kls.getKondisiStopKontak() ,kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getLokasiRuang() );
-        n.CheckKondisiSarana(kls);
-        dispose();
-        x.inputKondisiKebersihan(IDKelas.getText());
-    }//GEN-LAST:event_NextActionPerformed
-
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        klikTabel(Tabelku);
-        kontak.setEnabled(false);
-        kskb.setEnabled(false);
-        kskr.setEnabled(false);
-        pskb.setEnabled(false);
-        Pojok.setEnabled(false);
-        pskr.setEnabled(false);
-        
-        jlcd.setEnabled(false);
-        kklb.setEnabled(false);
-        kklr.setEnabled(false);
-        pklb.setEnabled(false);
-        Pojok1.setEnabled(false);
-        pklr.setEnabled(false);
-        
-        jlampu.setEnabled(false);
-        plb.setEnabled(false);
-        plr.setEnabled(false);
-        klb.setEnabled(false);
-        klr.setEnabled(false);
-    }//GEN-LAST:event_jTable1MouseClicked
-
     /** 
      * @param args the command line arguments
      */
@@ -1160,7 +1228,7 @@ private boolean DiEdit() {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiSarana("3").setVisible(true);
+                new KondisiSarana("1").setVisible(true);
             }
         });
     }
@@ -1187,21 +1255,7 @@ private boolean DiEdit() {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1222,6 +1276,20 @@ private boolean DiEdit() {
     private javax.swing.JTextField kontak;
     private javax.swing.JTextField kskb;
     private javax.swing.JTextField kskr;
+    private javax.swing.JLabel label_DosenSK;
+    private javax.swing.JLabel label_atap;
+    private javax.swing.JLabel label_bkl;
+    private javax.swing.JLabel label_bl;
+    private javax.swing.JLabel label_bsk;
+    private javax.swing.JLabel label_dosenlcd;
+    private javax.swing.JLabel label_exatap;
+    private javax.swing.JLabel label_pojoklcd;
+    private javax.swing.JLabel label_pojoksk;
+    private javax.swing.JLabel label_rkl;
+    private javax.swing.JLabel label_rl;
+    private javax.swing.JLabel label_rsk;
+    private javax.swing.JLabel label_sampinglcd;
+    private javax.swing.JLabel label_sampingsk;
     private javax.swing.JTextField pklb;
     private javax.swing.JTextField pklr;
     private javax.swing.JTextField plb;
