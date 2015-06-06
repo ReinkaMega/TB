@@ -27,7 +27,7 @@ DatabaseWork(){
      JTable Tabelku = new JTable();
      DefaultTableModel DefaultTabelku;
      TableColumn kolom;
-     String a, b,c,d,e,f,g;
+     String a, b,c,d,e,f,g,h,i,j;
 //     DataAwal DA = new DataAwal();
      
     void Save(JTextField NM,JTextField LK,JTextField JR, JTextField FK) {
@@ -41,7 +41,6 @@ DatabaseWork(){
         try {
             if (a.equals("") || C.equals("") || b.equals("") || D.equals("")) {
                 JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
-                
             } else {
                 
                 Statement st = con.config.getConnection().createStatement();
@@ -59,7 +58,7 @@ DatabaseWork(){
         LK.setEditable(false);
         JR.setEditable(false);
     }
-    void Save(String KodeR,JTextField txtValue1,JTextField txtValue2,JTextField kursi,JTextField pintu,JTextField jendela) {
+     void Save(String KodeR,JTextField txtValue1,JTextField txtValue2,JTextField kursi,JTextField pintu,JTextField jendela) {
         
         a = txtValue1.getText();
         b = txtValue2.getText();
@@ -88,6 +87,87 @@ DatabaseWork(){
         pintu.setEditable(false);
         jendela.setEditable(false);
     }
+     
+    void Save(String KodeR,JTextField kontak,String Kkontak,String Pkontak,JTextField jlcd,String KLCD,String PLCD,JTextField jlampu,String klampu,String plampu){
+     //void Save(JTextField kontak,JTextField kskb,JTextField kskr,JTextField pskb,JTextField pskp,JTextField pskr,JTextField jlcd,JTextField kklb,JTextField kklr,JTextField pklb,JTextField Pojok1,JTextField pklr,JTextField jlampu,JTextField plb,JTextField plr,JTextField klb,JTextField klr){
+//    a = kontak.getText();
+//        b = kskb.getText();
+//        c = kskr.getText();
+//        d = pskb.getText();
+//        e = pskp.getText();
+//        f = kontak.getText();
+//        g = kskb.getText();
+//        h = kskr.getText();
+//        i = pskb.getText();
+//        j = pskp.getText();
+//        k = pskr.getText();
+//        l = jlcd.getText();
+//        m = kklb.getText();
+//        n = kklr.getText();
+//        o = pklb.getText();
+//        p = Pojok1.getText();
+//        q = pklr.getText();
+//        r = jlampu.getText();
+//        s = plb.getText();
+//        t = plr.getText();
+//        u = klb.getText();
+//        v = klr.getText();
+        a = kontak.getText();
+        b = Kkontak;
+        c = Pkontak;
+        d = jlcd.getText();
+        e = KLCD;
+        g = PLCD;
+        h = jlampu.getText();
+        i = klampu;
+        j = plampu;
+        try {
+            if (a.equals("") || c.equals("") || b.equals("") || d.equals("") || e.equals("")) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                
+            } else {
+                
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into jkp_sarana"
+                        + "(id ,JStopKontak, KStopKontak, PStopKontak, JKabelLCD, KKabelLCD, PKabelLCD, JLampu, KLampu, PLampu) values ('" + KodeR + "','" + a + "','" + b + "','" + c + "','" + d + "','" + e + "','" + f + "','" + g + "','" + h + "','" + i + "','" + j + "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+       
+    }
+    
+//        void Save(String KodeR,JTextField kontak,String Kkontak,String Pkontak,JTextField jlcd,String KLCD,String PLCD,JTextField jlampu,String klampu,String plampu){
+//        a = kontak.getText();
+//        b = Kkontak;
+//        c = Pkontak;
+//        d = jlcd.getText();
+//        e = KLCD;
+//        g = PLCD;
+//        h = jlampu.getText();
+//        i = klampu;
+//        j = plampu;
+//        try {
+//            if (a.equals("") || c.equals("") || b.equals("") || d.equals("") || e.equals("")) {
+//                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+//                
+//            } else {
+//                
+//                Statement st = con.config.getConnection().createStatement();
+//                st.executeUpdate(
+//                        "insert into jkp_sarana"
+//                        + "(id ,JStopKontak, KStopKontak, PStopKontak, JKabelLCD, KKabelLCD, PKabelLCD, JLampu, KLampu, PLampu) values ('" + KodeR + "','" + a + "','" + b + "','" + c + "','" + d + "','" + e + "','" + f + "','" + g + "','" + h + "','" + i + "','" + j + "')");
+//
+//                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+//            }
+//        } catch (SQLException ex) {
+//            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+//        }
+//       
+//    }
 
     void Save(String Kokoh,String Adakunci,String Aman,String KodeR) {
        
