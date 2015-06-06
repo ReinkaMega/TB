@@ -44,49 +44,49 @@ public class Sistem extends Proses{
         return RasioLuas;
     }
 
-    double CheckKondisiRuang() {
+    double CheckKondisiRuang(RuangKelas kls) {
 //        inop.InputKondisiRuang();
 //        kls = inop.getRuangKelas();
-//        Luas = kls.getPanjangRuang() * kls.getLebarRuang();
-//        if (kls.getLebarRuang() == kls.getPanjangRuang()) {
-//            System.out.println("Luas = "+Luas);
-//            System.out.println("Luas Tidak s");
-//            ts++;
+        System.out.println("==============Analisis==================");
+        Luas = kls.getPanjangRuang() * kls.getLebarRuang();
+        if (kls.getLebarRuang() == kls.getPanjangRuang()) {
+            System.out.println("Luas = "+Luas);
+            System.out.println("Luas Tidak Sesuai");
+            ts++;
+        } else {
+            System.out.println("Luas = "+Luas);
+            System.out.println("Luas Sesuai");
+            s++;
+        }
+        RasioLuas = Luas / kls.getJumlahKursi();
+        System.out.println("Rasio : " + RasioLuas);
+        if(RasioLuas<=0.5){
+            System.out.println("Rasio Tidak Sesuai");
+        }
+        else{
+            System.out.println("Rasio Sesuai");
+            s++;
+        }
+        if (kls.getJumlahPintu() >= 2) {
+            System.out.println("Jumlah Pintu Sesuai");
+            s++;
+        } else {
+            System.out.println("Jumlah Pintu Tidak Sesuai");
+            ts++;
+        }
+        if (kls.getJumlahJendela() >= 1) {
+            System.out.println("Jumlah Jendela Sesuai");
+            s++;
+        } else {
+            System.out.println("Jumlah Jendela Tidak Sesuai");
+            ts++;
+        }
+//        if (ts > s) {
+//            kondisi = 0; 
 //        } else {
-//            System.out.println("Luas = "+Luas);
-//            System.out.println("Luas s");
-//            s++;
+//            kondisi = 1;
 //        }
-//        RasioLuas = Luas / kls.getJumlahKursi();
-//        System.out.println("Rasio : " + RasioLuas);
-//        if(RasioLuas<=0.5){
-//            System.out.println("Rasio Tidak s");
-//        }
-//        else{
-//            System.out.println("Rasio s");
-//            s++;
-//        }
-//        if (kls.getJumlahPintu() >= 2) {
-//            System.out.println("Jumlah Pintu s");
-//            s++;
-//        } else {
-//            System.out.println("Jumlah Pintu Tidak s");
-//            ts++;
-//        }
-//        if (kls.getJumlahJendela() >= 1) {
-//            System.out.println("Jumlah Jendela s");
-//            s++;
-//        } else {
-//            System.out.println("Jumlah Jendela Tidak s");
-//            ts++;
-//        }
-//        inop.output(kls.getPanjangRuang(), kls.getLebarRuang(), kls.getJumlahKursi(),kls.getJumlahPintu() ,kls.getJumlahJendela());
-//        
-////        if (ts > s) {
-////            kondisi = 0; 
-////        } else {
-////            kondisi = 1;
-////        }
+         persentaseKondisiRuang(s);
         return s;
     } 
    @Override
@@ -273,53 +273,47 @@ public class Sistem extends Proses{
         System.out.println("::Anda Masuk CheckKondisiLingkungan::");
        
     }
-    int CheckKondisiLingkungan() {
+    int CheckKondisiLingkungan(RuangKelas kls) {
 //        inop.inputKondisiLingkungan();
 //        kls = inop.getRuangKelas();
 //        int kon;
-//        if (kls.getKondisiLantai().equalsIgnoreCase("bersih")) {
-//            System.out.println("getKondisiLantai : s");
-//            s++;
-//        } else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        if (kls.getKondisiDinding().equalsIgnoreCase("bersih")){
-//            System.out.println("KondisiDinding : s");
-//            s++;
-//        }else {
-//            ts++;
-//            System.out.println("Tidak s");
-//        }
-//        if (kls.getKondisiAtap().equalsIgnoreCase("bersih")){
-//            System.out.println("KondisiAtap : s");
-//            s++;
-//        }else{
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        if (kls.getKondisiPintu().equalsIgnoreCase("bersih")){
-//            System.out.println("KondisiPintu : s");
-//            s++;
-//        }else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        if (kls.getKondisiJendela().equalsIgnoreCase("bersih")){
-//            System.out.println("getKondisiJendela : s");
-//            s++;
-//        } else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        
-//        if (s > ts) {
-//            System.out.println("Bersih");
-//            kon = 1;
-//        } else {
-//            System.out.println("Kotor");
-//            kon = 0;
-//        }
+//        System.out.println("==============Analisis==================");
+        if ("Lancar".equalsIgnoreCase(kls.getSirkulasiUdara())) {
+            System.out.println("Sirkulasi Udara : Sesuai");
+            s++;
+        } else {
+            System.out.println("Sirkulasi Udara : Tidak Sesuai");
+            ts++;
+        }
+        if (kls.getNilaiPencahayaan() >= 60) {
+            if (kls.getNilaiPencahayaan() < 80) {
+                System.out.println("Nilai Pencahayaan : Sesuai");
+            }
+            s++;
+        } else {
+            System.out.println("Nilai Pencahayaan : Tidak Sesuai");
+            ts++;
+        }
+        if (kls.getKelembaban() >= 70) {
+            if (kls.getKelembaban() <= 80) {
+                System.out.println("Kelembaban : Sesuai");
+            }
+            s++;
+        } else {
+            System.out.println("Kelembaban : Tidak Sesuai");
+            ts++;
+        }
+        
+        if (kls.getSuhu() >= 25) {
+            if (kls.getSuhu() <= 35) {
+                System.out.println("Suhu : Sesuai");
+            }
+            s++;
+        } else {
+            System.out.println("Suhu : Tidak Sesuai");
+            ts++;
+        }
+        persentaseKondisiLingkungan(s);
         return s;
     }
     @Override
@@ -331,48 +325,44 @@ public class Sistem extends Proses{
         
     }
     
-    int CheckKondisiKebersihan() {
-        int kon;
-        if ("Lancar".equalsIgnoreCase(kls.getSirkulasiUdara())) {
-            System.out.println("SirkulasiUdara : Lancar");
+    int CheckKondisiKebersihan(RuangKelas kls) {
+        System.out.println("==============Analisis=================="); 
+        if (kls.getKondisiLantai().equalsIgnoreCase("Lantai Bersih")) {
+            System.out.println("Kondisi Lantai : Sesuai");
             s++;
         } else {
-            System.out.println("Tidak Lancar");
+            System.out.println("Kondisi Lantai : Tidak Sesuai");
             ts++;
         }
-        if (kls.getNilaiPencahayaan() >= 250) {
-            if (kls.getNilaiPencahayaan() <= 350) {
-                System.out.println("NilaiPencahayaan : s");
-            }
+        if (kls.getKondisiDinding().equalsIgnoreCase("Dinding Bersih/Baik")){
+            System.out.println("Kondisi Dinding : Sesuai");
+            s++;
+        }else {
+            ts++;
+            System.out.println("Kondisi Dinding : Tidak Sesuai");
+        }
+        if (kls.getKondisiAtap().equalsIgnoreCase("Atap Bersih")){
+            System.out.println("Kondisi Atap : Sesuai");
+            s++;
+        }else{
+            System.out.println("Kondisi Atap : Tidak Sesuai");
+            ts++;
+        }
+        if (kls.getKondisiPintu().equalsIgnoreCase("Pintu Bersih/Baik")){
+            System.out.println("Kondisi Pintu : Sesuai");
+            s++;
+        }else {
+            System.out.println("Kondisi Pintu : Tidak Sesuai");
+            ts++;
+        }
+        if (kls.getKondisiJendela().equalsIgnoreCase("Jendela Bersih/Baik")){
+            System.out.println("Kondisi Jendela : Sesuai");
             s++;
         } else {
-            System.out.println("Tidak s");
+            System.out.println("Kondisi Jendela : Tidak Sesuai");
             ts++;
         }
-        if (kls.getKelembaban() >= 70) {
-            if (kls.getKelembaban() <= 80) {
-                System.out.println("Kelembaban : s");
-            }
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        
-        if (kls.getSuhu() >= 25) {
-            if (kls.getSuhu() <= 35) {
-                System.out.println("Suhu : s");
-            }
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if (s > ts) {
-            kon = 1;
-        } else {
-            kon = 0;
-        }
+        persentaseKondisiLingkungan(s);
         return s;
     }
     @Override
@@ -383,36 +373,37 @@ public class Sistem extends Proses{
     System.out.println("::Anda Masuk CheckKondisiKenyamanan::");
     }
   
-    int CheckKondisiKenyamanan() {
+    int CheckKondisiKenyamanan(RuangKelas kls) {
 //        int kon;
-//        if ("s".equalsIgnoreCase(kls.getKebisingan())) {
-//            System.out.println("Kebisingan : s");
-//            s++;
-//        } else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        if ("s".equalsIgnoreCase(kls.getBau())) {
-//            System.out.println("Bau : s");
-//            s++;
-//        } else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        if ("s".equalsIgnoreCase(kls.getKerusakan())) {
-//            System.out.println("Kerusakan : s");
-//            s++;
-//        } else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        if ("s".equalsIgnoreCase(kls.getKeausan())) {
-//            System.out.println("Keausan : s");
-//            s++;
-//        } else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
+//        System.out.println("==============Analisis==================");
+       if ("Tidak Bising".equalsIgnoreCase(kls.getKebisingan())||"Sepi/Tenang".equalsIgnoreCase(kls.getKebisingan())) {
+            System.out.println("Kebisingan : Tidak Bising");
+            s++;
+        } else {
+            System.out.println("Kebisingan : Bising");
+            ts++;
+        }
+        if ("Tidak Bau".equalsIgnoreCase(kls.getBau())||"Wangi".equalsIgnoreCase(kls.getBau())) {
+            System.out.println("Bau : Enak");
+            s++;
+        } else {
+            System.out.println("Bau : Tidak Sedap");
+            ts++;
+        }
+        if ("Tidak Begitu Parah".equalsIgnoreCase(kls.getKerusakan())||"Keadaan Baik".equalsIgnoreCase(kls.getKerusakan())) {
+            System.out.println("Kerusakan : Tidak Rusak");
+            s++;
+        } else {
+            System.out.println("Kerusakan : Rusak");
+            ts++;
+        }
+        if ("Tidak Aus".equalsIgnoreCase(kls.getKeausan())) {
+            System.out.println("Keausan : Tidak Ada");
+            s++;
+        } else {
+            System.out.println("Keausan : Ada");
+            ts++;
+        }
 //        if (s == 1) {
 //            System.out.println("s");
 //            kon = 1;
@@ -420,6 +411,7 @@ public class Sistem extends Proses{
 //            System.out.println("Tidak s");
 //            kon = 0;
 //        }
+        persentaseKenyamanan(s);
         return s;
     }
     @Override
@@ -430,38 +422,33 @@ public class Sistem extends Proses{
     System.out.println("::Anda Masuk CheckKondisiKeamanan::");
     }
 
-    int CheckKondisiKeamanan() {
+    int CheckKondisiKeamanan(RuangKelas kls) {
 //        int kon;
 //        inop.inputKondisiLingkungan();
 //        kls = inop.getRuangKelas();
-//        if ("s".equalsIgnoreCase(kls.getKekokohan())) {
-//            System.out.println("Kekokohan : s");
-//            s++;
-//        } else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        if ("s".equalsIgnoreCase(kls.getKunciPintuJendela())) {
-//            System.out.println("KunciPintuJendela : s");
-//            s++;
-//        } else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        if ("s".equalsIgnoreCase(kls.getBahaya())) {
-//            System.out.println("Bahaya : s");
-//            s++;
-//        } else {
-//            System.out.println("Tidak s");
-//            ts++;
-//        }
-//        if (s == 1) {
-//            System.out.println("s");
-//            kon = 1;
-//        } else {
-//            System.out.println("Tidak s");
-//            kon = 0;
-//        }  
+        System.out.println("==============Analisis==================");
+        if ("Kokoh".equalsIgnoreCase(kls.getKekokohan())) {
+            System.out.println("Kekokohan : Sesuai");
+            s++;
+        } else {
+            System.out.println("Kekokohan : Tidak Sesuai");
+            ts++;
+        }
+        if ("Terkunci".equalsIgnoreCase(kls.getKunciPintuJendela())) {
+            System.out.println("KunciPintuJendela : Sesuai");
+            s++;
+        } else {
+            System.out.println("KunciPintuJendela : Tidak Sesuai");
+            ts++;
+        }
+        if ("Aman".equalsIgnoreCase(kls.getBahaya())) {
+            System.out.println("Kondisi Kelas : Aman");
+            s++;
+        } else {
+            System.out.println("Kondisi Kelas : Berbahaya");
+            ts++;
+        }
+        persentaseKeamanan(s); 
         return s;
     }
     @Override

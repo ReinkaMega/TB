@@ -972,43 +972,7 @@ private boolean DiEdit() {
         kls = x.getRuangKelas();
         //String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x
        x.output(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKerusakan(),null);
-       System.out.println("==============Analisis==================");
-       if ("Tidak Bising".equalsIgnoreCase(kls.getKebisingan())||"Sepi/Tenang".equalsIgnoreCase(kls.getKebisingan())) {
-            System.out.println("Kebisingan : Tidak Bising");
-            s++;
-        } else {
-            System.out.println("Kebisingan : Bising");
-            ts++;
-        }
-        if ("Tidak Bau".equalsIgnoreCase(kls.getBau())||"Wangi".equalsIgnoreCase(kls.getBau())) {
-            System.out.println("Bau : Enak");
-            s++;
-        } else {
-            System.out.println("Bau : Tidak Sedap");
-            ts++;
-        }
-        if ("Tidak Begitu Parah".equalsIgnoreCase(kls.getKerusakan())||"Keadaan Baik".equalsIgnoreCase(kls.getKerusakan())) {
-            System.out.println("Kerusakan : Tidak Rusak");
-            s++;
-        } else {
-            System.out.println("Kerusakan : Rusak");
-            ts++;
-        }
-        if ("Tidak Aus".equalsIgnoreCase(kls.getKeausan())) {
-            System.out.println("Keausan : Tidak Ada");
-            s++;
-        } else {
-            System.out.println("Keausan : Ada");
-            ts++;
-        }
-//        if (s == 1) {
-//            System.out.println("s");
-//            kon = 1;
-//        } else {
-//            System.out.println("Tidak s");
-//            kon = 0;
-//        }
-        n.persentaseKenyamanan(s);
+        n.CheckKondisiKenyamanan(kls);
         dispose();
         x.inputKondisiKeamanan(IDKelas.getText());
     }//GEN-LAST:event_LnActionPerformed

@@ -671,46 +671,7 @@ public class KondisiRuang extends javax.swing.JFrame {
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getPanjangRuang(), kls.getLebarRuang(), kls.getJumlahKursi(),kls.getJumlahPintu() ,kls.getJumlahJendela());
-        System.out.println("==============Analisis==================");
-        Luas = kls.getPanjangRuang() * kls.getLebarRuang();
-        if (kls.getLebarRuang() == kls.getPanjangRuang()) {
-            System.out.println("Luas = "+Luas);
-            System.out.println("Luas Tidak Sesuai");
-            ts++;
-        } else {
-            System.out.println("Luas = "+Luas);
-            System.out.println("Luas Sesuai");
-            s++;
-        }
-        RasioLuas = Luas / kls.getJumlahKursi();
-        System.out.println("Rasio : " + RasioLuas);
-        if(RasioLuas<=0.5){
-            System.out.println("Rasio Tidak Sesuai");
-        }
-        else{
-            System.out.println("Rasio Sesuai");
-            s++;
-        }
-        if (kls.getJumlahPintu() >= 2) {
-            System.out.println("Jumlah Pintu Sesuai");
-            s++;
-        } else {
-            System.out.println("Jumlah Pintu Tidak Sesuai");
-            ts++;
-        }
-        if (kls.getJumlahJendela() >= 1) {
-            System.out.println("Jumlah Jendela Sesuai");
-            s++;
-        } else {
-            System.out.println("Jumlah Jendela Tidak Sesuai");
-            ts++;
-        }
-//        if (ts > s) {
-//            kondisi = 0; 
-//        } else {
-//            kondisi = 1;
-//        }
-         n.persentaseKondisiRuang(s);
+        n.CheckKondisiRuang(kls);
          dispose();
          x.inputKondisiKebersihan(IDKelas.getText());
     }//GEN-LAST:event_LanjutActionPerformed

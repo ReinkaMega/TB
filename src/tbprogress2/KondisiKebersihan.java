@@ -745,43 +745,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         Sistem n = new Sistem();
         int kon;
         x.output(kls.getKondisiLantai(), kls.getKondisiDinding(), kls.getKondisiAtap(), kls.getKondisiPintu(), kls.getKondisiJendela());
-        System.out.println("==============Analisis=================="); 
-        if (kls.getKondisiLantai().equalsIgnoreCase("Lantai Bersih")) {
-            System.out.println("Kondisi Lantai : Sesuai");
-            s++;
-        } else {
-            System.out.println("Kondisi Lantai : Tidak Sesuai");
-            ts++;
-        }
-        if (kls.getKondisiDinding().equalsIgnoreCase("Dinding Bersih/Baik")){
-            System.out.println("Kondisi Dinding : Sesuai");
-            s++;
-        }else {
-            ts++;
-            System.out.println("Kondisi Dinding : Tidak Sesuai");
-        }
-        if (kls.getKondisiAtap().equalsIgnoreCase("Atap Bersih")){
-            System.out.println("Kondisi Atap : Sesuai");
-            s++;
-        }else{
-            System.out.println("Kondisi Atap : Tidak Sesuai");
-            ts++;
-        }
-        if (kls.getKondisiPintu().equalsIgnoreCase("Pintu Bersih/Baik")){
-            System.out.println("Kondisi Pintu : Sesuai");
-            s++;
-        }else {
-            System.out.println("Kondisi Pintu : Tidak Sesuai");
-            ts++;
-        }
-        if (kls.getKondisiJendela().equalsIgnoreCase("Jendela Bersih/Baik")){
-            System.out.println("Kondisi Jendela : Sesuai");
-            s++;
-        } else {
-            System.out.println("Kondisi Jendela : Tidak Sesuai");
-            ts++;
-        }
-        n.persentaseKondisiLingkungan(s);
+        n.CheckKondisiKebersihan(kls);
         dispose();
         x.inputKondisiLingkungan(IDKelas.getText());
     }//GEN-LAST:event_NextActionPerformed

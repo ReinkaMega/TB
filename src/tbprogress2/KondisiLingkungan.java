@@ -763,43 +763,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getSirkulasiUdara(), kls.getNilaiPencahayaan(), kls.getKelembaban(),kls.getSuhu());
-        System.out.println("==============Analisis==================");
-        if ("Lancar".equalsIgnoreCase(kls.getSirkulasiUdara())) {
-            System.out.println("Sirkulasi Udara : Sesuai");
-            s++;
-        } else {
-            System.out.println("Sirkulasi Udara : Tidak Sesuai");
-            ts++;
-        }
-        if (kls.getNilaiPencahayaan() >= 60) {
-            if (kls.getNilaiPencahayaan() < 80) {
-                System.out.println("Nilai Pencahayaan : Sesuai");
-            }
-            s++;
-        } else {
-            System.out.println("Nilai Pencahayaan : Tidak Sesuai");
-            ts++;
-        }
-        if (kls.getKelembaban() >= 70) {
-            if (kls.getKelembaban() <= 80) {
-                System.out.println("Kelembaban : Sesuai");
-            }
-            s++;
-        } else {
-            System.out.println("Kelembaban : Tidak Sesuai");
-            ts++;
-        }
-        
-        if (kls.getSuhu() >= 25) {
-            if (kls.getSuhu() <= 35) {
-                System.out.println("Suhu : Sesuai");
-            }
-            s++;
-        } else {
-            System.out.println("Suhu : Tidak Sesuai");
-            ts++;
-        }
-        n.persentaseKondisiLingkungan(s);
+        n.CheckKondisiLingkungan(kls);
         dispose();
         x.inputKondisiKenyamanan(IDKelas.getText());
     }//GEN-LAST:event_NextActionPerformed

@@ -705,29 +705,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getKekokohan(), kls.getKunciPintuJendela(), kls.getBahaya());
-        System.out.println("==============Analisis==================");
-        if ("Kokoh".equalsIgnoreCase(kls.getKekokohan())) {
-            System.out.println("Kekokohan : Sesuai");
-            s++;
-        } else {
-            System.out.println("Kekokohan : Tidak Sesuai");
-            ts++;
-        }
-        if ("Terkunci".equalsIgnoreCase(kls.getKunciPintuJendela())) {
-            System.out.println("KunciPintuJendela : Sesuai");
-            s++;
-        } else {
-            System.out.println("KunciPintuJendela : Tidak Sesuai");
-            ts++;
-        }
-        if ("Aman".equalsIgnoreCase(kls.getBahaya())) {
-            System.out.println("Kondisi Kelas : Aman");
-            s++;
-        } else {
-            System.out.println("Kondisi Kelas : Berbahaya");
-            ts++;
-        }
-        n.persentaseKeamanan(s);
+        n.CheckKondisiKeamanan(kls);
 //        if (s == 1) {
 //            System.out.println("s");
 //            kon = 1;
@@ -843,7 +821,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiKeamanan("Kode").setVisible(true);
+                new KondisiKeamanan("10000").setVisible(true);
             }
         });
     }
