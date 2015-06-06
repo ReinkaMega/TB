@@ -13,9 +13,9 @@ public class TBProgress2 {
      * @param args the command line arguments 
      */
     public static void main(String[] args) {
-        Sistem analisis = new Sistem();
-        IO in = new IO();
-        in.inputIdentitasKelas();
+//        Sistem analisis = new Sistem();
+//        IO in = new IO();
+//        in.inputIdentitasKelas();
 //        in.InputKondisiRuang();
 //        analisis.persentaseKondisiRuang();
 //        analisis.CheckKondisiSarana();
@@ -28,7 +28,7 @@ public class TBProgress2 {
 //        analisis.persentaseKenyamanan();
 //        analisis.CheckKondisiKeamanan();
 //        analisis.persentaseKeamanan();
-        
+        IdentitasKelas a = new IdentitasKelas();
         
         //Arinkade
     }

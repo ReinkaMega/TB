@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -24,6 +25,7 @@ public class IdentitasKelas extends JFrame implements ActionListener{
     JLabel lbl[] = new JLabel[4];
     JTextField txt[] = new JTextField[4];
     JButton btn[] = new JButton[6];
+    JTable tabel = new JTable();
     public IdentitasKelas(){
            super("IDENTITAS RUANG KELAS");
         lbl[0] = new JLabel("Nama Ruang");
@@ -56,6 +58,8 @@ public class IdentitasKelas extends JFrame implements ActionListener{
         btn[4].setBounds(305, 160, 55, 20);
         btn[5] = new JButton("NEXT");
         btn[5].setBounds(365, 160, 70, 20);
+        tabel = new JTable();
+        tabel.setBounds(15, 200, 300, 100);
         JPanel panel = new JPanel();
         panel.setLayout(null);
         panel.setBorder(BorderFactory.createTitledBorder("Panel Manager"));
@@ -73,11 +77,12 @@ public class IdentitasKelas extends JFrame implements ActionListener{
         panel.add(btn[3]);
         panel.add(btn[4]);
         panel.add(btn[5]);
+        panel.add(tabel);
         
         add(panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         //pack();
-        setSize(450, 300);
+        setSize(450, 700);
         setVisible(true);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -105,13 +110,19 @@ public class IdentitasKelas extends JFrame implements ActionListener{
         btn[2].setVisible(false);
         btn[3].setVisible(false);
        }
-       else if(e.getSource() == btn[1]){
+       if(e.getSource() == btn[1]){
 //        da.Save(NM, LK, JR, FK);
 //        tampilDataKeTabel();
         btn[0].setVisible(true);
         btn[1].setVisible(false);
         btn[5].setVisible(true);
-        
+        }
+        if(e.getSource() == btn[2]){
+//        da.Save(NM, LK, JR, FK);
+//        tampilDataKeTabel();
+        btn[0].setVisible(true);
+        btn[1].setVisible(false);
+        btn[5].setVisible(true);
         }
     
     }
