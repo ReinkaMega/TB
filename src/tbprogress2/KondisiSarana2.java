@@ -743,7 +743,7 @@ public class KondisiSarana2 extends javax.swing.JFrame {
             System.out.println("Tidak s");
             ts++;
         }
-        n.persentaseKondisiSarana();
+        //n.persentaseKondisiSarana();
         dispose();
     }//GEN-LAST:event_lanjutActionPerformed
 

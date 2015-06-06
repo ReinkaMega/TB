@@ -501,11 +501,11 @@ public class IO extends Proses implements View{
     }
 
     @Override
-    void persentaseKondisiSarana() {
+    void persentaseKondisiSarana(int s) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     @Override
-    void persentaseKondisiSarana2() {
+    void persentaseKondisiSarana2(int s) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
