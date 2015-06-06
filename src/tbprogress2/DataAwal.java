@@ -476,7 +476,6 @@ public class DataAwal extends javax.swing.JFrame {
             IO x = new IO(NM,LK,FK,JR);
             x.IdentitasKelas();
             JOptionPane.showMessageDialog(null, "ID Ruang Anda = "+CODE.getText());
-            //x.InputKondisiRuang();
             dispose();
             x.InputKondisiRuang(CODE.getText());
         }        
