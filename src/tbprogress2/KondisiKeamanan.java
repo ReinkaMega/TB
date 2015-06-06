@@ -193,7 +193,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             
             jTabel1.setModel(DefaultTabelku);
 
-            String sql = "Select * from keamanan";
+            String sql = "Select * from keamanan ";
             Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
 
@@ -713,9 +713,10 @@ public class KondisiKeamanan extends javax.swing.JFrame {
 //            System.out.println("Tidak s");
 //            kon = 0;
 //        }
+        
         dispose();
             x.IdentitasKelas();
-            dispose();
+            new FrameOutput(IDKelas.getText()).setVisible(true);
     }//GEN-LAST:event_NextActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
@@ -758,6 +759,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Aman.setEnabled(false);
         Bahaya.setEnabled(false);
         jTable1.enable(true);
+        
     }//GEN-LAST:event_SaveActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
