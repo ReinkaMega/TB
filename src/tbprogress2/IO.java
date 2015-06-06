@@ -30,6 +30,142 @@ public class IO extends Proses implements View{
         System.out.println(""+kls.getPanjangRuang());
         rk = new RuangKelas(kls.getPanjangRuang(),kls.getLebarRuang(),kls.getJumlahKursi(),kls.getJumlahPintu(),kls.getJumlahJendela()); 
     }
+    
+     public IO(JTextField kontak,JTextField kskb,JTextField kskr,JTextField pskb,JTextField pskp,JTextField pskr,JTextField jlcd,JTextField kklb,JTextField kklr,JTextField pklb,JTextField Pojok1,JTextField pklr,JTextField jlampu,JTextField plb,JTextField plr,JTextField klb,JTextField klr){
+     kls.setJumlahStopKontak(Integer.parseInt(kontak.getText()));
+        int a,b;
+        a = Integer.parseInt(kskb.getText());
+        b = Integer.parseInt(kskr.getText());
+        if(a>=b){
+            kls.setKondisiStopKontak("Baik");
+        }
+        else{
+            kls.setKondisiStopKontak("Rusak");
+        }
+        int c,d,e;
+        c = Integer.parseInt(pskb.getText());
+        d = Integer.parseInt(pskp.getText());
+        e = Integer.parseInt(pskr.getText());
+        if(c>=e || d>=e){
+            kls.setPosisiStopKontak("Dekat Dosen/Pojok Kelas");
+        }
+        else{
+            kls.setPosisiStopKontak("Samping Kelas");
+        }
+        kls.setJumlahKabelLCD(Integer.parseInt(jlcd.getText()));
+         int f,g;
+        f = Integer.parseInt(kklb.getText());
+        g = Integer.parseInt(kklr.getText());
+        if(f>=g){
+            kls.setKondisiKabelLCD("Baik");
+        }
+        else{
+            kls.setKondisiKabelLCD("Rusak");
+        }
+          int h,i,j;
+        h = Integer.parseInt(pklb.getText());
+        i = Integer.parseInt(Pojok1.getText());
+        j = Integer.parseInt(pklr.getText());
+        if(h>=j || i>=j){
+            kls.setPosisiKabelLCD("Dekat Dosen/Pojok Kelas");
+        }
+        else{
+            kls.setPosisiKabelLCD("Samping Kelas");
+        }
+          kls.setJumlahLampu(Integer.parseInt(jlampu.getText()));
+         int k,l;
+        k = Integer.parseInt(plb.getText());
+        l = Integer.parseInt(plr.getText());
+        if(k>=l){
+            kls.setKondisiLampu("Baik");
+        }
+        else{
+            kls.setKondisiLampu("Rusak");
+        }
+          int m,n;
+        m = Integer.parseInt(klb.getText());
+        n = Integer.parseInt(klr.getText());
+        if(m>=n){
+            kls.setPosisiKabelLCD("Atap Ruangan");
+        }
+        else{
+            kls.setPosisiKabelLCD("Selain Atap Ruangan");
+        }
+        rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu()); 
+    }
+     
+       public IO(JTextField jka,JTextField pkab,JTextField pkar,JTextField kkab,JTextField kkar,JTextField jac,JTextField pacs,JTextField pacd,JTextField pacb,JTextField kacb,JTextField kacr,JTextField ssid,JCheckBox bb,JCheckBox bt,JTextField jcctv,JTextField kcctvb,JTextField kcctvr,JTextField pcctvb,JTextField pcctvr){
+     kls.setJumlahKipasAngin(Integer.parseInt(jka.getText()));
+        int a,b;
+        a = Integer.parseInt(pkab.getText());
+        b = Integer.parseInt(pkar.getText());
+        if(a>=b){
+            kls.setKondisiKipasAngin("Atap Ruangan");
+        }
+        else{
+            kls.setKondisiKipasAngin("Samping Ruangan");
+        }
+        int c,d;
+        c = Integer.parseInt(kkab.getText());
+        d = Integer.parseInt(kkar.getText());
+        if(c>=d){
+            kls.setPosisiKipasAngin("Baik");
+        }
+        else{
+            kls.setPosisiKipasAngin("Rusak");
+        }
+        kls.setJumlahAC(Integer.parseInt(jac.getText()));
+         int e,f,g;
+        e = Integer.parseInt(pacs.getText());
+        f = Integer.parseInt(pacd.getText());
+        g = Integer.parseInt(pacb.getText());
+        if(e>=f || g>=f){
+            kls.setKondisiKabelLCD("Samping/Belakang");
+        }
+        else{
+            kls.setKondisiKabelLCD("Depan");
+        }
+        int h,i;
+        h = Integer.parseInt(kacb.getText());
+        i = Integer.parseInt(kacr.getText());
+        
+        if(h>=i){
+            kls.setPosisiKabelLCD("Baik");
+        }
+        else{
+            kls.setPosisiKabelLCD("Rusak");
+        }
+        kls.setSSID(ssid.getText());
+        if(bb.isSelected()){
+            kls.setBandwidth("Bisa");
+        }
+        else if(bt.isSelected()){
+            kls.setKondisiJendela("Tidak");
+        }
+        
+          kls.setJumlahCCTV(Integer.parseInt(jcctv.getText()));
+         int k,l;
+        k = Integer.parseInt(kcctvb.getText());
+        l = Integer.parseInt(kcctvr.getText());
+        if(k>=l){
+            kls.setKondisiCCTV("Baik");
+        }
+        else{
+            kls.setKondisiCCTV("Rusak");
+        }
+          int m,n;
+        m = Integer.parseInt(pcctvb.getText());
+        n = Integer.parseInt(pcctvr.getText());
+        if(m>=n){
+            kls.setPosisiKabelLCD("Depan/Belakang");
+        }
+        else{
+            kls.setPosisiKabelLCD("Samping");
+        }
+       rk = new RuangKelas(kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
+     }
+     
+     
     public IO(JCheckBox Kokoh,JCheckBox TKokoh,JCheckBox Adakunci,JCheckBox Tkunci,JCheckBox Aman,JCheckBox Bahaya){
         if(Kokoh.isSelected()){
             kls.setKekokohan("Kokoh");
