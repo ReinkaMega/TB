@@ -437,6 +437,11 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         PRC.setText("Parameter");
 
         PC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        PC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PCActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("%");
@@ -856,6 +861,10 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         SUL.setEnabled(false);
         SUT.setEnabled(false);
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void PCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PCActionPerformed
 
     /**
      * @param args the command line arguments
