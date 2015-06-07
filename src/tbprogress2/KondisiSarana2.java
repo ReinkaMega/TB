@@ -73,6 +73,7 @@ public class KondisiSarana2 extends javax.swing.JFrame {
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
         
     }
+
     void Enable_TextField1(boolean x){
         
         kondisiKA.setEnabled(x);
@@ -106,7 +107,11 @@ public class KondisiSarana2 extends javax.swing.JFrame {
         kcctvb.setEnabled(x);
         kcctvr.setEnabled(x);
         pcctvb.setEnabled(x);
-        pcctvr.setEnabled(x); 
+        pcctvr.setEnabled(x);
+        
+        cctvbaik.setEnabled(x);
+        cctvrusak.setEnabled(x);
+           
     }
 private boolean DiEdit() {
 //        RuangKelas kls = new RuangKelas();
@@ -938,9 +943,9 @@ private boolean DiEdit() {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 87, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(lbl_kar)
@@ -970,7 +975,7 @@ private boolean DiEdit() {
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
                                 .addComponent(posisiKA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel1)
@@ -1007,65 +1012,67 @@ private boolean DiEdit() {
                                 .addComponent(jLabel16)
                                 .addGap(18, 18, 18)
                                 .addComponent(kondisiAC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(92, 92, 92))
+                        .addGap(92, 92, 92)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(bb)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(bt))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel19)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jcctv, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel20)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(kondisiCCTV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel21)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(posisiCCTV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lbl_pcs)
+                                            .addComponent(lbl_pcdb, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(pcctvr, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(pcctvb, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lbl_kcr)
+                                            .addComponent(lbl_kcb)
+                                            .addComponent(lbl_jcr)
+                                            .addComponent(lbl_jcb))
+                                        .addGap(67, 67, 67)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cctvbaik, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cctvrusak, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(kcctvb, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(kcctvr, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addContainerGap(44, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29))))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(btnSelesai))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(Add)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Save)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Next)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Edit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(bb)
-                                .addGap(18, 18, 18)
-                                .addComponent(bt))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jcctv, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addGap(18, 18, 18)
-                                .addComponent(kondisiCCTV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel21)
-                                .addGap(18, 18, 18)
-                                .addComponent(posisiCCTV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_pcs)
-                                    .addComponent(lbl_pcdb, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pcctvr, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(pcctvb, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_kcr)
-                                    .addComponent(lbl_kcb)
-                                    .addComponent(lbl_jcr)
-                                    .addComponent(lbl_jcb))
-                                .addGap(67, 67, 67)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cctvbaik, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cctvrusak, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(kcctvb, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(kcctvr, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(44, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(btnSelesai)
+                        .addComponent(Next)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Edit)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -1084,13 +1091,14 @@ private boolean DiEdit() {
                     .addComponent(jac, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel17)
-                    .addComponent(bb)
-                    .addComponent(bt)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(posisiKA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(posisiAC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel17)
+                        .addComponent(bb)
+                        .addComponent(bt)
+                        .addComponent(posisiAC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_acs)
@@ -1157,20 +1165,20 @@ private boolean DiEdit() {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbl_pcs)
                             .addComponent(pcctvr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 41, Short.MAX_VALUE)
-                        .addComponent(btnSelesai)
-                        .addGap(30, 30, 30)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Next)
-                            .addComponent(Save)
-                            .addComponent(Add)
-                            .addComponent(Edit))
-                        .addGap(31, 31, 31))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSelesai)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Add)
+                    .addComponent(Save)
+                    .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Next)
+                    .addComponent(Edit))
+                .addGap(94, 94, 94))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1184,10 +1192,10 @@ private boolean DiEdit() {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1390,15 +1398,147 @@ private boolean DiEdit() {
     }//GEN-LAST:event_ssidActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        // TODO add your handling code here:
+           IO x = new IO(jka,pkab,pkar,kkab,kkar,jac,pacs,pacd,pacb,kacb,kacr,ssid,bb,bt,jcctv,kcctvb,kcctvr,pcctvb,pcctvr);
+        kls = x.getRuangKelas();
+        System.out.println(""+IDKelas.getText()+jka.getText()+kls.getPosisiKipasAngin()+kls.getKondisiKipasAngin()+jac.getText()+kls.getPosisiAC()+kls.getKondisiAC()+ssid.getText()+kls.getBandwidth()+jcctv.getText()+kls.getKondisiCCTV()+kls.getPosisiCCTV());
+        /////////String KodeR,JTextField jka,String pka,String kka,JTextField jac,String pac,String kac,JTextField ssid,String bw,JTextField jcctv,String kcctv,String pcctv
+       //////////String KodeR,JTextField jka,String pka,String kka,JTextField jac,String pac,String kac,JTextField ssid,String bw,JTextField jcctv,String kcctv,String pcctv){
+        
+        da.Save(IDKelas.getText(),jka,kls.getPosisiKipasAngin(),kls.getKondisiKipasAngin(),jac,kls.getPosisiAC(),kls.getKondisiAC(),ssid,kls.getBandwidth(),jcctv,kls.getKondisiCCTV(),kls.getPosisiCCTV());
+        tampilDataKeTabel();
+        Save.setVisible(false);
+        Add.setVisible(true);
+        clearTEXT();
+        kondisiklik(true);
+        Next.setVisible(false);
+       jka.setEnabled(false);
+        pkab.setEnabled(false);
+        pkar.setEnabled(false);
+        kkab.setEnabled(false);
+        kkar.setEnabled(false);
+        pacs.setEnabled(false);
+        pacd.setEnabled(false);
+        pacb.setEnabled(false);
+        kacb.setEnabled(false);
+        kacr.setEnabled(false);
+        cctvbaik.setEnabled(false);
+        cctvrusak.setEnabled(false);
+        kcctvb.setEnabled(false);
+        kcctvr.setEnabled(false);
+        pcctvb.setEnabled(false);
+        pcctvr.setEnabled(false);
+        jTable1.enable(true);
+        try{
+            String Sql = "Select id from jkp_sarana2 ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom12 = Set.getString("id");
+                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                    Add.setVisible(false);
+                    break;
+                }
+                else{
+                    Add.setVisible(true);
+                    
+                }
+                System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
+        }
+        catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+        }
     }//GEN-LAST:event_SaveActionPerformed
 
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        // TODO add your handling code here:
+        kondisiklik(true);
+        jka.setEditable(true);
+        jac.setEditable(true);
+        jcctv.setEditable(true);
+        jcctv.setEnabled(true);    
+        jka.setEnabled(true);
+        pkab.setEnabled(true);
+        pkar.setEnabled(true);
+        kkab.setEnabled(true);
+        kkar.setEnabled(true);
+        jac.setEnabled(true);
+        pacs.setEnabled(true);
+        pacd.setEnabled(true);
+        pacb.setEnabled(true);
+        kacb.setEnabled(true);
+        kacr.setEnabled(true);
+        cctvbaik.setEnabled(true);
+        cctvrusak.setEnabled(true);
+        ssid.setEnabled(true);
+        bb.setEnabled(true);
+        bt.setEnabled(true);
+        kcctvb.setEnabled(true);
+        kcctvr.setEnabled(true);
+        pcctvb.setEnabled(true);
+        pcctvr.setEnabled(true);
+        clearTEXT();
+        Save.setVisible(true);
+        Edit.setVisible(false);
+        Delete.setVisible(false);
+        Add.setVisible(false);
+        Next.setVisible(false);
+        jTable1.enable(false);
     }//GEN-LAST:event_AddActionPerformed
 
     private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
-        // TODO add your handling code here:
+                btnSelesai.setVisible(DiEdit());
+        jTable1.enable(true);
+        clearTEXT();
+         try{String Sql = "Select id from jkp_sarana2 ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom12 = Set.getString("id");
+                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                    Add.setVisible(false);
+                    break;
+                }
+                else{
+                    Add.setVisible(true);
+                    
+                }
+                System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
+         }
+         catch(SQLException e){
+             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+         }
+        Delete.setVisible(false);
+        //ADD.setVisible(true);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        jka.setEnabled(false);
+        pkab.setEnabled(false);
+        pkar.setEnabled(false);
+        kkab.setEnabled(false);
+        kkar.setEnabled(false);
+        pacs.setEnabled(false);
+        pacd.setEnabled(false);
+        pacb.setEnabled(false);
+        kacb.setEnabled(false);
+        kacr.setEnabled(false);
+        cctvbaik.setEnabled(false);
+        cctvrusak.setEnabled(false);
+        kcctvb.setEnabled(false);
+        kcctvr.setEnabled(false);
+        pcctvb.setEnabled(false);
+        pcctvr.setEnabled(false);
+        Delete.setVisible(false);
+        Add.setVisible(false);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        jTable1.enable(false);
     }//GEN-LAST:event_btnSelesaiActionPerformed
 
     private void IDKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDKelasActionPerformed
@@ -1406,7 +1546,34 @@ private boolean DiEdit() {
     }//GEN-LAST:event_IDKelasActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
-        // TODO add your handling code here:
+            kondisiklik(true);
+        clearTEXT2();
+            jka.setEditable(true);
+            jac.setEditable(true);
+            jcctv.setEditable(true);
+        Enable_TextField1(false);
+        btnSelesai.setVisible(true);
+         jka.setEnabled(true);
+        pkab.setEnabled(true);
+        pkar.setEnabled(true);
+        kkab.setEnabled(true);
+        kkar.setEnabled(true);
+        pacs.setEnabled(true);
+        pacd.setEnabled(true);
+        pacb.setEnabled(true);
+        kacb.setEnabled(true);
+        kacr.setEnabled(true);
+        cctvbaik.setEnabled(true);
+        cctvrusak.setEnabled(true);
+        kcctvb.setEnabled(true);
+        kcctvr.setEnabled(true);
+        pcctvb.setEnabled(true);
+        pcctvr.setEnabled(true);
+        Delete.setVisible(false);
+        Add.setVisible(false);
+        Edit.setVisible(false);
+        Next.setVisible(false);
+        jTable1.enable(false);
     }//GEN-LAST:event_EditActionPerformed
 
     /**
@@ -1439,7 +1606,7 @@ private boolean DiEdit() {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new KondisiSarana2().setVisible(true);
+                new KondisiSarana2("1").setVisible(true);
             }
         });
     }
