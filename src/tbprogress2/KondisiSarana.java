@@ -35,6 +35,7 @@ public class KondisiSarana extends javax.swing.JFrame {
     private String C,D,E,F,G,kode;
     public KondisiSarana(String KR) {
         initComponents();
+        
         Save.setVisible(false);
         Next.setVisible(false);
         btnSelesai.setVisible(false);
@@ -43,6 +44,7 @@ public class KondisiSarana extends javax.swing.JFrame {
         setTitle("Sarana Ruang");
         con.koneksi();
         IDKelas.setEditable(false);
+        IDKelas.setText(KR);
         tampilDataKeTabel();
 //        enableBtn(false);
 //        enviBtnSave(true);
@@ -79,7 +81,11 @@ public class KondisiSarana extends javax.swing.JFrame {
         PosisiKL.setEnabled(false);
         PosisiL.setEnabled(false);
         PosisiSK.setEnabled(false);
-        
+//        for(int x=0;x<1000;x++){
+//            if(IDKelas.getText().equals(x)){
+//            
+//            }
+//        }
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Dimension frameSize = this.getSize();
         if (frameSize.height > screenSize.height) {
@@ -89,7 +95,10 @@ public class KondisiSarana extends javax.swing.JFrame {
             frameSize.width = screenSize.width;
         }
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-        IDKelas.setText(KR);
+        
+    }
+    void Enable_TextField1(){
+        
     }
 private boolean DiEdit() {
 //        boolean nilai = false;
@@ -163,6 +172,22 @@ private boolean DiEdit() {
        klr.setEnabled(x);
        
    }
+   void ken(boolean x){
+       kskb.setEnabled(x);
+       kskr.setEnabled(x);
+       kklb.setEnabled(x);
+       kklr.setEnabled(x);
+       plb.setEnabled(x);
+       plr.setEnabled(x);
+       pskb.setEnabled(x);
+       Pojok.setEnabled(x);
+       pskr.setEnabled(x);
+       pklb.setEnabled(x);
+       pklr.setEnabled(x);
+       Pojok1.setEnabled(x);
+       klb.setEnabled(x);
+       klr.setEnabled(x);
+   }
     private void klikTabel(JTable jTabel) {
         jTabel.setRowSelectionAllowed(true);
         baris = jTabel.getSelectedRow();
@@ -178,7 +203,7 @@ private boolean DiEdit() {
         String kolom10 = jTabel.getValueAt(baris, 9).toString();
         String kolom11 = jTabel.getValueAt(baris, 10).toString();
         String kolom12 = jTabel.getValueAt(baris, 11).toString();
-      
+        
         if(IDKelas.getText().equals(kolom12)){
         
         kondisiklik(false);
@@ -261,7 +286,7 @@ private boolean DiEdit() {
         Edit.setVisible(true);
         Save.setVisible(false);
         Next.setVisible(true);
-        ADD.setVisible(true);
+        //ADD.setVisible(false);
         jTabel.enable(true);
         }
         else{
@@ -271,7 +296,24 @@ private boolean DiEdit() {
             Save.setVisible(false);
             btnSelesai.setVisible(false);
             Next.setVisible(false);
-            ADD.setVisible(true);
+           // ADD.setVisible(true);
+            clearTEXT();
+            
+        //ken(false);
+        KondisiKL.setText("");
+        KondisiL.setText("");
+        KondisiSK.setText("");
+        PosisiKL.setText("");
+        PosisiL.setText("");
+        PosisiSK.setText("");
+        
+        KondisiSK.setEnabled(false);
+        KondisiKL.setEnabled(false);
+        KondisiL.setEnabled(false);
+        
+        PosisiKL.setEnabled(false);
+        PosisiL.setEnabled(false);
+        PosisiSK.setEnabled(false);
         }
     }
     private void tableModel(JTable jTabel1) {
@@ -289,6 +331,24 @@ private boolean DiEdit() {
             Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
 
+            String Sql = "Select id from jkp_sarana ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom12 = Set.getString("id");
+                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                    ADD.setVisible(false);
+                    break;
+                }
+                else{
+                    ADD.setVisible(true);
+                    
+                }
+                System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
             int no = 0;
             while (set.next()) {
                 no++;
@@ -304,6 +364,12 @@ private boolean DiEdit() {
                 String kolom10 = set.getString("PLampu");
                 String kolom11 = set.getString("id_sarana");
                 String kolom12 = set.getString("id");
+//                if(kolom12.equals(IDKelas.getText())){
+//                    ADD.setVisible(false);
+//                }
+//                else{
+//                    ADD.setVisible(false);
+//                }
                 String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
                 DefaultTabelku.addRow(data);
             }
@@ -342,6 +408,12 @@ private boolean DiEdit() {
         }
     }
     void clearTEXT() {
+        KondisiKL.setText("");
+        KondisiL.setText("");
+        KondisiSK.setText("");
+        PosisiKL.setText("");
+        PosisiL.setText("");
+        PosisiSK.setText("");
         
         kontak.setText("");
         kskb.setText("");
@@ -1228,7 +1300,7 @@ private boolean DiEdit() {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiSarana("1").setVisible(true);
+                new KondisiSarana("2").setVisible(true);
             }
         });
     }
