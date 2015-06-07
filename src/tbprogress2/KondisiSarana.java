@@ -206,7 +206,7 @@ private boolean DiEdit() {
                         + "JLampu=" + "'" + m + "', "
                         + "KLampu=" + "'" + kls.getKondisiLampu() + "', "
                         + "PLampu=" + "'" + kls.getPosisiLampu() + "' "
-                        + "where id_jkp_sarana ='" + CODE.getText() + "'");
+                        + "where id_sarana ='" + CODE.getText() + "'");
 
                 tampilDataKeTabel();
                 JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
@@ -1152,8 +1152,31 @@ private boolean DiEdit() {
     private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
         btnSelesai.setVisible(DiEdit());
         jTable1.enable(true);
+        clearTEXT();
+         try{String Sql = "Select id from jkp_sarana ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom12 = Set.getString("id");
+                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                    ADD.setVisible(false);
+                    break;
+                }
+                else{
+                    ADD.setVisible(true);
+                    
+                }
+                System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
+         }
+         catch(SQLException e){
+             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+         }
         Delete.setVisible(false);
-        ADD.setVisible(true);
+        //ADD.setVisible(true);
         Edit.setVisible(false);
         Next.setVisible(false);
         kontak.setEnabled(false);
