@@ -106,43 +106,115 @@ public class KondisiSarana extends javax.swing.JFrame {
         klr.setEnabled(x);        
     }
 private boolean DiEdit() {
+//        RuangKelas kls = new RuangKelas();
+//        RuangKelas rk;
        boolean nilai = false;
-//        IO x = new IO(kontak,kskb, kskr, pskb,Pojok, pskr,jlcd,kklb,kklr,pklb,Pojok1,pklr,jlampu,plb,plr,klb,klr);
-//        Sistem n = new Sistem();
-//        kls = x.getRuangKelas();
-//        a = kls.get
-//        b = kls.getKunciPintuJendela();
-//        c = kls.getBahaya();
-//        d = FK.getText();
-//        e = FPJ.getText();
-//        f = FB.getText();
-//       try {
-//            if (a.equals("") || b.equals("") || c.equals("")) {
-//                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
-//                nilai=true;
-//                clearTEXT();
-//             
-//            } else {
-//                Statement st = con.config.getConnection().createStatement();
-//                st.executeUpdate(
-//                        
-//                        "update keamanan set "
-//                        + "kokoh=" + "'" + a + "', "
-//                        + "kunci=" + "'" + b + "', "
-//                        + "bahaya=" + "'" + c + "' "
-//                        + "where id_keamanan ='" + CODE.getText() 
-////                        +" and " +"kokoh=" + "'" + d + "' "+"and "
-////                                + "kunci=" + "'" + e + "' "+"and "
-////                                + "bahaya=" + "'" + f 
-//                                +"'");
-//
-//                tampilDataKeTabel();
-//                JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
-//                nilai=false;
-//            }
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(this, "Data gagal diperbaharui! : " + ex);
-//        }
+        a = kontak.getText();
+        b = kskb.getText();
+        c = kskr.getText();
+        d = pskb.getText();
+        e = Pojok.getText();
+        f = pskr.getText();
+        
+        g = jlcd.getText();
+        String h = kklb.getText();
+        String i = kklr.getText();
+        String j = pklb.getText();
+        String k = Pojok1.getText();
+        String l = pklr.getText();
+        
+        String m = jlampu.getText();
+        String n = plb.getText();
+        String o = plr.getText();
+        String p = klb.getText();
+        String q = klr.getText();
+        
+        int A = Integer.parseInt(kskb.getText());
+        int B = Integer.parseInt(kskr.getText());
+        if(A>=B){
+            kls.setKondisiStopKontak("Baik");
+        }
+        else{
+            kls.setKondisiStopKontak("Rusak");
+        }
+        int C,D,E;
+        C = Integer.parseInt(pskb.getText());
+        D = Integer.parseInt(Pojok.getText());
+        E = Integer.parseInt(pskr.getText());
+        if(C>=E || D>=E){
+            kls.setPosisiStopKontak("Dekat Dosen/Pojok Kelas");
+        }
+        else{
+            kls.setPosisiStopKontak("Samping Kelas");
+        }
+        int F,G;
+        F = Integer.parseInt(kklb.getText());
+        G = Integer.parseInt(kklr.getText());
+        if(F>=G){
+            kls.setKondisiKabelLCD("Baik");
+        }
+        else{
+            kls.setKondisiKabelLCD("Rusak");
+        }
+        int H,I,J;
+        H = Integer.parseInt(pklb.getText());
+        I = Integer.parseInt(Pojok1.getText());
+        J = Integer.parseInt(pklr.getText());
+        if(H>=J || I>=J){
+            kls.setPosisiKabelLCD("Dekat Dosen/Pojok Kelas");
+        }
+        else{
+            kls.setPosisiKabelLCD("Samping Kelas");
+        }
+        int K,L;
+        K = Integer.parseInt(plb.getText());
+        L = Integer.parseInt(plr.getText());
+        if(K>=L){
+            kls.setKondisiLampu("Baik");
+        }
+        else{
+            kls.setKondisiLampu("Rusak");
+        }
+          int M,N;
+        M = Integer.parseInt(klb.getText());
+        N = Integer.parseInt(klr.getText());
+        if(M>=N){
+            kls.setPosisiLampu("Atap Ruangan");
+        }
+        else{
+            kls.setPosisiLampu("Selain Atap Ruangan");
+        }
+
+       try {
+            if (a.equals("") || b.equals("") || c.equals("") || d.equals("")||e.equals("") || f.equals("") || g.equals("") || h.equals("")||i.equals("") || j.equals("") || k.equals("") || l.equals("")||m.equals("") || n.equals("") || o.equals("") || p.equals("")||q.equals("")) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                nilai=true;
+                clearTEXT();
+//            } else if (a.equals(c) && E.equals(e) && b.equals(d) && F.equals(f)) {
+//                JOptionPane.showMessageDialog(null, "Tidak ada data yang di perbaharui!");
+//                nilai = false;
+            } else {
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "update jkp_sarana set "
+                        + "JStopKontak=" + "'" + a + "', "
+                        + "KStopKontak=" + "'" + kls.getKondisiStopKontak() + "', "
+                        + "PStopKontak=" + "'" + kls.getPosisiStopKontak() + "', "
+                        + "JKabelLCD=" + "'" + g + "', "
+                        + "KKabelLCD=" + "'" + kls.getKondisiKabelLCD() + "', "
+                        + "PKabelLCD=" + "'" + kls.getPosisiKabelLCD() + "', "
+                        + "JLampu=" + "'" + m + "', "
+                        + "KLampu=" + "'" + kls.getKondisiLampu() + "', "
+                        + "PLampu=" + "'" + kls.getPosisiLampu() + "' "
+                        + "where id_jkp_sarana ='" + CODE.getText() + "'");
+
+                tampilDataKeTabel();
+                JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
+                nilai=false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Data gagal diperbaharui! : " + ex);
+        }
        return nilai;
    }
    void kondisiklik(boolean x){
@@ -439,6 +511,34 @@ private boolean DiEdit() {
         pklr.setText("");
         
         jlampu.setText("");
+        plb.setText("");
+        plr.setText("");
+        klb.setText("");
+        klr.setText("");        
+    }
+    void clearTEXT2() {
+        KondisiKL.setText("");
+        KondisiL.setText("");
+        KondisiSK.setText("");
+        PosisiKL.setText("");
+        PosisiL.setText("");
+        PosisiSK.setText("");
+        
+       // kontak.setText("");
+        kskb.setText("");
+        kskr.setText("");
+        pskb.setText("");
+        Pojok.setText("");
+        pskr.setText("");
+        
+       // jlcd.setText("");
+        kklb.setText("");
+        kklr.setText("");
+        pklb.setText("");
+        Pojok1.setText("");
+        pklr.setText("");
+        
+        //jlampu.setText("");
         plb.setText("");
         plr.setText("");
         klb.setText("");
@@ -1098,6 +1198,11 @@ private boolean DiEdit() {
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
         kondisiklik(true);
+        clearTEXT2();
+            kontak.setEditable(true);
+            jlcd.setEditable(true);
+            jlampu.setEditable(true);
+        Enable_TextField1(false);
         btnSelesai.setVisible(true);
         kontak.setEnabled(true);
         kskb.setEnabled(true);
