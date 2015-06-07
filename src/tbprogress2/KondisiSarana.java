@@ -54,33 +54,8 @@ public class KondisiSarana extends javax.swing.JFrame {
         Delete.setVisible(false);
         Edit.setVisible(false);
         
-        kontak.setEnabled(false);
-        kskb.setEnabled(false);
-        kskr.setEnabled(false);
-        pskb.setEnabled(false);
-        Pojok.setEnabled(false);
-        pskr.setEnabled(false);
-        
-        jlcd.setEnabled(false);
-        kklb.setEnabled(false);
-        kklr.setEnabled(false);
-        pklb.setEnabled(false);
-        Pojok1.setEnabled(false);
-        pklr.setEnabled(false);
-        
-        jlampu.setEnabled(false);
-        plb.setEnabled(false);
-        plr.setEnabled(false);
-        klb.setEnabled(false);
-        klr.setEnabled(false);
-        
-        KondisiSK.setEnabled(false);
-        KondisiKL.setEnabled(false);
-        KondisiL.setEnabled(false);
-        
-        PosisiKL.setEnabled(false);
-        PosisiL.setEnabled(false);
-        PosisiSK.setEnabled(false);
+        Enable_TextField2(false);
+        Enable_TextField1(false);
 //        for(int x=0;x<1000;x++){
 //            if(IDKelas.getText().equals(x)){
 //            
@@ -97,11 +72,41 @@ public class KondisiSarana extends javax.swing.JFrame {
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
         
     }
-    void Enable_TextField1(){
+    void Enable_TextField1(boolean x){
         
+        KondisiSK.setEnabled(x);
+        KondisiKL.setEnabled(x);
+        KondisiL.setEnabled(x);
+        
+        PosisiKL.setEnabled(x);
+        PosisiL.setEnabled(x);
+        PosisiSK.setEnabled(x);
+    
+    }
+    void Enable_TextField2(boolean x){
+        
+        kontak.setEnabled(x);
+        kskb.setEnabled(x);
+        kskr.setEnabled(x);
+        pskb.setEnabled(x);
+        Pojok.setEnabled(x);
+        pskr.setEnabled(x);
+        
+        jlcd.setEnabled(x);
+        kklb.setEnabled(x);
+        kklr.setEnabled(x);
+        pklb.setEnabled(x);
+        Pojok1.setEnabled(x);
+        pklr.setEnabled(x);
+        
+        jlampu.setEnabled(x);
+        plb.setEnabled(x);
+        plr.setEnabled(x);
+        klb.setEnabled(x);
+        klr.setEnabled(x);        
     }
 private boolean DiEdit() {
-//        boolean nilai = false;
+       boolean nilai = false;
 //        IO x = new IO(kontak,kskb, kskr, pskb,Pojok, pskr,jlcd,kklb,kklr,pklb,Pojok1,pklr,jlampu,plb,plr,klb,klr);
 //        Sistem n = new Sistem();
 //        kls = x.getRuangKelas();
@@ -138,7 +143,7 @@ private boolean DiEdit() {
 //        } catch (SQLException ex) {
 //            JOptionPane.showMessageDialog(this, "Data gagal diperbaharui! : " + ex);
 //        }
-       return true;
+       return nilai;
    }
    void kondisiklik(boolean x){
        label_bsk.setEnabled(x);
@@ -298,6 +303,10 @@ private boolean DiEdit() {
             Next.setVisible(false);
            // ADD.setVisible(true);
             clearTEXT();
+            Enable_TextField2(false);
+            kontak.setEditable(false);
+            jlcd.setEditable(false);
+            jlampu.setEditable(false);
             
         //ken(false);
         KondisiKL.setText("");
@@ -880,13 +889,14 @@ private boolean DiEdit() {
                                         .addComponent(PosisiKL, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(kklr, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(kklb, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(43, 43, 43)
+                                .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(KondisiKL, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addGap(43, 43, 43)
-                                    .addComponent(jlcd, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(KondisiKL, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(70, 70, 70)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(45, 45, 45)
@@ -911,12 +921,14 @@ private boolean DiEdit() {
                                     .addComponent(klr, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addGap(1, 1, 1)
-                                        .addComponent(label_exatap))))
+                                        .addComponent(label_exatap)))
+                                .addGap(0, 105, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 105, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29))))
                     .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -930,16 +942,14 @@ private boolean DiEdit() {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 19, Short.MAX_VALUE)
                         .addComponent(CODE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(IDKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 13, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1117,6 +1127,10 @@ private boolean DiEdit() {
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         kondisiklik(true);
+        kontak.setEditable(true);
+            jlcd.setEditable(true);
+            jlampu.setEditable(true);
+            
         kontak.setEnabled(true);
         kskb.setEnabled(true);
         kskr.setEnabled(true);
@@ -1149,6 +1163,8 @@ private boolean DiEdit() {
         kondisiklik(true);
         da.kondisiHapus("jkp_sarana","id_sarana",CODE.getText());
         clearTEXT();
+        Enable_TextField2(false);
+        Enable_TextField1(false);
         Next.setVisible(false);
         Delete.setVisible(false);
         Edit.setVisible(false);
@@ -1185,6 +1201,29 @@ private boolean DiEdit() {
         klb.setEnabled(false);
         klr.setEnabled(false);
         jTable1.enable(true);
+        try{
+            String Sql = "Select id from jkp_sarana ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom12 = Set.getString("id");
+                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                    ADD.setVisible(false);
+                    break;
+                }
+                else{
+                    ADD.setVisible(true);
+                    
+                }
+                System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
+        }
+        catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+        }
     }//GEN-LAST:event_SaveActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
