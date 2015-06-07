@@ -140,7 +140,7 @@ public class IO extends Proses implements View{
             kls.setBandwidth("Bisa");
         }
         else if(bt.isSelected()){
-            kls.setKondisiJendela("Tidak");
+            kls.setBandwidth("Tidak Bisa");
         }
         
           kls.setJumlahCCTV(Integer.parseInt(jcctv.getText()));
