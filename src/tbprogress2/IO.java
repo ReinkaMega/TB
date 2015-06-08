@@ -119,28 +119,28 @@ public class IO extends Proses implements View{
         e = Integer.parseInt(pacs.getText());
         f = Integer.parseInt(pacd.getText());
         g = Integer.parseInt(pacb.getText());
-        if(e>=f || g>=f){
-            kls.setKondisiKabelLCD("Samping/Belakang");
+        if((e+g)>=f){
+            kls.setPosisiAC("Samping/Belakang");
         }
         else{
-            kls.setKondisiKabelLCD("Depan");
+            kls.setPosisiAC("Depan");
         }
         int h,i;
         h = Integer.parseInt(kacb.getText());
         i = Integer.parseInt(kacr.getText());
         
         if(h>=i){
-            kls.setPosisiKabelLCD("Baik");
+            kls.setKondisiAC("Baik");
         }
         else{
-            kls.setPosisiKabelLCD("Rusak");
+            kls.setKondisiAC("Rusak");
         }
         kls.setSSID(ssid.getText());
         if(bb.isSelected()){
             kls.setBandwidth("Bisa");
         }
         else if(bt.isSelected()){
-            kls.setKondisiJendela("Tidak");
+            kls.setBandwidth("Tidak Bisa");
         }
         
           kls.setJumlahCCTV(Integer.parseInt(jcctv.getText()));
@@ -157,10 +157,10 @@ public class IO extends Proses implements View{
         m = Integer.parseInt(pcctvb.getText());
         n = Integer.parseInt(pcctvr.getText());
         if(m>=n){
-            kls.setPosisiKabelLCD("Depan/Belakang");
+            kls.setPosisiCCTV("Depan/Belakang");
         }
         else{
-            kls.setPosisiKabelLCD("Samping");
+            kls.setPosisiCCTV("Samping");
         }
        rk = new RuangKelas(kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
      }
