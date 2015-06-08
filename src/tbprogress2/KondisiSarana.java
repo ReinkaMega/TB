@@ -1318,7 +1318,7 @@ private boolean DiEdit() {
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getJumlahStopKontak(),kls.getKondisiStopKontak() ,kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getLokasiRuang() );
-        n.CheckKondisiSarana(kls);
+        n.CheckKondisiSarana(kls,IDKelas.getText());
 //            int a,b,c;
 //            a = Integer.parseInt(kontak.getText());
 //            b = Integer.parseInt(jlcd.getText());

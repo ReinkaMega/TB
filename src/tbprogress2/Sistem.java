@@ -103,70 +103,75 @@ public class Sistem extends Proses{
         System.out.println("::Anda Masuk CheckKondisiSarana::");
     }
 
-    double CheckKondisiSarana(RuangKelas kls) {
+    double CheckKondisiSarana(RuangKelas kls,String IDRuang) {
+        String ajstopkontak,akstopkontak,apstopkontak;
+        String ajlcd,aklcd,aplcd;
+        String ajlampu,aklampu,aplampu;
+        
         if (kls.getJumlahStopKontak() >= 4) {
-            System.out.println("Jumlah Stop Kontak : s");
+            ajstopkontak = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak Sesusai");
+            ajstopkontak = "Tidak Sesuai";
             ts++;
         }
         if (kls.getKondisiStopKontak().equalsIgnoreCase("baik")){
-            System.out.println("KondisiStopKontak : s");
+            akstopkontak = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak Sesuai");
+            akstopkontak = "Tidak Sesuai";
         }
         if (kls.getPosisiStopKontak().equalsIgnoreCase("DekatDosen") || kls.getPosisiStopKontak().equalsIgnoreCase("PojokKelas")) {
-            System.out.println("PosisiStopKontak : s");
+            apstopkontak = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+            apstopkontak = "Tidak Sesuai";
             ts++;
         }
         if(kls.getJumlahKabelLCD()>=1){
-            System.out.println("JumlahKabelLCD : s");
+            ajlcd = "Sesuai";
             s++;
 
         } else {
-            System.out.println("Tidak s");
+             ajlcd = "Tidak Sesuai";
             ts++;
         }
         if(kls.getKondisiKabelLCD().equalsIgnoreCase("baik")|| kls.getKondisiKabelLCD().equalsIgnoreCase("berfungsi")){
-            System.out.println("KondisiKabelLCD : s");
+            aklcd = "Sesuai";
             s++;
         }else{
-            System.out.println("Tidak s");
+           aklcd = "Tidak Sesuai";
             ts++;
         }
         if(kls.getPosisiKabelLCD().equalsIgnoreCase("dekatdosen")){
-            System.out.println("PosisiKabelLCD : s");
+            aplcd = "Sesuai";
             s++;
         }else{
-            System.out.println("Tidak s");
+            aplcd = "Tidak Sesuai";
             ts++;
         }
         if(kls.getJumlahLampu()>=18){
-            System.out.println("JumlahLampu : s");
+            ajlampu = "Sesuai";
             s++;
         }else{
-            System.out.println("Tidak s");
+            ajlampu = "Tidak Sesuai";
             ts++;
         }
         if(kls.getKondisiLampu().equalsIgnoreCase("baik")){
-            System.out.println("KondisiLampu : s");
+            aklampu = "Sesuai";
             s++;
         }else{
-            System.out.println("Tidak s");
+            aklampu = "Tidak Sesuai";
             ts++;
         }
         if(kls.getPosisiLampu().equalsIgnoreCase("atapruangan")){
-            System.out.println("PosisiLampu : s");
+            aplampu = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+            aplampu = "Tidak Sesuai";
             ts++;
         }
+        con.analisisSave(IDRuang, ajstopkontak, akstopkontak, apstopkontak, ajlcd, aklcd, aplcd, ajlampu, aklampu, aplampu);
        persentaseKondisiSarana(s);
        //output(kls.getJumlahStopKontak(), kls.getKondisiStopKontak(), kls.getPosisiStopKontak(), kls.getJumlahKabelLCD(), kls.getKondisiKabelLCD(), kls.getPosisiKabelLCD(),kls.getJumlahLampu(), kls.getKondisiLampu(), kls.getPosisiLampu());
 //        if (ts > s) {
