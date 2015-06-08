@@ -998,7 +998,7 @@ private boolean DiEdit() {
         kls = x.getRuangKelas();
         //String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x
         x.output(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKerusakan(),null);
-        n.CheckKondisiKenyamanan(kls);
+        n.CheckKondisiKenyamanan(kls,IDKelas.getText());
         dispose();
         x.inputKondisiKeamanan(IDKelas.getText());
     }//GEN-LAST:event_LnActionPerformed
@@ -1110,7 +1110,7 @@ private boolean DiEdit() {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiKenyamanan("1").setVisible(true);
+                new KondisiKenyamanan("4").setVisible(true);
             }
         });
     }

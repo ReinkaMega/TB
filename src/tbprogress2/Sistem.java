@@ -189,88 +189,111 @@ public class Sistem extends Proses{
         System.out.println("::Anda Masuk CheckKondisiLingkungan::");
        
     }
-    double CheckKondisiSarana2(RuangKelas kls) {
+    double CheckKondisiSarana2(RuangKelas kls,String IDKelas) {
 //        inop.inputKondisiSarana();
 //        kls = inop.getRuangKelas();
-        
+        String ajkipasangin, akkipasangin, apkipasangin, ajac, akac, apac,assid,abandwidth, ajcctv, akcctv, apcctv;
          if(kls.getJumlahKipasAngin()>=2){
-            System.out.println("JumlahKipasAngin : s");
+            //System.out.println("JumlahKipasAngin : s");
+            ajkipasangin = "Sesuai";
+             s++;
+        } else {
+            //System.out.println("Tidak s");
+            ajkipasangin = "Tidak Sesuai";
+             ts++;
+        }
+        if(kls.getPosisiKipasAngin().equalsIgnoreCase("Baik")){
+            //System.out.println("PosisiKipasAngin : s");
+            akkipasangin = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+            //System.out.println("Tidak s");
+            akkipasangin = "Tidak Sesuai";
             ts++;
         }
-        if(kls.getPosisiKipasAngin().equalsIgnoreCase("atapruangan")){
-            System.out.println("PosisiKipasAngin : s");
-            s++;
-        } else {
-            System.out.println("Tidak s");
-            ts++;
-        }
-        if(kls.getKondisiKipasAngin().equalsIgnoreCase("baik")){
-            System.out.println("KondisiKipasAngin : s");
+        if(kls.getKondisiKipasAngin().equalsIgnoreCase("Atap Ruangan")){
+            //System.out.println("KondisiKipasAngin : s");
+            apkipasangin = "Sesuai";
             s++;
         }else {
-            System.out.println("Tidak s");
+            apkipasangin = "Tidak Sesuai";
+           // System.out.println("Tidak s");
             ts++;
         }
         if(kls.getJumlahAC()>=1){
-            System.out.println("JumlahAC : s");
+            //System.out.println("JumlahAC : s");
+            ajac = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+           // System.out.println("Tidak s");
+            ajac = "Tidak Sesuai";
             ts++;
         }
-        if(kls.getKondisiAC().equalsIgnoreCase("baik")){
-            System.out.println("KondisiAC : s");
+        if(kls.getKondisiAC().equalsIgnoreCase("Baik")){
+            //System.out.println("KondisiAC : s");
+            akac = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+            //System.out.println("Tidak s");
+            akac = "Tidak Sesuai";
             s++;
         }
-        if(kls.getPosisiAC().equalsIgnoreCase("belakang")|| kls.getPosisiAC().equalsIgnoreCase("samping")){
-            System.out.println("PosisiAC : s");
+        if(kls.getPosisiAC().equalsIgnoreCase("Samping/Belakang")){
+            //System.out.println("PosisiAC : s");
+            apac = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+            //System.out.println("Tidak s");
+            apac = "Tidak Sesuai";
             ts++;
         }
-        if(kls.getSSID().equalsIgnoreCase("ummhotspot")){
-            System.out.println("getSSID : s");
+        if(kls.getSSID().equalsIgnoreCase("UMMHotspot")){
+            //System.out.println("getSSID : s");
+            assid = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+           // System.out.println("Tidak s");
+            assid = "Tidak Sesuai";
             ts++;
         }
-        if(kls.getBandwidth().equalsIgnoreCase("bisa")){
-            System.out.println("Bandwidth : s");
+        if(kls.getBandwidth().equalsIgnoreCase("Bisa")){
+            //System.out.println("Bandwidth : s");
+            abandwidth = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+            abandwidth = "Tidak Sesuai";
+            //System.out.println("Tidak s");
             ts++;
         }
         if (kls.getJumlahCCTV()>=2){
-            System.out.println("JumlahCCTV : s");
+           // System.out.println("JumlahCCTV : s");
+            ajcctv = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+           // System.out.println("Tidak s");
+            ajcctv = "Tidak Sesuai";
             ts++;
         }
-        if(kls.getKondisiCCTV().equalsIgnoreCase("baik")){
-            System.out.println("KondisiCCTV : s");
+        if(kls.getKondisiCCTV().equalsIgnoreCase("Baik")){
+           // System.out.println("KondisiCCTV : s");
+            akcctv = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+           // System.out.println("Tidak s");
+            akcctv = "Tidak Sesuai";
             ts++;
         }
-        if(kls.getPosisiCCTV().equalsIgnoreCase("depanbelakang")){
-            System.out.println("PosisiCCTV : s");
+        if(kls.getPosisiCCTV().equalsIgnoreCase("Depan/Belakang")){
+           // System.out.println("PosisiCCTV : s");
+            apcctv = "Sesuai";
             s++;
         } else {
-            System.out.println("Tidak s");
+           // System.out.println("Tidak s");
+            apcctv = "Tidak Sesuai";
             ts++;
         }
         persentaseKondisiSarana2(s);
+        con.analisisSave(IDKelas, ajkipasangin, akkipasangin, apkipasangin, ajac, akac, apac, assid, abandwidth, ajcctv, akcctv, apcctv);
         //inop.output(kls.getJumlahKipasAngin(), kls.getKondisiKipasAngin(), kls.getPosisiKipasAngin() , kls.getJumlahAC(), kls.getKondisiAC(), kls.getPosisiAC(), kls.getSSID(), kls.getBandwidth(), kls.getJumlahCCTV(), kls.getKondisiCCTV(), kls.getPosisiCCTV());
     return s;
     }
@@ -282,46 +305,49 @@ public class Sistem extends Proses{
         System.out.println("::Anda Masuk CheckKondisiLingkungan::");
        
     }
-    int CheckKondisiLingkungan(RuangKelas kls) {
+    int CheckKondisiLingkungan(RuangKelas kls,String IDKelas) {
 //        inop.inputKondisiLingkungan();
 //        kls = inop.getRuangKelas();
 //        int kon;
 //        System.out.println("==============Analisis==================");
+        String asirkulasiudara,acahaya="",alembab="",asuhu="";
         if ("Lancar".equalsIgnoreCase(kls.getSirkulasiUdara())) {
-            System.out.println("Sirkulasi Udara : Sesuai");
+            //System.out.println("Sirkulasi Udara : Sesuai");
+            asirkulasiudara = "Sesuai";
             s++;
         } else {
-            System.out.println("Sirkulasi Udara : Tidak Sesuai");
+           // System.out.println("Sirkulasi Udara : Tidak Sesuai");
+            asirkulasiudara = "Tidak Sesuai";
             ts++;
         }
-        if (kls.getNilaiPencahayaan() >= 60) {
-            if (kls.getNilaiPencahayaan() < 80) {
-                System.out.println("Nilai Pencahayaan : Sesuai");
-            }
+        if (kls.getNilaiPencahayaan() >= 60&&kls.getNilaiPencahayaan() < 80) {
+            acahaya = "Sesuai";
             s++;
         } else {
-            System.out.println("Nilai Pencahayaan : Tidak Sesuai");
+            //System.out.println("Nilai Pencahayaan : Tidak Sesuai");
+            acahaya = "Tidak Sesuai";
             ts++;
         }
-        if (kls.getKelembaban() >= 70) {
-            if (kls.getKelembaban() <= 80) {
-                System.out.println("Kelembaban : Sesuai");
-            }
+        if (kls.getKelembaban() >= 70&&kls.getKelembaban() <= 80) {
+               alembab = "Sesuai";
+            
             s++;
         } else {
-            System.out.println("Kelembaban : Tidak Sesuai");
+            //System.out.println("Kelembaban : Tidak Sesuai");
+            alembab = "Tidak Sesuai";
             ts++;
         }
         
-        if (kls.getSuhu() >= 25) {
-            if (kls.getSuhu() <= 35) {
-                System.out.println("Suhu : Sesuai");
-            }
-            s++;
+        if (kls.getSuhu() >= 25&&kls.getSuhu() <= 35) {
+                //System.out.println("Suhu : Sesuai");
+                asuhu = "Sesuai";
+                s++;
         } else {
-            System.out.println("Suhu : Tidak Sesuai");
-            ts++;
+            //System.out.println("Suhu : Tidak Sesuai");
+                asuhu = "Tidak Sesuai";
+                ts++;
         }
+        con.analisisSave(IDKelas, asirkulasiudara, acahaya, alembab, asuhu);
         persentaseKondisiLingkungan(s);
         return s;
     }
@@ -394,35 +420,53 @@ public class Sistem extends Proses{
     System.out.println("::Anda Masuk CheckKondisiKenyamanan::");
     }
   
-    int CheckKondisiKenyamanan(RuangKelas kls) {
+    int CheckKondisiKenyamanan(RuangKelas kls,String IDKelas) {
 //        int kon;
 //        System.out.println("==============Analisis==================");
+       String abising,abau,abocor,arusak,aaus;
        if ("Tidak Bising".equalsIgnoreCase(kls.getKebisingan())||"Sepi/Tenang".equalsIgnoreCase(kls.getKebisingan())) {
-            System.out.println("Kebisingan : Tidak Bising");
+            //System.out.println("Kebisingan : Tidak Bising");
+            abising = "Sesuai";
             s++;
         } else {
-            System.out.println("Kebisingan : Bising");
-            ts++;
+            //System.out.println("Kebisingan : Bising");
+           abising = "Tidak Sesuai"; 
+           ts++;
         }
         if ("Tidak Bau".equalsIgnoreCase(kls.getBau())||"Wangi".equalsIgnoreCase(kls.getBau())) {
-            System.out.println("Bau : Enak");
+            //System.out.println("Bau : Enak");
+            abau = "Sesuai";
             s++;
         } else {
-            System.out.println("Bau : Tidak Sedap");
+            //System.out.println("Bau : Tidak Sedap");
+            abau = "Tidak Sesuai";
+            ts++;
+        }
+        if ("Tidak Begitu Parah".equalsIgnoreCase(kls.getKebocoran())||"Keadaan Baik".equalsIgnoreCase(kls.getKebocoran())) {
+            //System.out.println("Kerusakan : Tidak Rusak");
+            abocor = "Sesuai";
+            s++;
+        } else {
+            abocor = "Tidak Sesuai";
+            System.out.println("Kerusakan : Rusak");
             ts++;
         }
         if ("Tidak Begitu Parah".equalsIgnoreCase(kls.getKerusakan())||"Keadaan Baik".equalsIgnoreCase(kls.getKerusakan())) {
-            System.out.println("Kerusakan : Tidak Rusak");
+            //System.out.println("Kerusakan : Tidak Rusak");
+            arusak = "Sesuai";
             s++;
         } else {
+            arusak = "Tidak Sesuai";
             System.out.println("Kerusakan : Rusak");
             ts++;
         }
         if ("Tidak Aus".equalsIgnoreCase(kls.getKeausan())) {
-            System.out.println("Keausan : Tidak Ada");
+           // System.out.println("Keausan : Tidak Ada");
+            aaus = "Sesuai";
             s++;
         } else {
-            System.out.println("Keausan : Ada");
+            //System.out.println("Keausan : Ada");
+            aaus = "Tidak Sesuai";
             ts++;
         }
 //        if (s == 1) {
@@ -432,6 +476,7 @@ public class Sistem extends Proses{
 //            System.out.println("Tidak s");
 //            kon = 0;
 //        }
+        con.analisisSave(IDKelas, abising, abau, abocor, arusak, aaus, 0);
         persentaseKenyamanan(s);
         return s;
     }

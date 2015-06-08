@@ -431,7 +431,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="Edit" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="53" max="32767" attributes="0"/>
-                  <Component id="Next" min="-2" max="-2" attributes="0"/>
+                  <Component id="HasilAnalisa" min="-2" pref="140" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -445,7 +445,7 @@
                       <Component id="Delete" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="ADD" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Edit" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Next" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="HasilAnalisa" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="29" max="32767" attributes="0"/>
               </Group>
@@ -462,13 +462,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Next">
+        <Component class="javax.swing.JButton" name="HasilAnalisa">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Selanjutnya"/>
+            <Property name="text" type="java.lang.String" value="Hasil Analisa"/>
             <Property name="toolTipText" type="java.lang.String" value="Klik Untuk Pergi Ke Langkah Berikutnya"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NextActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HasilAnalisaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="ADD">

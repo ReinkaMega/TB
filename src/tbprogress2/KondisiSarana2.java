@@ -1212,7 +1212,7 @@ private boolean DiEdit() {
 //            kls.getKondisiCCTV(),kls.getPosisiCCTV());
 //       
        // n.persentaseKondisiSarana();
-         n.CheckKondisiSarana2(kls);
+         n.CheckKondisiSarana2(kls,IDKelas.getText());
          dispose();
          x.inputKondisiLingkungan(IDKelas.getText());
         
@@ -1585,7 +1585,7 @@ private boolean DiEdit() {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiSarana2("1").setVisible(true);
+                new KondisiSarana2("4").setVisible(true);
             }
         });
     }

@@ -43,7 +43,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         FPJ.setVisible(false);
         FB.setVisible(false);
         Save.setVisible(false);
-        Next.setVisible(false);
+        HasilAnalisa.setVisible(false);
         btnSelesai.setVisible(false);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -196,7 +196,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Delete.setVisible(true);
         Edit.setVisible(true);
         Save.setVisible(false);
-        Next.setVisible(true);
+        HasilAnalisa.setVisible(true);
         //ADD.setVisible(true);
         jTabel.enable(true);
         }
@@ -206,7 +206,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             Edit.setVisible(false);
             Save.setVisible(false);
             btnSelesai.setVisible(false);
-            Next.setVisible(false);
+            HasilAnalisa.setVisible(false);
             //ADD.setVisible(true);
         }
     }
@@ -314,7 +314,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         Delete = new javax.swing.JButton();
-        Next = new javax.swing.JButton();
+        HasilAnalisa = new javax.swing.JButton();
         ADD = new javax.swing.JButton();
         Save = new javax.swing.JButton();
         Edit = new javax.swing.JButton();
@@ -565,11 +565,11 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             }
         });
 
-        Next.setText("Selanjutnya");
-        Next.setToolTipText("Klik Untuk Pergi Ke Langkah Berikutnya");
-        Next.addActionListener(new java.awt.event.ActionListener() {
+        HasilAnalisa.setText("Hasil Analisa");
+        HasilAnalisa.setToolTipText("Klik Untuk Pergi Ke Langkah Berikutnya");
+        HasilAnalisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NextActionPerformed(evt);
+                HasilAnalisaActionPerformed(evt);
             }
         });
 
@@ -611,7 +611,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Edit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(Next)
+                .addComponent(HasilAnalisa, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -623,7 +623,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
                     .addComponent(Delete)
                     .addComponent(ADD)
                     .addComponent(Edit)
-                    .addComponent(Next))
+                    .addComponent(HasilAnalisa))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -716,13 +716,13 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         da.kondisiHapus("keamanan","id_keamanan",CODE.getText());
         clearTEXT();
-        Next.setVisible(false);
+        HasilAnalisa.setVisible(false);
         Delete.setVisible(false);
         Edit.setVisible(false);
         tampilDataKeTabel();
     }//GEN-LAST:event_DeleteActionPerformed
 
-    private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
+    private void HasilAnalisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HasilAnalisaActionPerformed
 //        if(Kokoh.setSelected(false) || Tkokoh.setSelected(false) || Adakunci.setSelected(false) || Tkunci.setSelected(false)||Aman.setSelected(false)||Bahaya.setSelected(false)){
 //            JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
 //            ADD.setVisible(true);
@@ -745,7 +745,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         dispose();
             x.IdentitasKelas();
             new FrameOutput(IDKelas.getText()).setVisible(true);
-    }//GEN-LAST:event_NextActionPerformed
+    }//GEN-LAST:event_HasilAnalisaActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         Kokoh.setEnabled(true);
@@ -759,7 +759,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Edit.setVisible(false);
         Delete.setVisible(false);
         ADD.setVisible(false);
-        Next.setVisible(false);
+        HasilAnalisa.setVisible(false);
         jTable1.enable(false);
     }//GEN-LAST:event_ADDActionPerformed
 
@@ -779,7 +779,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Save.setVisible(false);
         ADD.setVisible(false);
         clearTEXT();
-        Next.setVisible(false);
+        HasilAnalisa.setVisible(false);
         Kokoh.setEnabled(false);
         Tkokoh.setEnabled(false);
         Adakunci.setEnabled(false);
@@ -801,7 +801,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Delete.setVisible(false);
         ADD.setVisible(false);
         Edit.setVisible(false);
-        Next.setVisible(false);
+        HasilAnalisa.setVisible(false);
         jTable1.enable(false);
     }//GEN-LAST:event_EditActionPerformed
 
@@ -811,7 +811,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Delete.setVisible(false);
         //ADD.setVisible(true);
         Edit.setVisible(false);
-        Next.setVisible(false);
+        HasilAnalisa.setVisible(false);
         Kokoh.setEnabled(false);
         Tkokoh.setEnabled(false);
         Adakunci.setEnabled(false);
@@ -867,9 +867,9 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     private javax.swing.JTextField FB;
     private javax.swing.JTextField FK;
     private javax.swing.JTextField FPJ;
+    private javax.swing.JButton HasilAnalisa;
     private javax.swing.JTextField IDKelas;
     private javax.swing.JCheckBox Kokoh;
-    private javax.swing.JButton Next;
     private javax.swing.JButton Save;
     private javax.swing.JCheckBox Tkokoh;
     private javax.swing.JCheckBox Tkunci;

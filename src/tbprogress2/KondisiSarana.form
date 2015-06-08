@@ -88,39 +88,19 @@
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="kontak" min="-2" pref="140" max="-2" attributes="0"/>
                                                       <Component id="KondisiSK" min="-2" pref="140" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="kskb" min="-2" pref="51" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="SKB" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="kskr" min="-2" pref="51" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="SKR" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
+                                                      <Component id="kskb" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
+                                                      <Component id="kskr" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="SKSK" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="pskr" min="-2" pref="86" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                                          <Group type="102" attributes="0">
-                                                              <Component id="SKPD" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="32767" attributes="0"/>
-                                                              <Component id="pskb" min="-2" pref="86" max="-2" attributes="0"/>
-                                                          </Group>
+                                                      <Component id="pskr" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
+                                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                          <Component id="pskb" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
                                                           <Component id="PosisiSK" min="-2" pref="153" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="SKPK" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Component id="Pojok" min="-2" pref="86" max="-2" attributes="0"/>
-                                                      </Group>
+                                                      <Component id="Pojok" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                               </Group>
@@ -142,7 +122,7 @@
                                       <Component id="label_pojoklcd" min="-2" max="-2" attributes="0"/>
                                       <Component id="KLPS" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                           <Component id="pklb" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
@@ -150,16 +130,9 @@
                                           <Component id="pklr" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
                                           <Component id="PosisiKL" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="KLR" min="-2" max="-2" attributes="0"/>
-                                              <Component id="KLB" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="kklb" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
-                                              <Component id="kklr" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                          <Component id="kklb" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
+                                          <Component id="kklr" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -173,59 +146,46 @@
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="KLPD" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="KLPK" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField12" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="label_bl" min="-2" pref="34" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="label_rl" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jTextField6" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="label_atap" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="plr" min="-2" pref="38" max="-2" attributes="0"/>
-                                              <Component id="plb" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
-                                              <Component id="KondisiL" pref="125" max="32767" attributes="0"/>
-                                              <Component id="klb" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                              <Component id="PosisiL" max="32767" attributes="0"/>
-                                              <Component id="jlampu" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="klr" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                           <Component id="label_exatap" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="label_bl" min="-2" pref="34" max="-2" attributes="0"/>
+                                                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="label_rl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="label_atap" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="plr" min="-2" pref="38" max="-2" attributes="0"/>
+                                                      <Component id="plb" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                                                      <Component id="KondisiL" pref="125" max="32767" attributes="0"/>
+                                                      <Component id="klb" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="PosisiL" max="32767" attributes="0"/>
+                                                      <Component id="jlampu" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Component id="klr" min="-2" pref="53" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField13" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField14" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="105" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
@@ -275,7 +235,6 @@
                               <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                                   <Component id="pskr" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="KLPS" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="SKSK" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="label_sampingsk" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -301,9 +260,6 @@
                                       <Component id="label_bsk" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="kklb" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="kskb" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="SKB" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="KLB" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -313,9 +269,6 @@
                                       <Component id="plr" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="kskr" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="label_rsk" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="SKR" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="KLR" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -343,8 +296,6 @@
                               <Component id="klb" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="pskb" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="label_DosenSK" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="SKPD" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField13" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -352,24 +303,16 @@
                               <Component id="Pojok1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Pojok" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="label_pojoksk" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="SKPK" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="label_exatap" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="klr" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="pklr" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField14" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="KLPD" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="KLPK" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="btnSelesai" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="104" max="-2" attributes="0"/>
@@ -912,76 +855,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="SKB">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="SKR">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField2"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="KLB">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField3"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="KLR">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField4"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField5"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField6"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="SKPD">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField7"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="SKPK">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField8"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="SKSK">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField9"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="KLPD">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField10"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="KLPK">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField11"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField12">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField12"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField13">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField13"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField14">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField14"/>
           </Properties>
         </Component>
       </SubComponents>
