@@ -792,7 +792,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getSirkulasiUdara(), kls.getNilaiPencahayaan(), kls.getKelembaban(),kls.getSuhu());
-        n.CheckKondisiLingkungan(kls);
+        n.CheckKondisiLingkungan(kls,IDKelas.getText());
         dispose();
         x.inputKondisiKenyamanan(IDKelas.getText());
     }//GEN-LAST:event_NextActionPerformed
@@ -921,7 +921,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiLingkungan("1").setVisible(true);
+                new KondisiLingkungan("4").setVisible(true);
             }
         });
     }
