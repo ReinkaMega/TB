@@ -394,7 +394,7 @@ public class DataAwal extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        Delete.setText("Hapus");
+        Delete.setText("Delete");
         Delete.setToolTipText("Klik untuk Menghapus Data pada Kolom");
         Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -402,7 +402,7 @@ public class DataAwal extends javax.swing.JFrame {
             }
         });
 
-        Next.setText("Selanjutnya");
+        Next.setText("Next");
         Next.setToolTipText("Klik Untuk Pergi Ke Langkah Berikutnya");
         Next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -450,13 +450,13 @@ public class DataAwal extends javax.swing.JFrame {
                 .addComponent(Save)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Delete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ADD)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Edit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HasilAnalisa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(HasilAnalisa)
+                .addGap(18, 18, 18)
                 .addComponent(Next)
                 .addContainerGap())
         );
@@ -485,7 +485,7 @@ public class DataAwal extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE))))
                 .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
@@ -529,17 +529,16 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_NextActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        //KondisiSaveButton();
-                        da.Save(NM, LK, JR, FK);
-                       tampilDataKeTabel();
-                       Save.setVisible(false);
-                       ADD.setVisible(true);
-                       clearTEXT();
-                       Next.setVisible(false);
+        da.Save(NM, LK, JR, FK);
+        tampilDataKeTabel();
+        Save.setVisible(false);
+        ADD.setVisible(true);
+        clearTEXT();
+        Next.setVisible(false);
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        //da.kondisiHapus("identitas","id",CODE.getText());
+
         da.kondisiHapus(CODE.getText());
         clearTEXT();
         tampilDataKeTabel();
@@ -547,7 +546,7 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
-       NM.setEditable(true);
+        NM.setEditable(true);
         FK.setEditable(true);
         LK.setEditable(true);
         JR.setEditable(true);

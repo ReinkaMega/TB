@@ -42,7 +42,7 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="460" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -266,13 +266,13 @@
                   <Component id="Save" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="Delete" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="ADD" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="Edit" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="HasilAnalisa" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="HasilAnalisa" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Next" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -298,7 +298,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="Delete">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Hapus"/>
+            <Property name="text" type="java.lang.String" value="Delete"/>
             <Property name="toolTipText" type="java.lang.String" value="Klik untuk Menghapus Data pada Kolom"/>
           </Properties>
           <Events>
@@ -307,7 +307,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Next">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Selanjutnya"/>
+            <Property name="text" type="java.lang.String" value="Next"/>
             <Property name="toolTipText" type="java.lang.String" value="Klik Untuk Pergi Ke Langkah Berikutnya"/>
           </Properties>
           <Events>
