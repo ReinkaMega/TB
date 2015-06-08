@@ -301,5 +301,21 @@ DatabaseWork(){
             JOptionPane.showMessageDialog(null, "Data gagal dihapus: " + ex);
         }
     }
+     void analisisSave(String id,double luas,String bentuk,double rasio,String arasio,String apintu,String ajendela){
+         try {
+            
+                
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into analisis_kondisi"
+                        + "(id,luas,bentuk, rasio,arasio, apintu, ajendela) values ('" + id + "','" + luas + "','" + bentuk + "','" + rasio+ "','" + arasio  + "','" + apintu + "','"+ ajendela + "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+     }
+     
 }  
 //

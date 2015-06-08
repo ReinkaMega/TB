@@ -14,6 +14,7 @@ public class Sistem extends Proses{
 
     IO inop = new IO();
     RuangKelas kls = new RuangKelas();
+    DatabaseWork con = new DatabaseWork();
     Scanner in = new Scanner(System.in);
     int s = 0, ts = 0, kondisi;
     private double Luas, RasioLuas;
@@ -44,49 +45,54 @@ public class Sistem extends Proses{
         return RasioLuas;
     }
 
-    double CheckKondisiRuang(RuangKelas kls) {
+    double CheckKondisiRuang(RuangKelas kls,String IDKelas) {
 //        inop.InputKondisiRuang();
 //        kls = inop.getRuangKelas();
+        String arasio,bentuk,apintu,ajendela;
         System.out.println("==============Analisis==================");
         Luas = kls.getPanjangRuang() * kls.getLebarRuang();
         if (kls.getLebarRuang() == kls.getPanjangRuang()) {
-            System.out.println("Luas = "+Luas);
-            System.out.println("Luas Tidak Sesuai");
+            
+            bentuk = "Bentuk Tidak Sesuai";
+           
             ts++;
         } else {
             System.out.println("Luas = "+Luas);
-            System.out.println("Luas Sesuai");
+            bentuk = "Bentuk Sesuai";
             s++;
         }
         RasioLuas = Luas / kls.getJumlahKursi();
         System.out.println("Rasio : " + RasioLuas);
         if(RasioLuas<=0.5){
-            System.out.println("Rasio Tidak Sesuai");
+            arasio ="Tidak Sesuai";
         }
         else{
-            System.out.println("Rasio Sesuai");
+            arasio = "Sesuai";
             s++;
         }
         if (kls.getJumlahPintu() >= 2) {
-            System.out.println("Jumlah Pintu Sesuai");
+            apintu = "Sesuai";
             s++;
         } else {
-            System.out.println("Jumlah Pintu Tidak Sesuai");
+            apintu = "Tidak Sesuai";
+           // System.out.println("Jumlah Pintu Tidak Sesuai");
             ts++;
         }
         if (kls.getJumlahJendela() >= 1) {
-            System.out.println("Jumlah Jendela Sesuai");
+            ajendela = "Sesuai";
             s++;
         } else {
-            System.out.println("Jumlah Jendela Tidak Sesuai");
+            ajendela = "Tidak Sesuai";
             ts++;
         }
+        con.analisisSave(IDKelas, Luas, bentuk, RasioLuas,arasio, apintu, ajendela);
+        
 //        if (ts > s) {
 //            kondisi = 0; 
 //        } else {
 //            kondisi = 1;
 //        }
-         persentaseKondisiRuang(s);
+        persentaseKondisiRuang(s);
         return s;
     } 
    @Override

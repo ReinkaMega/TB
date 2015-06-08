@@ -9,6 +9,7 @@ package tbprogress2;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -31,20 +32,16 @@ public class FrameOutput extends javax.swing.JFrame {
     private TableColumn kolom;
     public FrameOutput(String id) {
         initComponents();
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         con.koneksi();
-        tampilDataKeTabel(jTable1,id);
-        tableModel(jTable5,id,null);
-        
+        tableModel(tabelkondisi,id);
+        tableModel1(tabelidentitas, id);
     }
-    private void tampilDataKeTabel(JTable x,String KR) {
-        Tabelku = x;
-        tableModel(Tabelku,KR);
-    }
-    
+
     private void tableModel(JTable jTabel1,String KR) {
-//        try {
-            Object[] field = { "Nama", "Lokasi", "Prodi", "Fakultas","ID"};
-            DefaultTabelku = new DefaultTableModel(field, 5){
+        try {
+            Object[] field = { "Luas", "Bentuk", "Rasio", "Analisis Rasio","Jumlah Kursi","Jumlah Jendela"};
+            DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
             }
@@ -52,27 +49,27 @@ public class FrameOutput extends javax.swing.JFrame {
             
             jTabel1.setModel(DefaultTabelku);
 
-//            String sql = "Select * from identitas where id="+KR;
-//            Statement st = con.config.getConnection().createStatement();
-//            ResultSet set = st.executeQuery(sql);
-//
-//            int no = 0;
-//            while (set.next()) {
-//                no++;
-//                String kolom1 = String.valueOf(no).toString();
-//                String kolom2 = set.getString("nama");
-//                String kolom3 = set.getString("lokasi");
-//                String kolom4 = set.getString("prodi");
-//                String kolom5 = set.getString("fakultas");
-//                String kolom6 = set.getString("id");
-//                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6};
-//                DefaultTabelku.addColumn(data);
-//            }
+            String sql = "Select * from analisis_kondisi where id="+KR;
+            Statement st = con.config.getConnection().createStatement();
+            ResultSet set = st.executeQuery(sql);
+
+            
+            while (set.next()) {  
+                String kolom2 = set.getString("luas");
+                String kolom3 = set.getString("bentuk");
+                String kolom4 = set.getString("rasio");
+                String kolom5 = set.getString("arasio");
+                String kolom6 = set.getString("apintu");
+                String kolom7 = set.getString("ajendela");
+                String kolom8 = set.getString("id");
+                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8};
+                DefaultTabelku.addRow(data);
+            }
 
             jTabel1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
             
             kolom = jTabel1.getColumnModel().getColumn(0);
-            kolom.setPreferredWidth(40);
+            kolom.setPreferredWidth(140);
             kolom = jTabel1.getColumnModel().getColumn(1);
             kolom.setPreferredWidth(145);
             kolom = jTabel1.getColumnModel().getColumn(2);
@@ -81,18 +78,15 @@ public class FrameOutput extends javax.swing.JFrame {
             kolom.setPreferredWidth(220);
             kolom = jTabel1.getColumnModel().getColumn(4);
             kolom.setPreferredWidth(240);
-//            kolom = jTabel1.getColumnModel().getColumn(5);
-//            kolom.setPreferredWidth(0);
-//            kolom.setMinWidth(0);
-//            kolom.setMaxWidth(0);
-//            kolom.setWidth(0);
-//        } catch (SQLException e) {
-//            JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
-//        }
+            kolom = jTabel1.getColumnModel().getColumn(5);
+            kolom.setPreferredWidth(240);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+        }
     }
-    private void tableModel(JTable jTabel1,String KR,String x) {
+    private void tableModel1(JTable jTabel1,String KR) {
         try {
-            Object[] field = {"No", "Nama", "Lokasi", "Prodi", "Fakultas","ID"};
+            Object[] field = { "Nama", "Lokasi", "Prodi", "Fakultas","ID"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -107,30 +101,27 @@ public class FrameOutput extends javax.swing.JFrame {
 
             int no = 0;
             while (set.next()) {
-                no++;
-                String kolom1 = String.valueOf(no).toString();
                 String kolom2 = set.getString("nama");
                 String kolom3 = set.getString("lokasi");
                 String kolom4 = set.getString("prodi");
                 String kolom5 = set.getString("fakultas");
                 String kolom6 = set.getString("id");
-                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6};
+                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6};
                 DefaultTabelku.addRow(data);
             }
 
             jTabel1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
             
+            
             kolom = jTabel1.getColumnModel().getColumn(0);
-            kolom.setPreferredWidth(40);
-            kolom = jTabel1.getColumnModel().getColumn(1);
             kolom.setPreferredWidth(145);
-            kolom = jTabel1.getColumnModel().getColumn(2);
+            kolom = jTabel1.getColumnModel().getColumn(1);
             kolom.setPreferredWidth(217);
-            kolom = jTabel1.getColumnModel().getColumn(3);
+            kolom = jTabel1.getColumnModel().getColumn(2);
             kolom.setPreferredWidth(220);
-            kolom = jTabel1.getColumnModel().getColumn(4);
+            kolom = jTabel1.getColumnModel().getColumn(3);
             kolom.setPreferredWidth(240);
-            kolom = jTabel1.getColumnModel().getColumn(5);
+            kolom = jTabel1.getColumnModel().getColumn(4);
             kolom.setPreferredWidth(0);
             kolom.setMinWidth(0);
             kolom.setMaxWidth(0);
@@ -150,13 +141,13 @@ public class FrameOutput extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelidentitas = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tabelkondisi = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable6 = new javax.swing.JTable();
@@ -169,12 +160,13 @@ public class FrameOutput extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable7 = new javax.swing.JTable();
+        back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Identitas Kelas"));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelidentitas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -185,7 +177,7 @@ public class FrameOutput extends javax.swing.JFrame {
                 "lolo", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tabelidentitas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -234,9 +226,9 @@ public class FrameOutput extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Kenyamanan Kelas"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Kondisi Kelas"));
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tabelkondisi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -247,7 +239,7 @@ public class FrameOutput extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(tabelkondisi);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -394,24 +386,36 @@ public class FrameOutput extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        back.setText("Kembali");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -431,13 +435,20 @@ public class FrameOutput extends javax.swing.JFrame {
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(5, 5, 5)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(back)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         jPanel2.getAccessibleContext().setAccessibleName("Data Kebersihan Kelas\n");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        dispose();
+        new DataAwal().setVisible(true);
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -475,6 +486,7 @@ public class FrameOutput extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -489,12 +501,12 @@ public class FrameOutput extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
+    private javax.swing.JTable tabelidentitas;
+    private javax.swing.JTable tabelkondisi;
     // End of variables declaration//GEN-END:variables
 }

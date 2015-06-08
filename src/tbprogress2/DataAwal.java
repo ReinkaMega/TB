@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -39,7 +40,9 @@ public class DataAwal extends javax.swing.JFrame {
     
     public DataAwal() {
         initComponents();
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
+        HasilAnalisa.setVisible(false);
         Save.setVisible(false);
         btnSelesai.setVisible(false);
         setLocationRelativeTo(null);
@@ -123,7 +126,7 @@ public class DataAwal extends javax.swing.JFrame {
         String kolom4 = jTabel.getValueAt(baris, 3).toString();
         String kolom5 = jTabel.getValueAt(baris, 4).toString();
         String kolom6 = jTabel.getValueAt(baris, 5).toString();
-        
+        HasilAnalisa.setVisible(true);
         NM.setText(kolom2);
         //txt_nama2.setText(kolom2);
         LK.setText(kolom3);
@@ -549,6 +552,7 @@ public class DataAwal extends javax.swing.JFrame {
         Delete.setVisible(false);
         ADD.setVisible(false);
         Next.setVisible(false);
+        HasilAnalisa.setVisible(false);
     }//GEN-LAST:event_ADDActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
@@ -561,6 +565,7 @@ public class DataAwal extends javax.swing.JFrame {
         ADD.setVisible(false);
         Edit.setVisible(false);
         Next.setVisible(false);
+        HasilAnalisa.setVisible(false);
         
     }//GEN-LAST:event_EditActionPerformed
 
@@ -575,6 +580,7 @@ public class DataAwal extends javax.swing.JFrame {
         FK.setEditable(false);
         LK.setEditable(false);
         JR.setEditable(false);
+        HasilAnalisa.setVisible(false);
     }//GEN-LAST:event_btnSelesaiActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -582,6 +588,7 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void HasilAnalisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HasilAnalisaActionPerformed
+        dispose();
         new FrameOutput(CODE.getText()).setVisible(true);
     }//GEN-LAST:event_HasilAnalisaActionPerformed
     private void tampilDataKeTabel() {

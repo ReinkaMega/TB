@@ -698,7 +698,7 @@ public class KondisiRuang extends javax.swing.JFrame {
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getPanjangRuang(), kls.getLebarRuang(), kls.getJumlahKursi(),kls.getJumlahPintu() ,kls.getJumlahJendela());
-        n.CheckKondisiRuang(kls);
+        n.CheckKondisiRuang(kls,IDKelas.getText());
         dispose();
         x.inputKondisiSarana(IDKelas.getText());
     }//GEN-LAST:event_LanjutActionPerformed
