@@ -53,7 +53,7 @@ public class DataAwal extends javax.swing.JFrame {
 //        enviBtnSave2(false);
 //        enviBtnNew(false);
         
-        CODE.setVisible(false);
+        CODE.setVisible(true);
         Delete.setVisible(false);
         Edit.setVisible(false);
         NM.setEditable(false);
@@ -232,6 +232,7 @@ public class DataAwal extends javax.swing.JFrame {
         ADD = new javax.swing.JButton();
         Save = new javax.swing.JButton();
         Edit = new javax.swing.JButton();
+        HasilAnalisa = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
 
@@ -267,7 +268,7 @@ public class DataAwal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(119, 119, 119))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -397,6 +398,13 @@ public class DataAwal extends javax.swing.JFrame {
             }
         });
 
+        HasilAnalisa.setText("Hasil Analisa");
+        HasilAnalisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HasilAnalisaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -410,7 +418,9 @@ public class DataAwal extends javax.swing.JFrame {
                 .addComponent(ADD)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Edit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(HasilAnalisa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Next)
                 .addContainerGap())
         );
@@ -423,7 +433,8 @@ public class DataAwal extends javax.swing.JFrame {
                     .addComponent(Delete)
                     .addComponent(ADD)
                     .addComponent(Edit)
-                    .addComponent(Next))
+                    .addComponent(Next)
+                    .addComponent(HasilAnalisa))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -539,8 +550,11 @@ public class DataAwal extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         
-           
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void HasilAnalisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HasilAnalisaActionPerformed
+        new FrameOutput(CODE.getText()).setVisible(true);
+    }//GEN-LAST:event_HasilAnalisaActionPerformed
     private void tampilDataKeTabel() {
         Tabelku = jTable1;
         tableModel(Tabelku);
@@ -588,6 +602,7 @@ public class DataAwal extends javax.swing.JFrame {
     private javax.swing.JButton Edit;
     private javax.swing.JTextField FK;
     private javax.swing.JTextField FK2;
+    private javax.swing.JButton HasilAnalisa;
     private javax.swing.JTextField JR;
     private javax.swing.JTextField JR2;
     private javax.swing.JTextField LK;

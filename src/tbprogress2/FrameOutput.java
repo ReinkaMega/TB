@@ -23,29 +23,122 @@ public class FrameOutput extends javax.swing.JFrame {
     /**
      * Creates new form FrameOutput
      */
-    RuangKelas kls = new RuangKelas();
-    int s = 0, ts = 0, kondisi;
     DatabaseWork da = new DatabaseWork();
     private Integer baris;
     private Connect con = new Connect();
     private JTable Tabelku = new JTable();
     private DefaultTableModel DefaultTabelku;
     private TableColumn kolom;
-    private String a, b,c,d,e,f,g;
-    private String C,D,E,F,G,kode;
     public FrameOutput(String id) {
         initComponents();
-        NM.setEditable(false);
-        LK.setEditable(false);
-        FK.setEditable(false);
-        JR.setEditable(false);
-        NMI.setEditable(false);
-        LKI.setEditable(false);
-        FKI.setEditable(false);
-        JRI.setEditable(false);
+        con.koneksi();
+        tampilDataKeTabel(jTable1,id);
+        tableModel(jTable5,id,null);
         
     }
+    private void tampilDataKeTabel(JTable x,String KR) {
+        Tabelku = x;
+        tableModel(Tabelku,KR);
+    }
+    
+    private void tableModel(JTable jTabel1,String KR) {
+//        try {
+            Object[] field = { "Nama", "Lokasi", "Prodi", "Fakultas","ID"};
+            DefaultTabelku = new DefaultTableModel(field, 5){
+                public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+    };
+            
+            jTabel1.setModel(DefaultTabelku);
 
+//            String sql = "Select * from identitas where id="+KR;
+//            Statement st = con.config.getConnection().createStatement();
+//            ResultSet set = st.executeQuery(sql);
+//
+//            int no = 0;
+//            while (set.next()) {
+//                no++;
+//                String kolom1 = String.valueOf(no).toString();
+//                String kolom2 = set.getString("nama");
+//                String kolom3 = set.getString("lokasi");
+//                String kolom4 = set.getString("prodi");
+//                String kolom5 = set.getString("fakultas");
+//                String kolom6 = set.getString("id");
+//                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6};
+//                DefaultTabelku.addColumn(data);
+//            }
+
+            jTabel1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+            
+            kolom = jTabel1.getColumnModel().getColumn(0);
+            kolom.setPreferredWidth(40);
+            kolom = jTabel1.getColumnModel().getColumn(1);
+            kolom.setPreferredWidth(145);
+            kolom = jTabel1.getColumnModel().getColumn(2);
+            kolom.setPreferredWidth(217);
+            kolom = jTabel1.getColumnModel().getColumn(3);
+            kolom.setPreferredWidth(220);
+            kolom = jTabel1.getColumnModel().getColumn(4);
+            kolom.setPreferredWidth(240);
+//            kolom = jTabel1.getColumnModel().getColumn(5);
+//            kolom.setPreferredWidth(0);
+//            kolom.setMinWidth(0);
+//            kolom.setMaxWidth(0);
+//            kolom.setWidth(0);
+//        } catch (SQLException e) {
+//            JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+//        }
+    }
+    private void tableModel(JTable jTabel1,String KR,String x) {
+        try {
+            Object[] field = {"No", "Nama", "Lokasi", "Prodi", "Fakultas","ID"};
+            DefaultTabelku = new DefaultTableModel(null, field){
+                public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+    };
+            
+            jTabel1.setModel(DefaultTabelku);
+
+            String sql = "Select * from identitas where id="+KR;
+            Statement st = con.config.getConnection().createStatement();
+            ResultSet set = st.executeQuery(sql);
+
+            int no = 0;
+            while (set.next()) {
+                no++;
+                String kolom1 = String.valueOf(no).toString();
+                String kolom2 = set.getString("nama");
+                String kolom3 = set.getString("lokasi");
+                String kolom4 = set.getString("prodi");
+                String kolom5 = set.getString("fakultas");
+                String kolom6 = set.getString("id");
+                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6};
+                DefaultTabelku.addRow(data);
+            }
+
+            jTabel1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+            
+            kolom = jTabel1.getColumnModel().getColumn(0);
+            kolom.setPreferredWidth(40);
+            kolom = jTabel1.getColumnModel().getColumn(1);
+            kolom.setPreferredWidth(145);
+            kolom = jTabel1.getColumnModel().getColumn(2);
+            kolom.setPreferredWidth(217);
+            kolom = jTabel1.getColumnModel().getColumn(3);
+            kolom.setPreferredWidth(220);
+            kolom = jTabel1.getColumnModel().getColumn(4);
+            kolom.setPreferredWidth(240);
+            kolom = jTabel1.getColumnModel().getColumn(5);
+            kolom.setPreferredWidth(0);
+            kolom.setMinWidth(0);
+            kolom.setMaxWidth(0);
+            kolom.setWidth(0);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -89,7 +182,7 @@ public class FrameOutput extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "lolo", "Title 2", "Title 3", "Title 4"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
