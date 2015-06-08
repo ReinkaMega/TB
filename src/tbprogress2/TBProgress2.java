@@ -29,7 +29,7 @@ public class TBProgress2 {
 //        analisis.persentaseKenyamanan();
 //        analisis.CheckKondisiKeamanan();
 //        analisis.persentaseKeamanan();
-//        IdentitasKelas a = new IdentitasKelas();
+      IdentitasKelas a = new IdentitasKelas();
 //        Login x = new Login();
         //Arinkade
     }
