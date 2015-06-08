@@ -38,6 +38,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     private String C,D,E,F,G,kode;
     KondisiKeamanan(String KR) {
         initComponents();
+        IDKelas.setText(KR);
         FK.setVisible(false);
         FPJ.setVisible(false);
         FB.setVisible(false);
@@ -55,6 +56,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
 //        enviBtnSave(true);
 //        enviBtnSave2(false);
 //        enviBtnNew(false);
+        KondisiAddButton();
         CODE.setVisible(false);
         Delete.setVisible(false);
         Edit.setVisible(false);
@@ -73,13 +75,39 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             frameSize.width = screenSize.width;
         }
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-        IDKelas.setText(KR);
+        
     }
 
 //    KondisiKeamanan(String KR) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
-
+     void KondisiAddButton(){
+         try{
+            String Sql = "Select id from keamanan ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom12 = Set.getString("id");
+                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                    ADD.setVisible(false);
+                    //System.out.println(""+IDKelas.getText());
+                    break;
+                }
+                else{
+                    ADD.setVisible(true);
+                    //System.out.println(""+IDKelas.getText());
+                }
+                //System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
+         }
+         catch(SQLException e){
+             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+         }
+     }
+    
      private boolean DiEdit() {
         boolean nilai = false;
         IO x = new IO(Kokoh,Tkokoh,Adakunci,Tkunci,Aman,Bahaya);
@@ -169,7 +197,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Edit.setVisible(true);
         Save.setVisible(false);
         Next.setVisible(true);
-        ADD.setVisible(true);
+        //ADD.setVisible(true);
         jTabel.enable(true);
         }
         else{
@@ -179,7 +207,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             Save.setVisible(false);
             btnSelesai.setVisible(false);
             Next.setVisible(false);
-            ADD.setVisible(true);
+            //ADD.setVisible(true);
         }
     }
     private void tableModel(JTable jTabel1) {
@@ -196,7 +224,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             String sql = "Select * from keamanan ";
             Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
-
+            KondisiAddButton();
             int no = 0;
             while (set.next()) {
                 no++;
@@ -749,7 +777,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         
         }
         Save.setVisible(false);
-        ADD.setVisible(true);
+        ADD.setVisible(false);
         clearTEXT();
         Next.setVisible(false);
         Kokoh.setEnabled(false);
@@ -781,7 +809,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         btnSelesai.setVisible(DiEdit());
         jTable1.enable(true);
         Delete.setVisible(false);
-        ADD.setVisible(true);
+        //ADD.setVisible(true);
         Edit.setVisible(false);
         Next.setVisible(false);
         Kokoh.setEnabled(false);
@@ -823,7 +851,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiKeamanan("10000").setVisible(true);
+                new KondisiKeamanan("1").setVisible(true);
             }
         });
     }

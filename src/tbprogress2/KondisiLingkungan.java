@@ -41,7 +41,9 @@ public class KondisiLingkungan extends javax.swing.JFrame {
     private String kode;
     
     public KondisiLingkungan(String KR) {
-        initComponents();
+        initComponents();  
+        IDKelas.setEditable(false);
+        IDKelas.setText(KR);
         SC.setEnabled(false);
         SS.setEnabled(false);
         SL.setEnabled(false);
@@ -91,12 +93,34 @@ public class KondisiLingkungan extends javax.swing.JFrame {
             frameSize.width = screenSize.width;
         }
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-        IDKelas.setEditable(false);
-        IDKelas.setText(KR);
-    }
       
-    
-
+    }
+     void KondisiAddButton(){
+         try{
+            String Sql = "Select id from lingkungan ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom12 = Set.getString("id");
+                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                    Add.setVisible(false);
+                    //System.out.println(""+IDKelas.getText());
+                    break;
+                }
+                else{
+                    Add.setVisible(true);
+                    //System.out.println(""+IDKelas.getText());
+                }
+                //System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
+         }
+         catch(SQLException e){
+             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+         }
+     } 
      private boolean DiEdit() {
         boolean nilai = false;
         IO x = new IO(SUL,SUT, PC,PL,PS);
@@ -194,7 +218,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
             Save.setVisible(false);
             btnselesai.setVisible(false);
             Next.setVisible(false);
-            Add.setVisible(true);
+            //Add.setVisible(true);
       }
         
     }
@@ -212,7 +236,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
             String sql = "Select * from lingkungan";
             Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
-
+            KondisiAddButton();
             int no = 0;
             while (set.next()) {
                 no++;
@@ -796,7 +820,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         System.out.println("lopo");
         jTable1.enable(true);
         Delete.setVisible(false);
-        Add.setVisible(true);
+       // Add.setVisible(true);
         Edit.setVisible(false);
         Next.setVisible(false);
          PC.setEditable(false);
@@ -812,7 +836,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         da.Save(IDKelas.getText(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu(),kls.getSirkulasiUdara());
         tampilDataKeTabel();
         Save.setVisible(false);
-        Add.setVisible(true);
+        Add.setVisible(false);
         clearTEXT();
         
         PRC.setText(null);
@@ -834,6 +858,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         Delete.setVisible(false);
         Edit.setVisible(false);
         Next.setVisible(false);
+        Add.setVisible(true);
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
@@ -896,7 +921,7 @@ public class KondisiLingkungan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiLingkungan("KODE").setVisible(true);
+                new KondisiLingkungan("1").setVisible(true);
             }
         });
     }

@@ -39,6 +39,7 @@ public class DataAwal extends javax.swing.JFrame {
     
     public DataAwal() {
         initComponents();
+        
         Save.setVisible(false);
         btnSelesai.setVisible(false);
         setLocationRelativeTo(null);
@@ -53,7 +54,7 @@ public class DataAwal extends javax.swing.JFrame {
 //        enviBtnSave2(false);
 //        enviBtnNew(false);
         
-        CODE.setVisible(true);
+        CODE.setVisible(false);
         Delete.setVisible(false);
         Edit.setVisible(false);
         NM.setEditable(false);
@@ -140,6 +141,38 @@ public class DataAwal extends javax.swing.JFrame {
         Save.setVisible(false);
         btnSelesai.setVisible(false);
         ADD.setVisible(true);
+    }
+    void KondisiSaveButton(){
+         try{
+            String Sql = "Select nama , lokasi from identitas ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom1 = Set.getString("nama");
+                String kolom2 = Set.getString("lokasi");
+                if(kolom1.equalsIgnoreCase(NM.getText())&&kolom2.equalsIgnoreCase(LK.getText())){
+                    JOptionPane.showMessageDialog(null, "Nama Ruang Sudah Ada");
+                    //System.out.println(""+IDKelas.getText());
+                    break;
+                }
+                else{
+                       da.Save(NM, LK, JR, FK);
+                       tampilDataKeTabel();
+                       Save.setVisible(false);
+                       ADD.setVisible(true);
+                       clearTEXT();
+                       Next.setVisible(false);
+                    //System.out.println(""+IDKelas.getText());
+                }
+                //System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
+         }
+         catch(SQLException e){
+             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+         }
     }
     private void tableModel(JTable jTabel1) {
         try {
@@ -493,12 +526,8 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_NextActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        da.Save(NM, LK, JR, FK);
-        tampilDataKeTabel();
-        Save.setVisible(false);
-        ADD.setVisible(true);
-        clearTEXT();
-        Next.setVisible(false);
+        KondisiSaveButton();
+       
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed

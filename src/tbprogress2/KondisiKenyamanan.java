@@ -39,6 +39,32 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
     private String b,c,d,e,f,g,h,i;
     private String a,E,F,G,H,I;
     private String kode;
+    void KondisiAddButton(){
+         try{
+            String Sql = "Select id from kenyamanan ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom12 = Set.getString("id");
+                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                    ADD.setVisible(false);
+                    //System.out.println(""+IDKelas.getText());
+                    break;
+                }
+                else{
+                    ADD.setVisible(true);
+                    //System.out.println(""+IDKelas.getText());
+                }
+                //System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
+         }
+         catch(SQLException e){
+             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+         }
+     }  
     void SliderEnable(boolean X){
         Sbising.setEnabled(X);
         Sbau.setEnabled(X);
@@ -66,6 +92,8 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
     }
     public KondisiKenyamanan(String KR) {
         initComponents();
+        IDKelas.setText(KR);
+        IDKelas.setEditable(false);
         FakeBocor.setVisible(false);
         FakeRusak.setVisible(false);
         setResizable(false);
@@ -116,8 +144,7 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
             frameSize.width = screenSize.width;
         }
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-        IDKelas.setText(KR);
-        IDKelas.setEditable(false);
+        
     }
     public void nyeret1(){
                 PersenBising.setEditable(false);	
@@ -345,7 +372,7 @@ private boolean DiEdit() {
             Save.setVisible(false);
             btnSelesai.setVisible(false);
             Ln.setVisible(false);
-            ADD.setVisible(true);
+            //ADD.setVisible(true);
         }
     }
     private void tableModel(JTable jTabel1) {
@@ -362,7 +389,7 @@ private boolean DiEdit() {
             String sql = "Select * from kenyamanan";
             Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
-
+            KondisiAddButton();
             int no = 0;
             while (set.next()) {
                 no++;
@@ -970,7 +997,7 @@ private boolean DiEdit() {
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         //String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x
-       x.output(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKerusakan(),null);
+        x.output(kls.getKebisingan(),kls.getBau(),kls.getKebocoran(),kls.getKerusakan(),kls.getKerusakan(),null);
         n.CheckKondisiKenyamanan(kls);
         dispose();
         x.inputKondisiKeamanan(IDKelas.getText());
@@ -982,7 +1009,7 @@ private boolean DiEdit() {
         da.Save(IDKelas.getText(),PBising,PBau,PAus,kls.getKebocoran(),kls.getKerusakan() );
         tampilDataKeTabel();
         Save.setVisible(false);
-        ADD.setVisible(true);
+        //ADD.setVisible(true);
         clearTEXT();
         Ln.setVisible(false);
         SliderEnable(false);
@@ -992,16 +1019,17 @@ private boolean DiEdit() {
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        da.kondisiHapus("keamanan","id_keamanan",CODE.getText());
+        da.kondisiHapus("kenyamanan","id_kenyamanan",CODE.getText());
         clearTEXT();
         Ln.setVisible(false);
         Delete.setVisible(false);
         Edit.setVisible(false);
-        ADD.setVisible(true);
         tampilDataKeTabel();
         cekbok(false);
         cekbokenable(false);
         SliderEnable(false);
+                ADD.setVisible(true);
+
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
@@ -1033,7 +1061,7 @@ private boolean DiEdit() {
         btnSelesai.setVisible(DiEdit());
        // jTable1.setEnabled(true);
         Delete.setVisible(false);
-        ADD.setVisible(true);
+        KondisiAddButton();
         Edit.setVisible(false);
         Ln.setVisible(false);
         cekbok(false);
@@ -1082,7 +1110,7 @@ private boolean DiEdit() {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiKenyamanan("kode").setVisible(true);
+                new KondisiKenyamanan("1").setVisible(true);
             }
         });
     }

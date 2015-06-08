@@ -38,6 +38,8 @@ public class KondisiKebersihan extends javax.swing.JFrame {
     private String C,D,E,F,G,kode;
     public KondisiKebersihan(String KR) {
       initComponents();
+       IDKelas.setText(KR);
+        IDKelas.setEditable(false);
         Save.setVisible(false);
         Next.setVisible(false);
         btnselesai.setVisible(false);
@@ -50,7 +52,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setResizable(false);
-        setTitle("Keamanan Ruang");
+        setTitle("Kebersihan Ruang");
         con.koneksi();
         tampilDataKeTabel();
 //        enableBtn(false);
@@ -79,13 +81,35 @@ public class KondisiKebersihan extends javax.swing.JFrame {
             frameSize.width = screenSize.width;
         }
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-        IDKelas.setText(KR);
-        IDKelas.setEditable(false);
+       
     }
-      
+    void KondisiAddButton(){
+         try{
+            String Sql = "Select id from kebersihan ";
+            Statement St = con.config.getConnection().createStatement();
+            ResultSet Set = St.executeQuery(Sql);
+            
+            while (Set.next()) {
+                String kolom12 = Set.getString("id");
+                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                    Add.setVisible(false);
+                    //System.out.println(""+IDKelas.getText());
+                    break;
+                }
+                else{
+                    Add.setVisible(true);
+                    //System.out.println(""+IDKelas.getText());
+                }
+                //System.out.println(""+IDKelas.getText());
+              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
+                //DefaultTabelku.addRow(data);
+            }
+         }
+         catch(SQLException e){
+             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
+         }
+     }  
     
-      
-
      private boolean DiEdit() {
         boolean nilai = false;
         IO x = new IO(LB,LBR,DB,DBR,AB,ABR,PB,PBR,JB,JBR);
@@ -213,7 +237,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
             Save.setVisible(false);
             btnselesai.setVisible(false);
             Next.setVisible(false);
-            Add.setVisible(true);
+            //Add.setVisible(true);
       }
         
     }
@@ -231,7 +255,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
             String sql = "Select * from kebersihan";
             Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
-
+            KondisiAddButton();
             int no = 0;
             while (set.next()) {
                 no++;
@@ -778,7 +802,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         da.Save(IDKelas.getText(),kls.getKondisiLantai(),kls.getKondisiDinding(),kls.getKondisiAtap(),kls.getKondisiPintu(),kls.getKondisiJendela());
         tampilDataKeTabel();
         Save.setVisible(false);
-        Add.setVisible(true);
+        Add.setVisible(false);
         clearTEXT();
         Next.setVisible(false);
         LB.setEnabled(false);
@@ -817,7 +841,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
        btnselesai.setVisible(DiEdit());
         jTable1.enable(true);
         Delete.setVisible(false);
-        Add.setVisible(true);
+        //Add.setVisible(true);
         Edit.setVisible(false);
         Next.setVisible(false);
         LB.setEnabled(false);
@@ -848,10 +872,14 @@ public class KondisiKebersihan extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-      da.kondisiHapus("kebersihan","id_kebersihan",CODE.getText());
+        da.kondisiHapus("kebersihan","id_kebersihan",CODE.getText());
         clearTEXT();
+        KondisiAddButton();
+        Delete.setVisible(false);
+        Edit.setVisible(false);
         Next.setVisible(false);
-        tampilDataKeTabel();        // TODO add your handling code here:
+        tampilDataKeTabel();
+        Add.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
@@ -903,7 +931,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiKebersihan("kode").setVisible(true);
+                new KondisiKebersihan("1").setVisible(true);
             }
         });
     }
