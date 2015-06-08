@@ -35,8 +35,6 @@ public class KondisiSarana extends javax.swing.JFrame {
     private String C,D,E,F,G,kode;
     public KondisiSarana(String KR) {
         initComponents();
-        SKB.setVisible(false);
-        SKPD.setVisible(false);
         Save.setVisible(false);
         Next.setVisible(false);
         btnSelesai.setVisible(false);
