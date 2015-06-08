@@ -145,11 +145,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="pklb" min="-2" pref="45" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="pklb" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
                                           <Component id="Pojok1" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
                                           <Component id="pklr" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
                                           <Component id="PosisiKL" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>

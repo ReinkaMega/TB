@@ -268,9 +268,44 @@ public class IO extends Proses implements View{
         rk = new RuangKelas(kls.getSirkulasiUdara(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu()); 
     
     }
+    public IO(JTextField kontak,JTextField KondisiSK,JTextField PosisiSK,JTextField jlcd,JTextField KondisiKL, JTextField PosisiKL,JTextField jlampu,JTextField KondisiL,JTextField PosisiL){
+            kls.setJumlahStopKontak(Integer.parseInt(kontak.getText()));    
+            kls.setKondisiStopKontak(KondisiSK.getText());
+            kls.setPosisiStopKontak(PosisiSK.getText());
+            kls.setJumlahKabelLCD(Integer.parseInt(jlcd.getText()));
+            kls.setKondisiKabelLCD(KondisiKL.getText());
+            kls.setPosisiKabelLCD(PosisiKL.getText());
+            kls.setJumlahLampu(Integer.parseInt(jlampu.getText()));
+            kls.setKondisiLampu(KondisiL.getText());
+            kls.setPosisiLampu(PosisiL.getText());  
+        rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu()); 
+    }
+    public IO(JTextField jka,JTextField kondisiKA,JTextField posisiKA,JTextField jac,JTextField kondisiAC,JTextField posisiAC,JTextField ssid,JCheckBox bb,JCheckBox bt,JTextField jcctv,JTextField kondisiCCTV ,JTextField posisiCCTV){
+        kls.setJumlahKipasAngin(Integer.parseInt(jka.getText()));
+            kls.setKondisiKipasAngin(kondisiKA.getText());
+            kls.setPosisiKipasAngin(posisiKA.getText());
+        
+        kls.setJumlahAC(Integer.parseInt(jac.getText()));
+          kls.setPosisiAC(kondisiAC.getText());
+          kls.setKondisiAC(posisiAC.getText());
+        
+        kls.setSSID(ssid.getText());
+        if(bb.isSelected()){   
+        kls.setBandwidth("Bisa");
+        }
+        else if(bt.isSelected()){
+            kls.setBandwidth("Tidak");
+        }
+          kls.setJumlahCCTV(Integer.parseInt(jcctv.getText()));
+          kls.setPosisiCCTV(posisiCCTV.getText());
+          kls.setKondisiCCTV(kondisiCCTV.getText());
+          rk = new RuangKelas(kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
+     }
     public IO(){
         
     }
+    
+    
     public RuangKelas getRuangKelas(){
     return rk;
     }
@@ -322,30 +357,32 @@ public class IO extends Proses implements View{
     }
      @Override
      public void inputKondisiSarana2(String Kode){
-        System.out.println("Masukkan Jumlah Kipas Angin : ");
-        kls.setJumlahKipasAngin(in.nextInt());
-        System.out.println("Masukkan Kondisi Kipas Angin : ");
-        kls.setKondisiKipasAngin(in.next());
-        System.out.println("Masukkan Posisi Kipas Angin : ");
-        kls.setPosisiKipasAngin(in.next());
-        System.out.println("Masukkan Jumlah AC : ");
-        kls.setJumlahAC(in.nextInt());
-        System.out.println("Masukkan Kondisi AC : ");
-        kls.setKondisiAC(in.next());
-        System.out.println("Masukkan Posisi AC : ");
-        kls.setPosisiAC(in.next());
-        System.out.println("Masukkan SSID : ");
-        kls.setSSID(in.next());
-        System.out.println("Masukkan Bandwidth : ");
-        kls.setBandwidth(in.next());
-        System.out.println("Masukkan Jumlah CCTV : ");
-        kls.setJumlahCCTV(in.nextInt());
-        System.out.println("Masukkan Kondisi CCTV : ");
-        kls.setKondisiCCTV(in.next());
-        System.out.println("Masukkan Posisi CCTV : ");
-        kls.setPosisiCCTV(in.next());
-        rk = new RuangKelas (kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
-     }
+          new KondisiSarana2(Kode).setVisible(true);
+     
+//        System.out.println("Masukkan Jumlah Kipas Angin : ");
+//        kls.setJumlahKipasAngin(in.nextInt());
+//        System.out.println("Masukkan Kondisi Kipas Angin : ");
+//        kls.setKondisiKipasAngin(in.next());
+//        System.out.println("Masukkan Posisi Kipas Angin : ");
+//        kls.setPosisiKipasAngin(in.next());
+//        System.out.println("Masukkan Jumlah AC : ");
+//        kls.setJumlahAC(in.nextInt());
+//        System.out.println("Masukkan Kondisi AC : ");
+//        kls.setKondisiAC(in.next());
+//        System.out.println("Masukkan Posisi AC : ");
+//        kls.setPosisiAC(in.next());
+//        System.out.println("Masukkan SSID : ");
+//        kls.setSSID(in.next());
+//        System.out.println("Masukkan Bandwidth : ");
+//        kls.setBandwidth(in.next());
+//        System.out.println("Masukkan Jumlah CCTV : ");
+//        kls.setJumlahCCTV(in.nextInt());
+//        System.out.println("Masukkan Kondisi CCTV : ");
+//        kls.setKondisiCCTV(in.next());
+//        System.out.println("Masukkan Posisi CCTV : ");
+//        kls.setPosisiCCTV(in.next());
+//        rk = new RuangKelas (kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
+         }
     
     @Override
     public void inputKondisiKebersihan(String Kode){

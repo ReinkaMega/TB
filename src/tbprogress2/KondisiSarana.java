@@ -35,7 +35,8 @@ public class KondisiSarana extends javax.swing.JFrame {
     private String C,D,E,F,G,kode;
     public KondisiSarana(String KR) {
         initComponents();
-        
+        SKB.setVisible(false);
+        SKPD.setVisible(false);
         Save.setVisible(false);
         Next.setVisible(false);
         btnSelesai.setVisible(false);
@@ -1312,14 +1313,19 @@ private boolean DiEdit() {
     }//GEN-LAST:event_PojokActionPerformed
 
     private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
-
-        IO x = new IO(kontak,kskb, kskr, pskb,Pojok, pskr,jlcd,kklb,kklr,pklb,Pojok1,pklr,jlampu,plb,plr,klb,klr);
+          IO x = new IO(kontak,KondisiSK,PosisiSK,jlcd,KondisiKL,PosisiKL,jlampu,KondisiL,PosisiL);
+//        IO x = new IO(kontak, kskb, kskr, pskb,Pojok, pskr,jlcd,kklb,kklr,pklb,Pojok1,pklr,jlampu,plb,plr,klb,klr);
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getJumlahStopKontak(),kls.getKondisiStopKontak() ,kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getLokasiRuang() );
         n.CheckKondisiSarana(kls);
+//            int a,b,c;
+//            a = Integer.parseInt(kontak.getText());
+//            b = Integer.parseInt(jlcd.getText());
+//            c = Integer.parseInt(jlampu.getText());
+//        x.output(a, KondisiSK.getText(), PosisiSK.getText(), b, KondisiKL.getText(), PosisiKL, c, KondisiL.getText(), PosisiL.getText());
         dispose();
-        x.inputKondisiKebersihan(IDKelas.getText());
+        x.inputKondisiSarana2(IDKelas.getText());
     }//GEN-LAST:event_NextActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
