@@ -529,7 +529,7 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_NextActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        KondisiSaveButton();
+        //KondisiSaveButton();
                         da.Save(NM, LK, JR, FK);
                        tampilDataKeTabel();
                        Save.setVisible(false);

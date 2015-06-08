@@ -334,43 +334,55 @@ public class Sistem extends Proses{
         
     }
     
-    int CheckKondisiKebersihan(RuangKelas kls) {
+    int CheckKondisiKebersihan(RuangKelas kls,String IDRuang) {
+        String alantai,adinding,aatap,apintu,ajendela;
         System.out.println("==============Analisis=================="); 
         if (kls.getKondisiLantai().equalsIgnoreCase("Lantai Bersih")) {
-            System.out.println("Kondisi Lantai : Sesuai");
+            //System.out.println("Kondisi Lantai : Sesuai");
+            alantai = "Sesuai";
             s++;
         } else {
-            System.out.println("Kondisi Lantai : Tidak Sesuai");
+            //System.out.println("Kondisi Lantai : Tidak Sesuai");
+            alantai = "Tidak Sesuai";
             ts++;
         }
         if (kls.getKondisiDinding().equalsIgnoreCase("Dinding Bersih/Baik")){
-            System.out.println("Kondisi Dinding : Sesuai");
+            //System.out.println("Kondisi Dinding : Sesuai");
+            adinding = "Sesuai";
             s++;
         }else {
             ts++;
-            System.out.println("Kondisi Dinding : Tidak Sesuai");
+            adinding = "Tidak Sesuai";
+            //System.out.println("Kondisi Dinding : Tidak Sesuai");
         }
         if (kls.getKondisiAtap().equalsIgnoreCase("Atap Bersih")){
-            System.out.println("Kondisi Atap : Sesuai");
+            //System.out.println("Kondisi Atap : Sesuai");
+            aatap = "Sesuai";
             s++;
         }else{
-            System.out.println("Kondisi Atap : Tidak Sesuai");
+            //System.out.println("Kondisi Atap : Tidak Sesuai");
+            aatap = "Tidak Sesuai";
             ts++;
         }
         if (kls.getKondisiPintu().equalsIgnoreCase("Pintu Bersih/Baik")){
-            System.out.println("Kondisi Pintu : Sesuai");
+           // System.out.println("Kondisi Pintu : Sesuai");
+            apintu = "Sesuai";
             s++;
         }else {
-            System.out.println("Kondisi Pintu : Tidak Sesuai");
+            //System.out.println("Kondisi Pintu : Tidak Sesuai");
+            apintu = "Tidak Sesuai";
             ts++;
         }
         if (kls.getKondisiJendela().equalsIgnoreCase("Jendela Bersih/Baik")){
-            System.out.println("Kondisi Jendela : Sesuai");
+            //System.out.println("Kondisi Jendela : Sesuai");
+            ajendela = "Sesuai";
             s++;
         } else {
-            System.out.println("Kondisi Jendela : Tidak Sesuai");
+            //System.out.println("Kondisi Jendela : Tidak Sesuai");
+            ajendela = "Tidak Sesuai";
             ts++;
         }
+        con.analisisSave(IDRuang, alantai, adinding, aatap, apintu, ajendela);
         persentaseKondisiLingkungan(s);
         return s;
     }
@@ -431,32 +443,34 @@ public class Sistem extends Proses{
     System.out.println("::Anda Masuk CheckKondisiKeamanan::");
     }
 
-    int CheckKondisiKeamanan(RuangKelas kls) {
+    int CheckKondisiKeamanan(RuangKelas kls,String IDRuang) {
 //        int kon;
 //        inop.inputKondisiLingkungan();
 //        kls = inop.getRuangKelas();
+        String akekokohan,akuncipintujendela,abahaya;
         System.out.println("==============Analisis==================");
         if ("Kokoh".equalsIgnoreCase(kls.getKekokohan())) {
-            System.out.println("Kekokohan : Sesuai");
+            akekokohan = "Sesuai";
             s++;
         } else {
-            System.out.println("Kekokohan : Tidak Sesuai");
+            akekokohan = "Tidak Sesuai";
             ts++;
         }
         if ("Terkunci".equalsIgnoreCase(kls.getKunciPintuJendela())) {
-            System.out.println("KunciPintuJendela : Sesuai");
+            akuncipintujendela = "Sesuai";
             s++;
         } else {
-            System.out.println("KunciPintuJendela : Tidak Sesuai");
+            akuncipintujendela = "Tidak Sesuai";
             ts++;
         }
         if ("Aman".equalsIgnoreCase(kls.getBahaya())) {
-            System.out.println("Kondisi Kelas : Aman");
+            abahaya = "Sesuai";
             s++;
         } else {
-            System.out.println("Kondisi Kelas : Berbahaya");
+            abahaya = "Tidak Sesuai";
             ts++;
         }
+        con.analisisSave(IDRuang, akekokohan, akuncipintujendela, abahaya);
         persentaseKeamanan(s); 
         return s;
     }

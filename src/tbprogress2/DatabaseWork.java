@@ -331,6 +331,37 @@ DatabaseWork(){
             JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
         }
      }
-     
+     void analisisSave(String id,String akekokohan,String akuncipintujendela,String abahaya) {
+             
+           try {
+       
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into analisis_keamanan"
+                        + "(id, akekokohan, akuncipintujendela, abahaya) values ('" + id + "','" + akekokohan + "','" + akuncipintujendela + "','" + abahaya +  "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+       
+       }
+     void analisisSave(String id,String alantai,String adinding,String aatap,String apintu,String ajendela) {
+             
+           try {
+       
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into analisis_kebersihan"
+                        + "(id, alantai,adinding,aatap ,apintu ,ajendela) values ('" + id + "','" + alantai + "','" + adinding +"','" + aatap + "','" + apintu + "','" + ajendela +  "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+       
+       }
 }  
 //

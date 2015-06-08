@@ -769,7 +769,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         Sistem n = new Sistem();
         int kon;
         x.output(kls.getKondisiLantai(), kls.getKondisiDinding(), kls.getKondisiAtap(), kls.getKondisiPintu(), kls.getKondisiJendela());
-        n.CheckKondisiKebersihan(kls);
+        n.CheckKondisiKebersihan(kls,IDKelas.getText());
         dispose();
         x.inputKondisiLingkungan(IDKelas.getText());
     }//GEN-LAST:event_NextActionPerformed
@@ -931,7 +931,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiKebersihan("1").setVisible(true);
+                new KondisiKebersihan("4").setVisible(true);
             }
         });
     }

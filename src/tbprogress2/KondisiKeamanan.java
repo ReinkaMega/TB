@@ -733,7 +733,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         x.output(kls.getKekokohan(), kls.getKunciPintuJendela(), kls.getBahaya());
-        n.CheckKondisiKeamanan(kls);
+        n.CheckKondisiKeamanan(kls,IDKelas.getText());
 //        if (s == 1) {
 //            System.out.println("s");
 //            kon = 1;
@@ -851,7 +851,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiKeamanan("1").setVisible(true);
+                new KondisiKeamanan("4").setVisible(true);
             }
         });
     }
