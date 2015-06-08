@@ -917,6 +917,12 @@ private boolean DiEdit() {
             }
         });
 
+        IDKelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IDKelasActionPerformed(evt);
+            }
+        });
+
         jLabel7.setText("ID RUANG");
 
         btnSelesai.setText("Selesai");
@@ -1533,6 +1539,10 @@ private boolean DiEdit() {
     private void jlcdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlcdActionPerformed
         jlcd.setText("2");
     }//GEN-LAST:event_jlcdActionPerformed
+
+    private void IDKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDKelasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDKelasActionPerformed
 
     /** 
      * @param args the command line arguments

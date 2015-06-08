@@ -139,7 +139,7 @@ DatabaseWork(){
         }
        
     }
-     void save(String KodeR,JTextField jka,String pka,String kka,JTextField jac,String pac,String kac,JTextField ssid,String bw,JTextField jcctv,String kcctv,String pcctv){
+     void Save(String KodeR,JTextField jka,String pka,String kka,JTextField jac,String pac,String kac,JTextField ssid,String bw,JTextField jcctv,String kcctv,String pcctv){
         a = jka.getText();
         b = kka;
         c = pka;
@@ -151,6 +151,7 @@ DatabaseWork(){
         j = jcctv.getText();
         k = kcctv;
         l = pcctv;
+        //jumlah total 11
         try {
             if (a.equals("") || c.equals("") || b.equals("") || d.equals("") || e.equals("")) {
                 JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
@@ -159,8 +160,11 @@ DatabaseWork(){
                 
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
-                        "insert into jkp_sarana"
-                        + "(id ,JKipasAngin, KKipasAngin, PKipasAngin, JAC, KAC, PAC, SSID, bandwidth, JCCTV, KCCTV, PCCTV values ('" + KodeR + "','" + a + "','" + b + "','" + c + "','" + d + "','" + e + "','" + f + "','" + g + "','" + h + "','" + i + "','" + j + "','" + k + "','" + l + "')");
+                        "insert into jkp_sarana2"
+                        + "(id, JKipasAngin, KKipasAngin, PKipasAngin, JAC, KAC, PAC, SSID, bandwidth, JCCTV, KCCTV, PCCTV) values ('" 
+                                + KodeR + "','" + a + "','" + b + "','" 
+                                + c + "','" + d + "','" + e + "','" + g + "','" 
+                                + h + "','" + i + "','" + j + "','" + k + "','" + l + "')");//jumlah total 12+ koder
 
                 JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
             }
