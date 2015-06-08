@@ -4,60 +4,59 @@
  */
 package tbprogress2;
 
-/**dadaaasa
+/**
  *
  * @author Reinka Mega Adelia (178)
  */
 public class RuangKelas {
 
-private String NamaRuang;
-private String LokasiRuang;
-private String ProgramStudi;
-private String Fakultas;
-private int PanjangRuang;
-private int LebarRuang;
-private int JumlahKursi;
-private int JumlahPintu;
-private int JumlahJendela;
-private int JumlahStopKontak;
-private String KondisiStopKontak;
-private String PosisiStopKontak;
-private int JumlahKabelLCD;
-private String KondisiKabelLCD;
-private String PosisiKabelLCD;
-private int JumlahLampu;
-private String KondisiLampu;
-private String PosisiLampu;
-private int JumlahKipasAngin;
-private String KondisiKipasAngin;
-private String PosisiKipasAngin;
-private int JumlahAC;
-private String KondisiAC;
-private String PosisiAC;
-private String SSID;
-private String Bandwidth;
-private int JumlahCCTV;
-private String KondisiCCTV;
-private String PosisiCCTV;
-private String KondisiLantai;
-private String KondisiDinding;
-private String KondisiAtap;
-private String KondisiPintu;
-private String KondisiJendela;
-private String SirkulasiUdara;
-private int NilaiPencahayaan;
-private int Kelembaban;
-private int Suhu;
-private String Kebisingan;
-private String Bau;
-private String Kebocoran;
-private String Kerusakan;
-private String Keausan;
-private String Kekokohan;
-private String KunciPintuJendela;
-private String Bahaya;
-private int Edit;
-    
+    private String NamaRuang;
+    private String LokasiRuang;
+    private String ProgramStudi;
+    private String Fakultas;
+    private int PanjangRuang;
+    private int LebarRuang;
+    private int JumlahKursi;
+    private int JumlahPintu;
+    private int JumlahJendela;
+    private int JumlahStopKontak;
+    private String KondisiStopKontak;
+    private String PosisiStopKontak;
+    private int JumlahKabelLCD;
+    private String KondisiKabelLCD;
+    private String PosisiKabelLCD;
+    private int JumlahLampu;
+    private String KondisiLampu;
+    private String PosisiLampu;
+    private int JumlahKipasAngin;
+    private String KondisiKipasAngin;
+    private String PosisiKipasAngin;
+    private int JumlahAC;
+    private String KondisiAC;
+    private String PosisiAC;
+    private String SSID;
+    private String Bandwidth;
+    private int JumlahCCTV;
+    private String KondisiCCTV;
+    private String PosisiCCTV;
+    private String KondisiLantai;
+    private String KondisiDinding;
+    private String KondisiAtap;
+    private String KondisiPintu;
+    private String KondisiJendela;
+    private String SirkulasiUdara;
+    private int NilaiPencahayaan;
+    private int Kelembaban;
+    private int Suhu;
+    private String Kebisingan;
+    private String Bau;
+    private String Kebocoran;
+    private String Kerusakan;
+    private String Keausan;
+    private String Kekokohan;
+    private String KunciPintuJendela;
+    private String Bahaya;
+
     public String getBahaya() {
         return Bahaya;
     }
@@ -80,14 +79,6 @@ private int Edit;
 
     public void setBau(String Bau) {
         this.Bau = Bau;
-    }
-
-    public int getEdit() {
-        return Edit;
-    }
-
-    public void setEdit(int Edit) {
-        this.Edit = Edit;
     }
 
     public String getFakultas() {
@@ -327,7 +318,7 @@ private int Edit;
     }
 
     public void setLokasiRuang(String LokasiRuang) {
-        this.LokasiRuang =LokasiRuang;
+        this.LokasiRuang = LokasiRuang;
     }
 
     public String getNamaRuang() {
@@ -433,25 +424,23 @@ private int Edit;
     public void setSuhu(int Suhu) {
         this.Suhu = Suhu;
     }
-    
-    
-    public RuangKelas(String NamaRuang,String LokasiRuang,String ProgramStudi,String Fakultas){
+
+    public RuangKelas(String NamaRuang, String LokasiRuang, String ProgramStudi, String Fakultas) {
         setNamaRuang(NamaRuang);
         setLokasiRuang(LokasiRuang);
         setProgramStudi(ProgramStudi);
         setFakultas(Fakultas);
     }
-    
-    
-    public RuangKelas(int PanjangRuang,int LebarRuang,int JumlahKursi,int JumlahPintu,int JumlahJendela){
-       setPanjangRuang(PanjangRuang);
+
+    public RuangKelas(int PanjangRuang, int LebarRuang, int JumlahKursi, int JumlahPintu, int JumlahJendela) {
+        setPanjangRuang(PanjangRuang);
         setLebarRuang(LebarRuang);
         setJumlahKursi(JumlahKursi);
         setJumlahPintu(JumlahPintu);
         setJumlahJendela(JumlahJendela);
     }
-    //kkjkjkj
-    public RuangKelas(int JumlahStopKontak,String KondisiStopKontak,String PosisiStopKontak,int JumlahKabelLCD,String KondisiKabelLCD,String PosisiKabelLCD,int JumlahLampu,String KondisiLampu,String PosisiLampu){
+
+    public RuangKelas(int JumlahStopKontak, String KondisiStopKontak, String PosisiStopKontak, int JumlahKabelLCD, String KondisiKabelLCD, String PosisiKabelLCD, int JumlahLampu, String KondisiLampu, String PosisiLampu) {
         setJumlahStopKontak(JumlahStopKontak);
         setKondisiStopKontak(KondisiStopKontak);
         setPosisiStopKontak(PosisiStopKontak);
@@ -461,10 +450,11 @@ private int Edit;
         setJumlahLampu(JumlahLampu);
         setKondisiLampu(KondisiLampu);
         setPosisiLampu(PosisiLampu);
-        
+
     }
-    public RuangKelas (int JumlahKipasAngin,String KondisiKipasAngin,String PosisiKipasAngin,int JumlahAC,String KondisiAC,String PosisiAC,String SSID,String Bandwidth,int JumlahCCTV,String KondisiCCTV,String PosisiCCTV){
-         setJumlahKipasAngin(JumlahKipasAngin);
+
+    public RuangKelas(int JumlahKipasAngin, String KondisiKipasAngin, String PosisiKipasAngin, int JumlahAC, String KondisiAC, String PosisiAC, String SSID, String Bandwidth, int JumlahCCTV, String KondisiCCTV, String PosisiCCTV) {
+        setJumlahKipasAngin(JumlahKipasAngin);
         setKondisiKipasAngin(KondisiKipasAngin);
         setPosisiKipasAngin(PosisiKipasAngin);
         setJumlahAC(JumlahAC);
@@ -475,40 +465,41 @@ private int Edit;
         setJumlahCCTV(JumlahCCTV);
         setKondisiCCTV(KondisiCCTV);
         setPosisiCCTV(PosisiCCTV);
-            
-            }
-    
-    public RuangKelas(String KondisiLantai,String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela){
-       setKondisiLantai(KondisiLantai);
+
+    }
+
+    public RuangKelas(String KondisiLantai, String KondisiDinding, String KondisiAtap, String KondisiPintu, String KondisiJendela) {
+        setKondisiLantai(KondisiLantai);
         setKondisiDinding(KondisiDinding);
         setKondisiAtap(KondisiAtap);
         setKondisiPintu(KondisiPintu);
         setKondisiJendela(KondisiJendela);
     }
-    
-     public RuangKelas(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban, int Suhu){
-       setSirkulasiUdara(SirkulasiUdara);
+
+    public RuangKelas(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban, int Suhu) {
+        setSirkulasiUdara(SirkulasiUdara);
         setNilaiPencahayaan(NilaiPencahayaan);
         setKelembaban(Kelembaban);
         setSuhu(Suhu);
     }
-    
-      public RuangKelas(String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x){
+
+    public RuangKelas(String Kebisingan, String Bau, String Kebocoran, String Kerusakan, String Keausan, String x) {
         setKebisingan(Kebisingan);
         setBau(Bau);
         setKebocoran(Kebocoran);
         setKerusakan(Kerusakan);
         setKeausan(Keausan);
     }
-      
-    public RuangKelas(String Kekokohan,String KunciPintuJendela,String Bahaya){
-        
+
+    public RuangKelas(String Kekokohan, String KunciPintuJendela, String Bahaya) {
+
         setKekokohan(Kekokohan);
         setKunciPintuJendela(KunciPintuJendela);
-        setBahaya(Bahaya); 
-        
+        setBahaya(Bahaya);
+
     }
-    public RuangKelas(){
-        
+
+    public RuangKelas() {
+
     }
 }
